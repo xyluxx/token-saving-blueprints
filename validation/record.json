@@ -58,7 +58,7 @@
     "runtime_trial": false
   },
   "readme_assets": {
-    "badge_style": "standard Shields plastic, five badges in centered 3+2 rows",
+    "badge_style": "standard Shields plastic, five centered inline badges with no forced second row",
     "badge_count": 5,
     "badge_height": 20,
     "banner_pixels": [
@@ -66,7 +66,7 @@
       600
     ],
     "banner_status": "Owner requested publication of the retained document-cover design with clearly labeled hypothetical figures",
-    "visual_review": "Desktop 1400 and mobile390/320 rendered; image and adjacent caption identify figures as illustrative API-cost examples, not measured averages or forecasts; no clipping or page overflow"
+    "visual_review": "Desktop and mobile rendering checked; planning-scenario wording retains explicit assumptions and non-average qualification; narrow layouts can wrap naturally."
   },
   "remote_ci_status": "blocked at account level",
   "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",

@@ -1,17 +1,15 @@
 <h1 align="center">Token Saving Blueprints</h1>
 
 <p align="center">
-  <a href="#illustrative-api-cost-scenario"><img src="assets/banner.png" width="1200" alt="Token Saving Blueprints. Illustrative API-cost scenario with both add-ons: Conservative 38%, Aggressive 53%. Calculated examples, not measured averages or forecasts."></a>
+  <a href="#api-cost-planning-scenario"><img src="assets/banner.png" width="1200" alt="Token Saving Blueprints. API-cost planning scenario with both add-ons: Conservative 38%, Aggressive 53%. Based on stated assumptions, not measured averages."></a>
 </p>
 
-<p align="center"><strong>Illustration only:</strong> the banner figures are calculated API-cost examples with both add-ons, not measured averages or predictions.</p>
+<p align="center"><strong>Planning scenario:</strong> calculated from the stated assumptions with both add-ons. Actual savings vary; these are not measured averages.</p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ec6?style=plastic" width="87" height="20" alt="License: MIT"></a>
   <a href="#choose-the-mode-by-the-work"><img src="https://img.shields.io/badge/modes-2-007ec6?style=plastic" width="71" height="20" alt="Modes: 2"></a>
   <a href="VALIDATION.md"><img src="https://img.shields.io/badge/checks-54%20local-44cc11?style=plastic" width="111" height="20" alt="Checks: 54 local tests"></a>
-</p>
-<p align="center">
   <a href="docs/delegation.md"><img src="https://img.shields.io/badge/delegation-opt--in-007ec6?style=plastic" width="122" height="20" alt="Delegation: opt-in"></a>
   <a href="docs/addons/omniroute.md"><img src="https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic" width="140" height="20" alt="OmniRoute: optional"></a>
 </p>
@@ -44,9 +42,9 @@ For developers, executives and teams who want less wasted AI spend without repla
 
 Both modes can leave a short or information-dense task unchanged. A smaller incomplete answer is not a saving.
 
-## Illustrative API-cost scenario
+## API-cost planning scenario
 
-**Calculated examples, not observed averages, performance forecasts or token-saving guarantees.** The assumptions below were chosen to explain how the options combine. They were not derived as typical results from a benchmark of this repository.
+**Assumption-based cost modelling, not measured averages or guaranteed results.** The assumptions below were chosen to explain how the options combine. They were not derived as typical results from a benchmark of this repository.
 
 | Mode | OmniRoute compression | Cheaper-model delegation | Modelled API-cost reduction |
 |---|:---:|:---:|---:|
@@ -59,7 +57,7 @@ Both modes can leave a short or information-dense task unchanged. A smaller inco
 | Aggressive | Off | On | ~47% |
 | Aggressive | On | On | ~53% |
 
-The highlighted **38% Conservative** and **53% Aggressive** examples include both add-ons. They are not independent gains to add together. Delegation is task-aware guidance for suitable small jobs, not a fixed routing quota or a universal automatic router supplied by this repository.
+The highlighted **38% Conservative** and **53% Aggressive** scenarios include both add-ons. They are not independent gains to add together. Delegation is task-aware guidance for suitable small jobs, not a fixed routing quota or a universal automatic router supplied by this repository.
 
 <details>
 <summary><strong>Assumptions and reproducible arithmetic</strong></summary>
