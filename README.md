@@ -1,6 +1,6 @@
 # Token Saving Blueprints
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Methods: two modes](https://img.shields.io/badge/methods-2%20modes-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 51 local tests](https://img.shields.io/badge/checks-51%20local-44cc11?style=plastic)](VALIDATION.md) [![OmniRoute: optional](https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic)](docs/addons/omniroute.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Modes: 2](https://img.shields.io/badge/modes-2-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 51 local tests](https://img.shields.io/badge/checks-51%20local-44cc11?style=plastic)](VALIDATION.md)
 
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
 

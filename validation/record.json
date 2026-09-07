@@ -85,7 +85,7 @@
   },
   "readme_assets": {
     "banner_status": "Previous banner rejected by owner and removed; replacement preview not yet approved.",
-    "navigation_badges": 4,
+    "navigation_badges": 3,
     "badge_style": "Standard Shields.io plastic segmented badges; local checks explicitly labeled, not hosted CI."
   },
   "remote_ci_status": "blocked at account level",
