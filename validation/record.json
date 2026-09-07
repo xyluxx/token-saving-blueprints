@@ -1,21 +1,21 @@
 {
   "kind": "repository-validation-record",
   "status": "pass",
-  "validated_at_utc": "2026-09-07T01:09:20.626870+00:00",
+  "validated_at_utc": "2026-09-07T03:56:51.330244+00:00",
   "scope": "Blueprint documentation, catalogue integrity, privacy-pattern checks and synthetic accounting fixtures; not native account or token-savings certification",
-  "validated_content_commit": "a0fac073212e398953117340f2945a61709a46d8",
+  "validated_content_commit": "3a967981a6a2717ba6909719929723ebb6fba92c",
   "clean_checkout": true,
   "unit_tests": [
     {
       "interpreter": "CPython 3.10.12",
       "os": "Linux",
-      "tests": 42,
+      "tests": 51,
       "result": "pass"
     },
     {
       "interpreter": "CPython 3.11.15",
       "os": "Linux",
-      "tests": 42,
+      "tests": 51,
       "result": "pass"
     }
   ],
@@ -24,13 +24,14 @@
   "harness_identities": 19,
   "auth_provider_routes": 91,
   "market_records": 53,
-  "market_sources": 119,
+  "market_sources": 125,
   "synthetic_accounting_examples": 2,
   "syntax_checks": {
-    "json_fences": 3,
+    "json_fences": 4,
     "toml_fences": 2,
-    "shell_fences_bash_n": 16,
-    "shell_snippets_executed": false
+    "shell_fences_bash_n": 21,
+    "shell_snippets_executed": false,
+    "yaml_fences": "documented example; no native account execution"
   },
   "native_help_checks": [
     {
@@ -63,14 +64,31 @@
   "remote_ci_executed": false,
   "windows_macos_executed": false,
   "independent_review": {
-    "initial_reviews": "operator and technical; bounded material corrections identified and applied",
+    "initial_reviews": "prior operator/technical closure plus source-backed add-on/delegation review",
     "closure_verdict": "ready-as-blueprint",
     "remaining_material_blockers": 0,
-    "reviewed_commit": "a0fac073212e398953117340f2945a61709a46d8"
+    "post_review_changes": "Applied optional review findings: nested navigation links, malformed inventory IDs, exact supporting-group coverage, and source/cache-control precision. Three regression tests added and the complete clean-checkout gate passed."
   },
   "notes": [
     "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
     "Source dates and guide support labels retain their own scope.",
-    "No universal average, exact-quality guarantee or market-wide perfection claim is established."
-  ]
+    "No universal average, exact-quality guarantee or market-wide perfection claim is established.",
+    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified."
+  ],
+  "omniroute_inventory": {
+    "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
+    "registered_engines": 15,
+    "normal_config_choices": 12,
+    "supporting_groups": 22,
+    "runtime_trial": false
+  },
+  "readme_assets": {
+    "banner_pixels": [
+      1600,
+      500
+    ],
+    "visual_inspection": "pass",
+    "svg_safety_checks": "pass",
+    "navigation_pills": 6
+  }
 }
