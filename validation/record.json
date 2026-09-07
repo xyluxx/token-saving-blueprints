@@ -84,13 +84,9 @@
     "runtime_trial": false
   },
   "readme_assets": {
-    "banner_pixels": [
-      1600,
-      500
-    ],
-    "visual_inspection": "pass",
-    "svg_safety_checks": "pass",
-    "navigation_pills": 6
+    "banner_status": "Previous banner rejected by owner and removed; replacement preview not yet approved.",
+    "navigation_badges": 4,
+    "badge_style": "Standard Shields.io plastic segmented badges; local checks explicitly labeled, not hosted CI."
   },
   "remote_ci_status": "blocked at account level",
   "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",

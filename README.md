@@ -1,10 +1,6 @@
 # Token Saving Blueprints
 
-![Token Saving Blueprints: Conservative and Aggressive methods for your existing AI setup](assets/banner.png)
-
-[![Conservative](assets/pill-conservative.svg)](docs/modes/conservative.md) [![Aggressive](assets/pill-aggressive.svg)](docs/modes/aggressive.md) [![Native and API routes](assets/pill-routes.svg)](docs/auth-and-billing.md) [![MIT license](assets/pill-license.svg)](LICENSE)
-
-Optional: [![Delegation](assets/pill-delegation.svg)](docs/delegation.md) [![OmniRoute add-on](assets/pill-omniroute.svg)](docs/addons/omniroute.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Methods: two modes](https://img.shields.io/badge/methods-2%20modes-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 51 local tests](https://img.shields.io/badge/checks-51%20local-44cc11?style=plastic)](VALIDATION.md) [![OmniRoute: optional](https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic)](docs/addons/omniroute.md)
 
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
 
