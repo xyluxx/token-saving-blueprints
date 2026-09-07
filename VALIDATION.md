@@ -11,7 +11,7 @@ python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
-They check supported internal Markdown navigation, required harness coverage and canonical identity/display-name associations, route enums/dates/source URLs, market/source catalogue references, guide sections, JSON examples, Python syntax, common private-path/credential patterns, the pinned OmniRoute inventory, SVG safety and synthetic usage accounting. Unsafe input paths are rejected before opening them. Unit tests include deliberately broken inputs, not only happy paths. These checks are not a complete CommonMark parser, secret detector or semantic source verifier.
+They check supported internal Markdown navigation, required harness coverage and canonical identity/display-name associations, route enums/dates/source URLs, market/source catalogue references, guide sections, JSON examples, Python syntax, common private-path/credential patterns, the pinned OmniRoute inventory, provider-auth and platform coverage records, SVG safety and synthetic usage accounting. Unsafe input paths are rejected before opening them. Unit tests include deliberately broken inputs, not only happy paths. These checks are not a complete CommonMark parser, secret detector or semantic source verifier.
 
 The checks are dependency-free on Python 3.10 or later. Windows can use `py -3`; actual operating systems exercised for a release are listed in [the validation record](validation/record.json). A portable script is not proof every native client was tested on every OS.
 

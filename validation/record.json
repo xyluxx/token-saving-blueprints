@@ -1,21 +1,21 @@
 {
   "kind": "repository-validation-record",
   "status": "pass",
-  "validated_at_utc": "2026-09-07T03:56:51.330244+00:00",
-  "scope": "Blueprint documentation, catalogue integrity, privacy-pattern checks and synthetic accounting fixtures; not native account or token-savings certification",
-  "validated_content_commit": "3a967981a6a2717ba6909719929723ebb6fba92c",
+  "validated_at_utc": "2026-09-07T05:34:12.794996+00:00",
+  "scope": "Repository documents, structured coverage/auth inventories, source-backed material claim families, privacy patterns and synthetic accounting; not authenticated accounts or a savings benchmark",
+  "validated_content_commit": "f7c75c9352d6292a303cf717e26b6567a0d6f18a",
   "clean_checkout": true,
   "unit_tests": [
     {
       "interpreter": "CPython 3.10.12",
       "os": "Linux",
-      "tests": 51,
+      "tests": 53,
       "result": "pass"
     },
     {
       "interpreter": "CPython 3.11.15",
       "os": "Linux",
-      "tests": 51,
+      "tests": 53,
       "result": "pass"
     }
   ],
@@ -33,7 +33,38 @@
     "shell_snippets_executed": false,
     "yaml_fences": "documented example; no native account execution"
   },
-  "native_help_checks": [
+  "native_authenticated_trials": false,
+  "savings_benchmark": false,
+  "remote_ci_executed": false,
+  "windows_macos_executed": false,
+  "independent_review": {
+    "source_lanes": "Existing claims/OAuth/economics and broader common-platform discovery; parent checked additional sources and integrated corrections",
+    "closure": "Named corrections applied, inventories reconciled, clean-checkout tests passed; no universal certification claimed"
+  },
+  "notes": [
+    "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
+    "Source dates and guide support labels retain their own scope.",
+    "No universal average, exact-quality guarantee or market-wide perfection claim is established.",
+    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified.",
+    "The repository workflow is active and repository Actions are enabled, but the GitHub user-level restriction prevented any hosted test run. Local clean-checkout tests remain the executed evidence.",
+    "Additional coverage records include variants and legacy recognition, not 34 independently tested products. Original rejected image assets were removed; the replacement banner remains privately held."
+  ],
+  "omniroute_inventory": {
+    "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
+    "registered_engines": 15,
+    "normal_config_choices": 12,
+    "supporting_groups": 22,
+    "runtime_trial": false
+  },
+  "readme_assets": {
+    "banner_status": "Previous banner rejected by owner and removed; replacement preview not yet approved.",
+    "navigation_badges": 3,
+    "badge_style": "Standard Shields.io plastic segmented badges; local checks explicitly labeled, not hosted CI."
+  },
+  "remote_ci_status": "blocked at account level",
+  "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",
+  "remote_ci_checked_at_utc": "2026-09-07T03:59:06.592468+00:00",
+  "historical_native_help_checks": [
     {
       "client": "claude",
       "available": true,
@@ -59,36 +90,14 @@
       "scope": "version/help only; no authenticated task"
     }
   ],
-  "native_authenticated_trials": false,
-  "savings_benchmark": false,
-  "remote_ci_executed": false,
-  "windows_macos_executed": false,
-  "independent_review": {
-    "initial_reviews": "prior operator/technical closure plus source-backed add-on/delegation review",
-    "closure_verdict": "ready-as-blueprint",
-    "remaining_material_blockers": 0,
-    "post_review_changes": "Applied optional review findings: nested navigation links, malformed inventory IDs, exact supporting-group coverage, and source/cache-control precision. Three regression tests added and the complete clean-checkout gate passed."
-  },
-  "notes": [
-    "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
-    "Source dates and guide support labels retain their own scope.",
-    "No universal average, exact-quality guarantee or market-wide perfection claim is established.",
-    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified.",
-    "The repository workflow is active and repository Actions are enabled, but the GitHub user-level restriction prevented any hosted test run. Local clean-checkout tests remain the executed evidence."
-  ],
-  "omniroute_inventory": {
-    "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
-    "registered_engines": 15,
-    "normal_config_choices": 12,
-    "supporting_groups": 22,
-    "runtime_trial": false
-  },
-  "readme_assets": {
-    "banner_status": "Previous banner rejected by owner and removed; replacement preview not yet approved.",
-    "navigation_badges": 3,
-    "badge_style": "Standard Shields.io plastic segmented badges; local checks explicitly labeled, not hosted CI."
-  },
-  "remote_ci_status": "blocked at account level",
-  "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",
-  "remote_ci_checked_at_utc": "2026-09-07T03:59:06.592468+00:00"
+  "additional_platform_surface_records": 34,
+  "omniroute_oauth_category_ids": 24,
+  "whole_repository_revalidation": {
+    "base_commit": "4dfe91c7713453db720edda54ecef28d05a97f43",
+    "base_files_accounted": 80,
+    "exact_replacements": 47,
+    "replacement_files": 21,
+    "scope": "All public text read; repeated claims grouped; consequential current sources rechecked; not 47 independent errors or 91 account trials",
+    "unverified_boundaries": "Exact accounts, full gateway/runtime behavior, selected provider-policy/billing questions and combined savings remain unverified."
+  }
 }
