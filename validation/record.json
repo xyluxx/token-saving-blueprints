@@ -3,7 +3,7 @@
   "status": "pass",
   "validated_at_utc": "2026-09-07T05:34:12.794996+00:00",
   "scope": "Repository documents, structured coverage/auth inventories, source-backed material claim families, privacy patterns and synthetic accounting; not authenticated accounts or a savings benchmark",
-  "validated_content_commit": "f7c75c9352d6292a303cf717e26b6567a0d6f18a",
+  "validated_content_commit": "2d934e2671a7c115ba5adb5b7e1f550e3b610a78",
   "clean_checkout": true,
   "unit_tests": [
     {
