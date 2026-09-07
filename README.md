@@ -7,13 +7,13 @@
 <p align="center"><strong>Illustration only:</strong> the banner figures are calculated API-cost examples with both add-ons, not measured averages or predictions.</p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ec6?style=plastic" height="20" alt="License: MIT"></a>
-  <a href="#choose-the-mode-by-the-work"><img src="https://img.shields.io/badge/modes-2-007ec6?style=plastic" height="20" alt="Modes: 2"></a>
-  <a href="VALIDATION.md"><img src="https://img.shields.io/badge/checks-54%20local-44cc11?style=plastic" height="20" alt="Checks: 54 local tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ec6?style=plastic" width="87" height="20" alt="License: MIT"></a>
+  <a href="#choose-the-mode-by-the-work"><img src="https://img.shields.io/badge/modes-2-007ec6?style=plastic" width="71" height="20" alt="Modes: 2"></a>
+  <a href="VALIDATION.md"><img src="https://img.shields.io/badge/checks-54%20local-44cc11?style=plastic" width="111" height="20" alt="Checks: 54 local tests"></a>
 </p>
 <p align="center">
-  <a href="docs/delegation.md"><img src="https://img.shields.io/badge/delegation-opt--in-007ec6?style=plastic" height="20" alt="Delegation: opt-in"></a>
-  <a href="docs/addons/omniroute.md"><img src="https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic" height="20" alt="OmniRoute: optional"></a>
+  <a href="docs/delegation.md"><img src="https://img.shields.io/badge/delegation-opt--in-007ec6?style=plastic" width="122" height="20" alt="Delegation: opt-in"></a>
+  <a href="docs/addons/omniroute.md"><img src="https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic" width="140" height="20" alt="OmniRoute: optional"></a>
 </p>
 
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
