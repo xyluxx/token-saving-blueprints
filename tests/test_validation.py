@@ -627,5 +627,26 @@ class CoverageTests(unittest.TestCase):
                 self.assertTrue(v.validate_platform_coverage(root))
 
 
+class ApiCostScenarioTests(unittest.TestCase):
+    def test_scenario_arithmetic_and_nonbenchmark_boundary(self):
+        import json
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_api_cost_scenario", None)))
+        self.assertEqual(v.validate_api_cost_scenario(ROOT), [])
+        for change in ("label", "cost", "percent", "missing", "duplicate", "assumption"):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "examples").mkdir()
+                data = json.loads((ROOT / "examples/api-cost-scenario.json").read_text())
+                if change == "label": data["not_a_benchmark"] = False
+                elif change == "cost": data["rows"][0]["cost"] = "1"
+                elif change == "percent": data["rows"][0]["rounded_reduction_percent"] += 1
+                elif change == "missing": data["rows"].pop()
+                elif change == "duplicate": data["rows"][-1] = data["rows"][0]
+                elif change == "assumption": data["base_reduction"]["Conservative"] = "-1"
+                (root / "examples/api-cost-scenario.json").write_text(json.dumps(data))
+                self.assertTrue(v.validate_api_cost_scenario(root))
+
+
 if __name__ == "__main__":
     unittest.main()

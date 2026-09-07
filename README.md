@@ -1,6 +1,20 @@
-# Token Saving Blueprints
+<h1 align="center">Token Saving Blueprints</h1>
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Modes: 2](https://img.shields.io/badge/modes-2-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 53 local tests](https://img.shields.io/badge/checks-53%20local-44cc11?style=plastic)](VALIDATION.md)
+<p align="center">
+  <a href="#illustrative-api-cost-scenario"><img src="assets/banner.png" width="1200" alt="Token Saving Blueprints. Illustrative API-cost scenario with both add-ons: Conservative 38%, Aggressive 53%. Calculated examples, not measured averages or forecasts."></a>
+</p>
+
+<p align="center"><strong>Illustration only:</strong> the banner figures are calculated API-cost examples with both add-ons, not measured averages or predictions.</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ec6?style=plastic" height="20" alt="License: MIT"></a>
+  <a href="#choose-the-mode-by-the-work"><img src="https://img.shields.io/badge/modes-2-007ec6?style=plastic" height="20" alt="Modes: 2"></a>
+  <a href="VALIDATION.md"><img src="https://img.shields.io/badge/checks-54%20local-44cc11?style=plastic" height="20" alt="Checks: 54 local tests"></a>
+</p>
+<p align="center">
+  <a href="docs/delegation.md"><img src="https://img.shields.io/badge/delegation-opt--in-007ec6?style=plastic" height="20" alt="Delegation: opt-in"></a>
+  <a href="docs/addons/omniroute.md"><img src="https://img.shields.io/badge/OmniRoute-optional-007ec6?style=plastic" height="20" alt="OmniRoute: optional"></a>
+</p>
 
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
 
@@ -29,6 +43,40 @@ For developers, executives and teams who want less wasted AI spend without repla
 | Default | Start here | Use for an eligible task, not every session |
 
 Both modes can leave a short or information-dense task unchanged. A smaller incomplete answer is not a saving.
+
+## Illustrative API-cost scenario
+
+**Calculated examples, not observed averages, performance forecasts or token-saving guarantees.** The assumptions below were chosen to explain how the options combine. They were not derived as typical results from a benchmark of this repository.
+
+| Mode | OmniRoute compression | Cheaper-model delegation | Modelled API-cost reduction |
+|---|:---:|:---:|---:|
+| Conservative | Off | Off | ~20% |
+| Conservative | On | Off | ~24% |
+| Conservative | Off | On | ~35% |
+| Conservative | On | On | ~38% |
+| Aggressive | Off | Off | ~35% |
+| Aggressive | On | Off | ~42% |
+| Aggressive | Off | On | ~47% |
+| Aggressive | On | On | ~53% |
+
+The highlighted **38% Conservative** and **53% Aggressive** examples include both add-ons. They are not independent gains to add together. Delegation is task-aware guidance for suitable small jobs, not a fixed routing quota or a universal automatic router supplied by this repository.
+
+<details>
+<summary><strong>Assumptions and reproducible arithmetic</strong></summary>
+
+- Baseline: **$10,000 of variable API charges** for comparable work, not a fixed subscription fee.
+- Mode alone: assume **20%** cost reduction for Conservative or **35%** for Aggressive. These are chosen inputs, not measured mode averages.
+- Delegation: assume **30% of the remaining model spend** can move to workers costing **20% as much per unit at unchanged usage volume**. Add overhead equal to **5% of the remaining spend** for coordination, verification and repair. The assumed remaining-cost multiplier is `0.70 + 0.30 × 0.20 + 0.05 = 0.81`.
+- OmniRoute: assume another **5% Conservative / 10% Aggressive net reduction in remaining cost**, only from nonoverlapping opportunities after the preceding methods. These increments are not evidence of OmniRoute's actual performance.
+- The same complete accepted result and comparable billing/cache conditions are assumed, not demonstrated. Extra recovery, cache losses, changed worker token volume or lost quality can erase the apparent saving.
+
+`final cost = baseline × (1 − base reduction) × optional delegation multiplier × optional OmniRoute multiplier`
+
+For both add-ons, that produces **$6,156** for Conservative and **$4,738.50** for Aggressive. The table rounds the reductions to whole percentages. Inputs and outputs are in [the scenario data](examples/api-cost-scenario.json); the repository checker recomputes every combination using decimal arithmetic.
+
+</details>
+
+**Do not apply these percentages to token counts, subscription quotas or fixed monthly fees.** OmniRoute's OAuth support does not make those meters equivalent. If a method duplicates native optimization or produces extra work, the actual gain can be zero or negative. See [measurement](docs/measurement.md) and [evidence](docs/evidence.md).
 
 ## The operating loop
 

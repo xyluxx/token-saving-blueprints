@@ -1,0 +1,78 @@
+{
+  "kind": "hypothetical-api-cost-scenario",
+  "not_a_benchmark": true,
+  "not_a_forecast": true,
+  "baseline_variable_api_cost": "10000",
+  "base_reduction": {
+    "Conservative": "0.20",
+    "Aggressive": "0.35"
+  },
+  "omniroute_net_increment": {
+    "Conservative": "0.05",
+    "Aggressive": "0.10"
+  },
+  "delegation": {
+    "eligible_remaining_spend": "0.30",
+    "relative_worker_unit_cost": "0.20",
+    "additional_overhead": "0.05"
+  },
+  "assumptions": "Same accepted task result and comparable workload assumed. Base and gateway reductions are chosen inputs, not research-derived averages. Gateway gains are net, nonoverlapping with previous methods. Delegation assumes unchanged work volume at lower unit price plus the stated overhead. Not a token-count or subscription-quota model.",
+  "rows": [
+    {
+      "mode": "Conservative",
+      "compression": false,
+      "cheaper_delegation": false,
+      "cost": "8000.00",
+      "rounded_reduction_percent": 20
+    },
+    {
+      "mode": "Conservative",
+      "compression": true,
+      "cheaper_delegation": false,
+      "cost": "7600.00",
+      "rounded_reduction_percent": 24
+    },
+    {
+      "mode": "Conservative",
+      "compression": false,
+      "cheaper_delegation": true,
+      "cost": "6480.00",
+      "rounded_reduction_percent": 35
+    },
+    {
+      "mode": "Conservative",
+      "compression": true,
+      "cheaper_delegation": true,
+      "cost": "6156.00",
+      "rounded_reduction_percent": 38
+    },
+    {
+      "mode": "Aggressive",
+      "compression": false,
+      "cheaper_delegation": false,
+      "cost": "6500.00",
+      "rounded_reduction_percent": 35
+    },
+    {
+      "mode": "Aggressive",
+      "compression": true,
+      "cheaper_delegation": false,
+      "cost": "5850.00",
+      "rounded_reduction_percent": 42
+    },
+    {
+      "mode": "Aggressive",
+      "compression": false,
+      "cheaper_delegation": true,
+      "cost": "5265.00",
+      "rounded_reduction_percent": 47
+    },
+    {
+      "mode": "Aggressive",
+      "compression": true,
+      "cheaper_delegation": true,
+      "cost": "4738.50",
+      "rounded_reduction_percent": 53
+    }
+  ]
+}

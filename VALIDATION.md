@@ -36,3 +36,8 @@ Any CI workflow file, if supplied, is only a definition until an actual run is o
 ## Reporting validation
 
 Say what passed: documentation/fixture checks, source inspection or a particular native trial. Do not shorten those into “everything tested,” “no quality loss” or “works with any account.”
+
+
+## Scenario arithmetic versus performance
+
+The [README illustration](README.md#illustrative-api-cost-scenario) is calculated from explicit chosen assumptions in [scenario data](examples/api-cost-scenario.json). Checks cover all eight mode/add-on combinations, decimal costs, whole-percentage rounding and nonbenchmark/nonforecast labels. Passing that check proves arithmetic consistency, not that the assumed savings occur. The banner and adjacent text retain the same qualification.

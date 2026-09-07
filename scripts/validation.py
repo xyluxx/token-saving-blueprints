@@ -584,3 +584,42 @@ def validate_auth_matrix(root):
         if row.get("runtime_tested") is not False: findings.append("auth row runtime boundary changed")
     if len(ids) != len(set(ids)) or set(ids) != OMNI_AUTH_IDS: findings.append("auth provider coverage mismatch")
     return findings
+
+
+def validate_api_cost_scenario(root):
+    from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+    root = Path(root).resolve()
+    try:
+        data = load_json_within(root, root / "examples/api-cost-scenario.json")
+        if data.get("kind") != "hypothetical-api-cost-scenario" or data.get("not_a_benchmark") is not True or data.get("not_a_forecast") is not True:
+            return ["API scenario must remain explicitly hypothetical, not a benchmark or forecast"]
+        def fraction(value):
+            x = Decimal(str(value))
+            if not x.is_finite() or x < 0 or x > 1: raise ValueError("invalid fraction")
+            return x
+        baseline = Decimal(str(data["baseline_variable_api_cost"]))
+        if not baseline.is_finite() or baseline <= 0: raise ValueError("invalid baseline")
+        config = data["delegation"]
+        share = fraction(config["eligible_remaining_spend"])
+        worker = 1 - share + share * fraction(config["relative_worker_unit_cost"]) + fraction(config["additional_overhead"])
+        expected = {(m, o, d) for m in ("Conservative", "Aggressive") for o in (False, True) for d in (False, True)}
+        seen = set()
+        findings = []
+        for row in data["rows"]:
+            mode, omni, delegation = row["mode"], row["compression"], row["cheaper_delegation"]
+            if type(omni) is not bool or type(delegation) is not bool: raise ValueError("invalid switch")
+            identity = (mode, omni, delegation)
+            if identity not in expected or identity in seen: findings.append("API scenario configuration set mismatch")
+            seen.add(identity)
+            cost = baseline * (1 - fraction(data["base_reduction"][mode]))
+            if omni: cost *= 1 - fraction(data["omniroute_net_increment"][mode])
+            if delegation: cost *= worker
+            rounded_cost = cost.quantize(Decimal(".01"), rounding=ROUND_HALF_UP)
+            rounded_percent = int(((1 - cost / baseline) * 100).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
+            if Decimal(str(row["cost"])) != rounded_cost or row["rounded_reduction_percent"] != rounded_percent:
+                findings.append("API scenario arithmetic mismatch")
+        if seen != expected: findings.append("API scenario must cover all eight combinations")
+        if not isinstance(data.get("assumptions"), str) or not data["assumptions"].strip(): findings.append("API scenario assumptions missing")
+        return findings
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, InvalidOperation):
+        return ["missing or invalid API scenario data"]
