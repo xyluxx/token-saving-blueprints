@@ -12,6 +12,10 @@ Choose a capability, not a bundle. None of the optional or experimental entries 
 6. Snapshot only the configuration being changed, retain exact source artifacts and record how to bypass the choice. Do not install automatically or modify a shared global profile.
 7. Try one complete representative task, verify requirements and permissions, count the entire trajectory and revert on a failure. A small pilot is a screening decision, not a population savings claim.
 
+## Optional delegation and OmniRoute
+
+Use [host-native delegation](delegation.md) before adding another orchestrator. The [restricted OmniRoute add-on](addons/omniroute.md) is now an explicit optional method, not a blanket exclusion. It has source-level compression candidates and concrete activation gates; it is not a universal safe preset or a promised extra percentage. Keep the main native subscription outside the proxy. [Free-provider choices](addons/free-provider-lanes.md) are a separate account/data/cost decision.
+
 ## Fast choice by situation
 
 | Situation | First choice | Add only for a demonstrated gap |

@@ -483,5 +483,112 @@ class ReviewRegressionTests(unittest.TestCase):
             self.assertTrue(any("slug" in x for x in v.validate_routes(root, {"example"})))
 
 
+class AddonAssetTests(unittest.TestCase):
+    def test_complete_source_inventory_passes(self):
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_addon_inventory", None)), "add-on checker missing")
+        self.assertEqual(v.validate_addon_inventory(ROOT), [])
+
+    def test_missing_engine_is_not_hidden_by_changing_declared_count(self):
+        import json
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_addon_inventory", None)), "add-on checker missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "catalog").mkdir()
+            data = json.loads((ROOT / "catalog/omniroute-features.json").read_text())
+            removed = data["engines"].pop()["id"]
+            data["registered_engine_ids"].remove(removed)
+            data["counts"]["registered_engines"] -= 1
+            (root / "catalog/omniroute-features.json").write_text(json.dumps(data))
+            self.assertTrue(any("engine" in x for x in v.validate_addon_inventory(root)))
+
+    def test_hidden_engine_cannot_be_labeled_normal_config(self):
+        import json
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_addon_inventory", None)), "add-on checker missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "catalog").mkdir()
+            data = json.loads((ROOT / "catalog/omniroute-features.json").read_text())
+            row = next(x for x in data["engines"] if x["id"] == "ionizer")
+            row["writable_stacked_schema"] = True
+            row["in_public_catalog"] = True
+            data["public_configurable_engine_ids"].append("ionizer")
+            data["counts"]["normal_config_choices"] += 1
+            (root / "catalog/omniroute-features.json").write_text(json.dumps(data))
+            self.assertTrue(any("config" in x for x in v.validate_addon_inventory(root)))
+
+    def test_navigation_pill_checks_outer_destination(self):
+        v = load_validation(self)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "assets").mkdir()
+            (root / "assets/pill.svg").write_text("<svg/>")
+            (root / "README.md").write_text("[![Guide](assets/pill.svg)](missing-guide.md)")
+            self.assertTrue(v.validate_links(root))
+            (root / "missing-guide.md").write_text("# Guide")
+            self.assertEqual(v.validate_links(root), [])
+
+    def test_malformed_inventory_ids_return_findings(self):
+        import json
+        v = load_validation(self)
+        for field in ("registered_engine_ids", "public_configurable_engine_ids"):
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "catalog").mkdir()
+                data = json.loads((ROOT / "catalog/omniroute-features.json").read_text())
+                data[field][0] = None
+                (root / "catalog/omniroute-features.json").write_text(json.dumps(data))
+                try:
+                    findings = v.validate_addon_inventory(root)
+                except (TypeError, ValueError) as exc:
+                    self.fail("malformed IDs raised instead of returning findings: " + type(exc).__name__)
+                self.assertTrue(findings)
+
+    def test_supporting_groups_require_reviewed_identity_and_evidence(self):
+        import json
+        v = load_validation(self)
+        for change in ("identity", "source_url", "scope", "caveat"):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "catalog").mkdir()
+                data = json.loads((ROOT / "catalog/omniroute-features.json").read_text())
+                group = data["supporting_mechanisms"][0]
+                if change == "identity":
+                    group["id"] = "invented-unsupported-group"
+                else:
+                    group.pop(change)
+                (root / "catalog/omniroute-features.json").write_text(json.dumps(data))
+                self.assertTrue(v.validate_addon_inventory(root))
+
+    def test_basic_svg_passes(self):
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_assets", None)), "asset checker missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "assets").mkdir()
+            (root / "assets/good.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30"><rect width="100" height="30" fill="#ffffff"/></svg>')
+            self.assertEqual(v.validate_assets(root), [])
+
+    def test_svg_active_and_external_content_is_rejected(self):
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_assets", None)), "asset checker missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "assets").mkdir()
+            (root / "assets/bad.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg"><script>void(0)</script><image href="https://example.invalid/image.png"/></svg>')
+            self.assertTrue(v.validate_assets(root))
+
+    def test_svg_entity_declarations_are_rejected(self):
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_assets", None)), "asset checker missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "assets").mkdir()
+            (root / "assets/bad.svg").write_text('<!DOCTYPE svg [<!ENTITY example "text">]><svg xmlns="http://www.w3.org/2000/svg"><text>&example;</text></svg>')
+            self.assertTrue(any("declaration" in x for x in v.validate_assets(root)))
+
+
 if __name__ == "__main__":
     unittest.main()

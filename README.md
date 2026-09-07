@@ -1,5 +1,11 @@
 # Token Saving Blueprints
 
+![Token Saving Blueprints: Conservative and Aggressive methods for your existing AI setup](assets/banner.png)
+
+[![Conservative](assets/pill-conservative.svg)](docs/modes/conservative.md) [![Aggressive](assets/pill-aggressive.svg)](docs/modes/aggressive.md) [![Native and API routes](assets/pill-routes.svg)](docs/auth-and-billing.md) [![MIT license](assets/pill-license.svg)](LICENSE)
+
+Optional: [![Delegation](assets/pill-delegation.svg)](docs/delegation.md) [![OmniRoute add-on](assets/pill-omniroute.svg)](docs/addons/omniroute.md)
+
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
 
 For developers, executives and teams who want less wasted AI spend without replacing their working system. This is a set of blueprints, configuration recipes and verification checklists. It is **not** a new agent, proxy service or subscription broker.
@@ -62,6 +68,14 @@ The repository connects five decisions that are often documented separately:
 5. **Outcome accounting:** include retries, restoration and failure, not just the smaller intermediate payload.
 
 These are operating methods and templates, not claims that a new runtime enforces them automatically. See [system map](docs/system-map.md).
+
+## Optional delegation and OmniRoute
+
+Use [native or headless delegation](docs/delegation.md) when a bounded worker helps. API models do not each need a separate app window, but tool-capable workers still need their actual runtime and permissions. The main agent remains accountable.
+
+[OmniRoute](docs/addons/omniroute.md) is an optional, restricted API add-on for either mode, with a [complete compression inventory](docs/addons/omniroute-compression.md). It is not an all-features preset or a subscription-token broker. Its route, fallback, cache and data gates must pass first; otherwise stay native.
+
+[Cheaper/free worker models](docs/addons/free-provider-lanes.md) are separately consented cost choices. They can change dollars without reducing tokens, and no extra 20–30% is promised. Do not enable every layer or pool human accounts.
 
 ## Use it with your agent
 

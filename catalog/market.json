@@ -1390,24 +1390,33 @@
     "name": "OmniRoute",
     "category": "gateway bundle",
     "url": "https://github.com/diegosouzapw/OmniRoute",
-    "disposition": "excluded",
-    "rationale": "Excluded from default recommendations: subscription pooling, stealth/MITM and automatic fallback features conflict with this blueprint’s no-broker/no-CA/no-hidden-route boundaries. A separately authorized plain API integration is a different decision.",
+    "disposition": "optional",
+    "rationale": "Conditional, restricted API add-on for a bounded later pilot, not a default install or subscription broker. Native delegation often needs no gateway. Select one source-qualified compression owner only after route, fallback, data and account gates pass.",
     "license_status": "MIT root; transitive/native assets and provider contracts are separate.",
-    "evidence_scope": "Current README plus retained pinned code/license audit, not an installed trial.",
+    "evidence_scope": "Pinned source b345c7f6cd4e1590d1177540813302375a75e332: 15 registered compression engines, 12 normal writable choices, plus independent mechanisms. No installed trial or incremental whole-task savings benchmark.",
     "overlapping_with": [
+      "bifrost",
+      "headroom",
       "litellm",
-      "bifrost"
+      "ponytail",
+      "rtk"
     ],
     "sources": [
       "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/README.md",
-      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/LICENSE"
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/LICENSE",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/index.ts",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/shared/validation/compressionConfigSchemas.ts",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/handlers/chatCore.ts",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/modelFamilyFallback.ts",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/autoCombo/strictZeroCostFilter.ts",
+      "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/cloudSync.ts"
     ],
-    "checked_on": "2026-09-06",
-    "control_surface": "",
-    "best_tasks": "",
-    "marginal_savings": "",
-    "adoption_and_rollback": "",
-    "authority_maturity": "Important searched exclusion; no universal ranking implied. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "checked_on": "2026-09-07",
+    "control_surface": "Approved API call lane with effective key/model/connection policy; not universal native-harness or tenant control.",
+    "best_tasks": "Small stateless approved API analysis lane first; conditional ordinary-JSON or repetitive-output experiments after the route gate.",
+    "marginal_savings": "Unmeasured over the existing blueprint. Compression, lower-price workers and native subscription capacity remain separate. No extra20-30% average is established.",
+    "adoption_and_rollback": "Follow docs/addons/omniroute.md. Keep native baseline. No auto/combo/consumer-token/CA path; verify fixed post-alias model and all attempts, upstream spend bounds, data policy and layered bypass. Restore the original route if gates fail.",
+    "authority_maturity": "Source-inspected existing project; conditional pilot, not a validated universal preset. Certain fallback, cache and free-pool limits remain at the pin.",
     "repository_snapshot": {
       "full_name": "diegosouzapw/OmniRoute",
       "stargazers_count": 62028,
@@ -1418,7 +1427,9 @@
       "default_branch": "release/v3.8.51",
       "checked_on": "2026-09-06"
     },
-    "review_depth": "source-inspected"
+    "review_depth": "source-inspected",
+    "activation_status": "pilot-gated",
+    "guide": "docs/addons/omniroute.md"
   },
   {
     "id": "llmtrim",

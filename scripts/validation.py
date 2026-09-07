@@ -59,6 +59,7 @@ def validate_links(root):
             findings.append(f"{label}: unreadable or symlinked document")
             continue
         targets = re.findall(r'!?\[[^\]]*\]\((<[^>]+>|[^\s)]+)(?:\s+"[^"]*")?\)', text)
+        targets.extend(re.findall(r'\[!\[[^\]]*\]\([^\n)]+\)\]\((<[^>]+>|[^\s)]+)(?:\s+"[^"]*")?\)', text))
         definitions = re.findall(r'(?m)^\s{0,3}\[([^\]]+)\]:\s*(<[^>]+>|\S+)', text)
         defined = {" ".join(name.lower().split()) for name, _ in definitions}
         numeric_citations = set(re.findall(r'(?m)^\[(\d+)\]\s+https?://', text))
@@ -254,7 +255,7 @@ def validate_content(root):
                 continue
             if name in private_names or name.startswith(".env.") or name == ".envrc" or path.suffix in {".pem", ".key"}:
                 findings.append(f"{label}: private file must not be distributed")
-            if path.suffix not in {".md", ".json", ".py", ".yml", ".yaml", ".toml", ".csv", ".txt"} and name != "LICENSE":
+            if path.suffix not in {".md", ".json", ".py", ".yml", ".yaml", ".toml", ".csv", ".txt", ".svg"} and name != "LICENSE":
                 continue
             try:
                 text = path.read_text(encoding="utf-8")
@@ -391,4 +392,133 @@ def validate_market(root):
                 findings.append("market: check date is in the future")
         except (TypeError, ValueError):
             findings.append("market: invalid check date")
+    return findings
+
+
+OMNI_PIN = "b345c7f6cd4e1590d1177540813302375a75e332"
+OMNI_ENGINE_IDS = {
+    "lite", "caveman", "aggressive", "ultra", "rtk", "codex-responses", "session-dedup",
+    "headroom", "ccr", "llmlingua", "ionizer", "relevance", "llm", "read-lifecycle", "omniglyph",
+}
+OMNI_NORMAL_IDS = OMNI_ENGINE_IDS - {"ionizer", "llm", "read-lifecycle"}
+OMNI_SUPPORTING_IDS = {
+    'mcp-description',
+    'mcp-accessibility',
+    'mcp-tool-cardinality',
+    'output-styles',
+    'reactive-context-fit',
+    'adaptive-budget',
+    'hard-budget',
+    'provider-context-edit',
+    'cache-aware-protection',
+    'prefix-freeze',
+    'live-zone',
+    'compression-result-memo',
+    'quantum-lock',
+    'fidelity-gate',
+    'risk-gate',
+    'inflation-bailout-breaker',
+    'response-cache',
+    'native-prompt-cache',
+    'reasoning-replay-cache',
+    'request-idempotency',
+    'worker-offloading',
+    'output-token-cap',
+}
+
+
+
+def validate_addon_inventory(root):
+    root = Path(root).resolve()
+    findings = []
+    try:
+        data = load_json_within(root, root / "catalog/omniroute-features.json")
+    except (OSError, UnicodeError, ValueError):
+        return ["missing or invalid OmniRoute source inventory"]
+    if not isinstance(data, dict) or data.get("kind") != "source-inspected-feature-inventory":
+        return ["invalid OmniRoute source inventory kind"]
+    if data.get("pinned_commit") != OMNI_PIN or data.get("runtime_tested") is not False:
+        findings.append("OmniRoute pin/evidence boundary differs from the reviewed inventory")
+    engines = data.get("engines")
+    if not isinstance(engines, list) or not all(isinstance(x, dict) and isinstance(x.get("id"), str) for x in engines):
+        return findings + ["invalid OmniRoute engine entries"]
+    ids = [x["id"] for x in engines]
+    if len(ids) != len(set(ids)) or set(ids) != OMNI_ENGINE_IDS:
+        findings.append("OmniRoute engine registry coverage mismatch")
+    declared = data.get("registered_engine_ids")
+    normal = data.get("public_configurable_engine_ids")
+    if not isinstance(declared, list) or not all(isinstance(x, str) for x in declared) or sorted(declared) != sorted(OMNI_ENGINE_IDS):
+        findings.append("OmniRoute declared engine set mismatch")
+    if not isinstance(normal, list) or not all(isinstance(x, str) for x in normal) or sorted(normal) != sorted(OMNI_NORMAL_IDS):
+        findings.append("OmniRoute normal-config engine set mismatch")
+    for engine in engines:
+        expected = engine["id"] in OMNI_NORMAL_IDS
+        if engine.get("in_public_catalog") is not expected or engine.get("writable_stacked_schema") is not expected:
+            findings.append("OmniRoute engine config availability mismatch")
+        sources = engine.get("sources")
+        if not isinstance(sources, list) or not sources or not all(_http_url(x) and OMNI_PIN in x for x in sources):
+            findings.append("OmniRoute engine needs pinned source URLs")
+        if not isinstance(engine.get("risks_and_limits"), str) or not engine["risks_and_limits"].strip():
+            findings.append("OmniRoute engine needs explicit limitations")
+    groups = data.get("supporting_mechanisms")
+    if not isinstance(groups, list) or len(groups) != 22 or not all(isinstance(x, dict) and isinstance(x.get("id"), str) for x in groups):
+        findings.append("OmniRoute supporting-group coverage mismatch")
+    else:
+        if len({x["id"] for x in groups}) != len(groups) or {x["id"] for x in groups} != OMNI_SUPPORTING_IDS:
+            findings.append("OmniRoute supporting-group identity mismatch")
+        for group in groups:
+            source = group.get("source_url")
+            if not _http_url(source) or OMNI_PIN not in source:
+                findings.append("OmniRoute supporting group needs pinned source")
+            if any(not isinstance(group.get(key), str) or not group[key].strip() for key in ("scope", "caveat")):
+                findings.append("OmniRoute supporting group needs scope and limitations")
+    counts = data.get("counts")
+    if not isinstance(counts, dict) or counts != {"registered_engines": 15, "normal_config_choices": 12, "supporting_groups": 22}:
+        findings.append("OmniRoute declared inventory counts mismatch")
+    return findings
+
+
+def validate_assets(root):
+    import xml.etree.ElementTree as ET
+    import os
+    root = Path(root).resolve()
+    assets = root / "assets"
+    if not assets.exists():
+        return []
+    if assets.is_symlink() or not assets.resolve().is_relative_to(root):
+        return ["unsafe assets directory"]
+    findings = []
+    for directory, dirs, names in os.walk(assets, followlinks=False):
+        for name in list(dirs):
+            if (Path(directory) / name).is_symlink():
+                findings.append("symlinked asset directory")
+                dirs.remove(name)
+        for name in names:
+            path = Path(directory) / name
+            if path.suffix.lower() != ".svg":
+                continue
+            label = path.relative_to(root)
+            try:
+                if path.stat().st_size > 2_000_000:
+                    raise ValueError("oversized SVG")
+                text = read_text_within(root, path)
+                if "<!DOCTYPE" in text.upper() or "<!ENTITY" in text.upper():
+                    findings.append(f"{label}: SVG declaration is not allowed")
+                    continue
+                element = ET.fromstring(text)
+                if element.tag.split("}")[-1] != "svg":
+                    raise ValueError("not SVG")
+            except (OSError, UnicodeError, ValueError, ET.ParseError):
+                findings.append(f"{label}: invalid or unsafe SVG")
+                continue
+            for node in element.iter():
+                tag = node.tag.split("}")[-1].lower()
+                if tag in {"script", "foreignobject", "iframe", "style", "image", "animate", "set"}:
+                    findings.append(f"{label}: active/external SVG content is not allowed")
+                for key, value in node.attrib.items():
+                    key = key.split("}")[-1].lower()
+                    if key.startswith("on") or (key in {"href", "src"} and not value.startswith("#")):
+                        findings.append(f"{label}: active/external SVG attribute is not allowed")
+                    if "url(" in value.lower() and not re.fullmatch(r"url\(\s*#[A-Za-z0-9_-]+\s*\)", value):
+                        findings.append(f"{label}: external SVG resource is not allowed")
     return findings

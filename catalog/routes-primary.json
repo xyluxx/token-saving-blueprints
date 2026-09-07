@@ -564,7 +564,7 @@
   {
     "id": "hermes-anthropic-max-extra",
     "harness": "hermes",
-    "auth_path": "Documented Max OAuth plus purchased extra-usage credits",
+    "auth_path": "Project-documented Claude Max OAuth path; mechanism, provider permission and actual billing require verification",
     "provider_path": "Hermes Anthropic integration, not native Claude Code allowance",
     "support_level": "limited",
     "control": "native-supported",
@@ -573,13 +573,15 @@
     "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
     "caveats": [
       "Hermes docs say included Max allowance is not consumed; Pro unavailable through this path.",
-      "Provider terms and commercial intermediation require separate review."
+      "Provider terms and commercial intermediation require separate review.",
+      "Do not treat the superseded Agent SDK credit table as current billing. The official SDK/headless pause does not by itself clear this separate third-party route."
     ],
     "sources": [
       "https://hermes-agent.nousresearch.com/docs/integrations/providers",
-      "https://code.claude.com/docs/en/legal-and-compliance"
+      "https://code.claude.com/docs/en/legal-and-compliance",
+      "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan"
     ],
-    "checked_on": "2026-09-06"
+    "checked_on": "2026-09-07"
   },
   {
     "id": "hermes-direct-api",

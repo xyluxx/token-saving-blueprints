@@ -2,7 +2,7 @@
 
 [Start here](../../START-HERE.md) · [Conservative](../modes/conservative.md) · [Aggressive](../modes/aggressive.md) · [Auth and billing](../auth-and-billing.md) · [Measurement](../measurement.md)
 
-Checked 2026-09-06 UTC. Evidence: documented; installed CLI help also inspected. No authenticated native trial or savings benchmark.
+Checked 2026-09-07 UTC. Evidence: documented; installed CLI help also inspected. No authenticated native trial or savings benchmark.
 
 ## Who this is for
 
@@ -64,6 +64,10 @@ Never lower effort, change models, auto-approve tools, or rewrite opaque provide
 
 The installed CLI identified as 2.1.205; live documentation contains later features. That version check does not certify newer hooks or keyless Console sign-in on that installation. This guide deliberately avoids a one-size hook installer and any claim of measured token savings. Native cache savings, fewer tokens, subscription quota and API dollars are separate measures.
 
+## Native headless use and delegation
+
+The current official SDK support article starts with a June 15 update pausing the proposed separate-credit change: supported Agent SDK and `claude -p` usage currently still draw from subscription usage limits. Do not use the lower historical credit table as current pricing. Keep this distinction separate from provider restrictions on credential collection/intermediation. See [Delegation](../delegation.md) for bounded native workers and headless patterns.[71]
+
 ## Sources
 
 [70] https://code.claude.com/docs/en/memory.md — project-instructions
@@ -73,3 +77,5 @@ The installed CLI identified as 2.1.205; live documentation contains later featu
 [47] https://code.claude.com/docs/en/mcp — claude-mcp
 [48] https://code.claude.com/docs/en/legal-and-compliance — claude-legal
 [59] https://code.claude.com/docs/en/hooks.md — claude-hooks-full
+
+[71] https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan — current-sdk-billing-update

@@ -2,7 +2,7 @@
 
 [Start here](../../START-HERE.md) · [Conservative](../modes/conservative.md) · [Aggressive](../modes/aggressive.md) · [Auth and billing](../auth-and-billing.md) · [Measurement](../measurement.md)
 
-Checked 2026-09-06 UTC. Evidence: official documentation and installed CLI help. No authenticated provider trial or model benchmark for this guide.
+Checked 2026-09-07 UTC. Evidence: official documentation and installed CLI help. No authenticated provider trial or model benchmark for this guide.
 
 ## Who this is for
 
@@ -12,7 +12,7 @@ People using Nous Research's Hermes Agent in the CLI or a persistent assistant w
 
 1. Native documented subscription routes: use `hermes model` and the provider's own login. Nous Portal and “ChatGPT or Codex Subscription” are documented choices. The user authorizes their own account and Hermes maintains its provider credentials; no token copying or seat pooling is required.[29]
 2. Other provider OAuth: Hermes documents MiniMax, Copilot and xAI choices. The xAI `xai-oauth` provider is separate from API-key `xai`; its guide says `XAI_API_KEY` is not used for the OAuth provider. Subscription consumption across chat/media features must be verified, not inferred from the X Search quota statement alone.[29][65]
-3. Anthropic: direct `ANTHROPIC_API_KEY` is the straightforward API route. Current Hermes documentation describes Claude Max OAuth with purchased extra-usage credits, not included base Max allowance, and says Pro is unavailable through that path. This is not identical to native Claude Code subscription billing. Provider terms and the actual account bill still govern; do not turn this into a commercial subscription broker.[29][48] For a new setup, this project-reported subscription route is not approved here until its exact mechanism and current Anthropic permission are confirmed. Otherwise use a separately authorized API/cloud route; do not silently change an existing account.
+3. Anthropic: direct `ANTHROPIC_API_KEY` is the straightforward API route. Current Hermes documentation describes Claude Max OAuth with purchased extra-usage credits, not included base Max allowance, and says Pro is unavailable through that path. This is a project-specific billing claim, not a certified current account result. The official Claude Agent SDK article separately pauses its announced SDK/headless-credit change and says supported SDK/`claude -p` usage currently remains within subscription limits. That update does not by itself approve a third-party credential-intermediation route; establish the exact mechanism and actual account billing.[66] Provider terms and the actual account bill still govern; do not turn this into a commercial subscription broker.[29][48] For a new setup, this project-reported subscription route is not approved here until its exact mechanism and current Anthropic permission are confirmed. Otherwise use a separately authorized API/cloud route; do not silently change an existing account.
 4. Qwen warning: Hermes still lists `qwen-oauth`, but Qwen's own current auth documentation says its free tier was discontinued. Do not approve a new free-Qwen setup solely because a provider appears in a picker. Use a supported Alibaba/API plan after explicit account and billing approval.[29][56]
 5. Direct keys: the documented provider picker supports OpenAI API (`openai-api`), Anthropic, Gemini, xAI, Alibaba and others. Put the selected provider's key in the active Hermes home's private `.env` or approved secret source, not a project instruction file. Provider identity is explicit; an OpenAI API key is not a Codex subscription token.[29]
 6. Cloud: Bedrock uses the AWS credential chain, Vertex uses service-account/ADC authorization and GCP billing, and Azure Foundry uses the approved endpoint and credentials. Keep region, deployment/model, account and IAM scope fixed. These are separate from consumer subscriptions.[29]
@@ -71,3 +71,5 @@ The prior source audit and current official docs establish useful native interfa
 [56] https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md — qwen-auth-pinned
 [62] https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files — hermes-context-files
 [65] https://hermes-agent.nousresearch.com/docs/guides/xai-grok-oauth — hermes-xai
+
+[66] https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan — current-sdk-billing-update

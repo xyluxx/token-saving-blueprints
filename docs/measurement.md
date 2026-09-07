@@ -47,6 +47,10 @@ For APIs, compare actual or clearly estimated charges under the correct rates/ca
 
 Do not apply an API price to RTK's estimated token counter and call it a subscription saving. Do not add a compressor's percentage to an avoided-call estimate if they cover the same baseline work.
 
+## When adding delegation or a gateway
+
+In the ledger, `model` is the actually observed model when available; `requested_model` records intent. A gateway modelPinned label alone is not independent proof. Keep unknown observations unknown. Record a nonsecret account reference privately, never a key. Compare the existing blueprint against the same work plus one chosen add-on. Record parent and worker models/efforts, requested versus actual route, every attempt, local compute, verification and recovery. Do not reuse earlier assumed savings as another independent multiplier. Gateway cached responses can carry historical usage; count actual new provider calls separately. See [OmniRoute](addons/omniroute.md) and [Delegation](delegation.md).
+
 ## Acceptance before a public claim
 
 Check all required features, tests, records, identifiers, source qualifiers, permissions and current corrections. Use executable checks for deterministic work and blinded human/rubric review for semantic work. “No statistically significant difference” is not proof of equivalence.

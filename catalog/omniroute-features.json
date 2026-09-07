@@ -1,0 +1,846 @@
+{
+  "kind": "source-inspected-feature-inventory",
+  "pinned_commit": "b345c7f6cd4e1590d1177540813302375a75e332",
+  "checked_on": "2026-09-07",
+  "scope": "Complete built-in registry and separate source-visible mechanisms at the inspected pin. Not an activation preset, benchmark or assertion of safe semantics.",
+  "registered_engine_ids": [
+    "aggressive",
+    "caveman",
+    "ccr",
+    "codex-responses",
+    "headroom",
+    "ionizer",
+    "lite",
+    "llm",
+    "llmlingua",
+    "omniglyph",
+    "read-lifecycle",
+    "relevance",
+    "rtk",
+    "session-dedup",
+    "ultra"
+  ],
+  "public_configurable_engine_ids": [
+    "aggressive",
+    "caveman",
+    "ccr",
+    "codex-responses",
+    "headroom",
+    "lite",
+    "llmlingua",
+    "omniglyph",
+    "relevance",
+    "rtk",
+    "session-dedup",
+    "ultra"
+  ],
+  "engines": [
+    {
+      "id": "lite",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 5,
+      "default_status": "optional; global disabled, standalone mode opt-in; detail truncation true when selected",
+      "changes": "All string message content except optionally system; adjacent-message removal; base64 image placeholders only when supportsVision=false",
+      "submechanisms": [
+        {
+          "id": "lite:1",
+          "description": "collapseWhitespace: collapse 3+ newlines and strip trailing spaces without fenced-code awareness"
+        },
+        {
+          "id": "lite:2",
+          "description": "dedupSystemPrompt: compare trimmed FIRST 200 chars, not whole message; disabled by preservation"
+        },
+        {
+          "id": "lite:3",
+          "description": "compressToolResults: tool-role strings cut near 2000 chars, optional lite.compressToolResults=false"
+        },
+        {
+          "id": "lite:4",
+          "description": "removeRedundantContent: drops adjacent equal role+content ignoring metadata/call IDs; no separate switch"
+        },
+        {
+          "id": "lite:5",
+          "description": "replaceImageUrls: base64 images become format placeholder for authoritative nonvision target"
+        }
+      ],
+      "controls": {
+        "global": "lite.compressToolResults boolean (default true); preserveSystemPromptMode always|whenNoCache|never, default always",
+        "step": "settings stacked lite.config only {} accepted, despite engine exposing preserveSystemPrompt/compressToolResults. Use global detail."
+      },
+      "risks_and_limits": "Not generally lossless: whitespace is significant in code/Markdown; repeated events and distinct tool IDs must not collapse. No supported whitespace-only selector.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/lite.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/cavemanAdapter.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "caveman",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 20,
+      "default_status": "optional; standard selects enabled=true; stacked merged enabled can keep it off",
+      "changes": "Configured user/assistant/system text roles (default user only), including last user",
+      "submechanisms": [
+        {
+          "id": "caveman:1",
+          "description": "Regex filler, hedging, terse phrase, structural and dedup packs"
+        },
+        {
+          "id": "caveman:2",
+          "description": "Intensity lite/full/ultra; language packs and preserved spans"
+        },
+        {
+          "id": "caveman:3",
+          "description": "Validate candidate, revert on detected protected-content break"
+        }
+      ],
+      "controls": {
+        "global": "cavemanConfig",
+        "fields": {
+          "enabled": "boolean;default false",
+          "compressRoles": "array user|assistant|system;default [user]",
+          "skipRules": "string[]",
+          "minMessageLength": "integer >=0; default50",
+          "preservePatterns": "regex-string[]",
+          "intensity": "lite|full|ultra;default lite"
+        },
+        "language": "languageConfig enabled/defaultLanguage/autoDetect/enabledPacks; runtime language/autodetect internals not all cavemanConfig schema fields"
+      },
+      "risks_and_limits": "Not semantic-lossless: uncertainty/qualifiers can disappear. It rewrites existing input history, not current provider output. Latest source standalone standard is caveman only, despite stale standard=lite+caveman comments.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/cavemanAdapter.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "aggressive",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 30,
+      "default_status": "optional, metadata stable; not equivalent to blueprint Aggressive",
+      "changes": "Tool outputs, older assistant/user text, remaining long messages",
+      "submechanisms": [
+        {
+          "id": "aggressive:1",
+          "description": "toolStrategies fileContent/grepSearch/shellOutput/json/errorMessage"
+        },
+        {
+          "id": "aggressive:2",
+          "description": "Progressive aging by MESSAGE distance, not full conversational turns"
+        },
+        {
+          "id": "aggressive:3",
+          "description": "RuleBasedSummarizer, not paid LLM"
+        },
+        {
+          "id": "aggressive:4",
+          "description": "Below minSavingsThreshold tries caveman then lite, can truncate tools even if strategies disabled"
+        }
+      ],
+      "controls": {
+        "global": "aggressive",
+        "fields": {
+          "thresholds": "fullSummary/moderate/light/verbatim integer1..100 defaults5/3/2/2",
+          "toolStrategies": "fileContent/grepSearch/shellOutput/json/errorMessage booleans defaulttrue",
+          "summarizerEnabled": "boolean true",
+          "maxTokensPerMessage": "integer256..32768 default2048",
+          "minSavingsThreshold": "number0..1 default.05",
+          "preserveSystemPrompt": "boolean"
+        },
+        "step_intensity": "standard|ultra accepted but main aggressive implementation does not use intensity"
+      },
+      "risks_and_limits": "Last user spared in aging/fallback; tool results in its content can still change. fullSummary threshold is declared but unused in branch selection; light=verbatim=2 means default light tier has no distance. summarizerEnabled=false only disables remaining-long-message stage, not aging summaries.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/aggressive.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/cavemanAdapter.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "ultra",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 40,
+      "default_status": "optional; heuristic default, async SLM opt-in; stacked adapter calls heuristic",
+      "changes": "Eligible message text; preserves code/math/URLs via tombstones; skips system when configured",
+      "submechanisms": [
+        {
+          "id": "ultra:1",
+          "description": "Heuristic score/stopword token pruning, defaults keep=.5,minScore=.3"
+        },
+        {
+          "id": "ultra:2",
+          "description": "SLM tier via ultraEngine=slm, falls back to heuristic on missing/no-gain/error"
+        },
+        {
+          "id": "ultra:3",
+          "description": "compressionRate is keep fraction, not savings fraction"
+        }
+      ],
+      "controls": {
+        "global": "ultra and ultraEngine",
+        "fields": {
+          "enabled": "boolean false",
+          "compressionRate": "0..1 keep ratio default.5",
+          "minScoreThreshold": "0..1 default.3",
+          "slmFallbackToAggressive": "boolean true (legacy field; current tier fallback inspected in ultra.ts is heuristic)",
+          "modelPath": "nonempty string optional",
+          "maxTokensPerMessage": "integer0..32768 default0",
+          "preserveSystemPrompt": "boolean",
+          "ultraEngine": "heuristic|slm global",
+          "ultraSlmPrewarm": "boolean false global"
+        }
+      },
+      "risks_and_limits": "Actual ultra.ts is prose token pruning, not README all-aggressive-plus-code-thinning-plus-binary-truncation. No semantic guarantee; SLM failure is not guaranteed original-text passthrough.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/ultra.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/cavemanAdapter.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "rtk",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 10,
+      "default_status": "optional; metadata stable; standalone rtk forces enabled; default intensity minimal, seeded stack standard",
+      "changes": "Tool/function outputs and optionally assistant/fenced text; linked shell metadata affects filter eligibility",
+      "submechanisms": [
+        {
+          "id": "rtk:1",
+          "description": "55 built-in JSON filters, command detection/composite commands, ANSI/progress/line filtering"
+        },
+        {
+          "id": "rtk:2",
+          "description": "Unconditional repeated-line dedup independent of filter allowlist"
+        },
+        {
+          "id": "rtk:3",
+          "description": "Optional near-line grouping"
+        },
+        {
+          "id": "rtk:4",
+          "description": "Optional code stripping/comment removal/docstring retention"
+        },
+        {
+          "id": "rtk:5",
+          "description": "Optional semantic renderers: git-diff, terraform-plan, test-green, structured-table"
+        },
+        {
+          "id": "rtk:6",
+          "description": "Final smart line/character truncation with head/tail/error priority; document heuristic skips cap"
+        },
+        {
+          "id": "rtk:7",
+          "description": "Optional redacted bounded raw-output retention, discover/learn/verify filter tooling"
+        }
+      ],
+      "controls": {
+        "global": "rtkConfig",
+        "fields": {
+          "enabled": "boolean false",
+          "intensity": "minimal|standard|aggressive defaultminimal",
+          "applyToToolResults": "boolean true",
+          "applyToCodeBlocks": "boolean false",
+          "applyToAssistantMessages": "boolean false",
+          "enabledFilters": "string[] empty=all matched filters",
+          "disabledFilters": "string[] empty",
+          "maxLinesPerResult": "integer0..100000 default120; aggressive effective cap applies",
+          "maxCharsPerResult": "integer0..1000000 default12000",
+          "deduplicateThreshold": "integer2..100 default3",
+          "customFiltersEnabled": "boolean true",
+          "trustProjectFilters": "boolean false",
+          "rawOutputRetention": "never|failures|always defaultnever",
+          "rawOutputMaxBytes": "integer1024..10000000 default1048576",
+          "rawOutputMaxFiles": "integer1..10000000 default100000",
+          "rawOutputMaxAgeDays": "integer1..3650 default30",
+          "enableGrouping": "boolean false",
+          "groupingThreshold": "integer2..100 default3",
+          "stripCodeComments": "boolean false",
+          "preserveDocstrings": "boolean true",
+          "enableRenderers": "boolean false"
+        },
+        "schema_gap": "renderers:string[] exists in TS interface but strict settings rtkConfigSchema rejects it"
+      },
+      "risks_and_limits": "Lossy even minimal. enabledFilters is NOT a whole-transform allowlist: dedup and hard caps still run. Raw retention default never; even always is redacted, capped, evictable, not a byte-perfect archive.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/rtk/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "codex-responses",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 12,
+      "default_status": "optional; default enabled false; explicit standalone forces true; metadata stable",
+      "changes": "Only eligible mapped Responses function_call_output/local_shell_call_output/apply_patch_call_output",
+      "submechanisms": [
+        {
+          "id": "codex-responses:1",
+          "description": "JSON.parse/stringify minification"
+        },
+        {
+          "id": "codex-responses:2",
+          "description": "Diff context thinning"
+        },
+        {
+          "id": "codex-responses:3",
+          "description": "Search grouping retains at most 3 matches per path"
+        },
+        {
+          "id": "codex-responses:4",
+          "description": "Log head/tail and important lines neighborhood with maxLines cap"
+        },
+        {
+          "id": "codex-responses:5",
+          "description": "Pick smallest candidate by bytes then require target-token reduction"
+        }
+      ],
+      "controls": {
+        "global": "codexResponsesConfig",
+        "fields": {
+          "enabled": "boolean false",
+          "minBytes": "integer0..2000000 default512",
+          "maxOutputBytes": "integer1..10000000 default2097152",
+          "maxCandidateBytes": "integer1..2000000 default524288",
+          "maxLines": "integer1..10000 default160",
+          "minSearchMatches": "integer2..10000 default8",
+          "minLogLines": "integer2..10000 default24",
+          "preserveToolNames": "<=100 nonempty strings max100 chars; default Read/Glob/Grep/Write/Edit/WebSearch/WebFetch plus variants"
+        }
+      },
+      "risks_and_limits": "No JSON-only setting. local_shell_call_output rejected if any lossy candidate; function/apply_patch can select lossy alternatives. Native protected tool name eligibility gate; schema preserveToolNames ultimately via adapter global path. Integer/duplicate-key parse semantics still matter.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/codexResponses/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "session-dedup",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 3,
+      "default_status": "optional; exact mode default, fuzzy false; metadata stable",
+      "changes": "Non-system string/text message parts across turns, including developer/current user",
+      "submechanisms": [
+        {
+          "id": "session-dedup:1",
+          "description": "Exact SHA256-prefix 24hex suffix block reference, minimum 80 chars and 3 lines; first occurrence kept"
+        },
+        {
+          "id": "session-dedup:2",
+          "description": "Single-message repeated suffix collapse"
+        },
+        {
+          "id": "session-dedup:3",
+          "description": "Optional fuzzy whole-message 85% near-duplicate CCR replacement"
+        }
+      ],
+      "controls": {
+        "global": "sessionDedup.minBlockChars integer1..100000 default80, fuzzy:boolean defaultfalse",
+        "step": "loose bag; validator also accepts fuzzy object {enabled}; hidden fuzzy thresholds require source not public UI"
+      },
+      "risks_and_limits": "Recoverability not universal fidelity. Header says __sessionDedupMap__ reconstruction but apply attaches no such map. Mixed multipart composite indices can order/collide with string indices; parent should test. Fuzzy can remove changed exceptions; reference owner later pruning can strand marker.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/session-dedup/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "headroom",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 15,
+      "default_status": "optional; default minRows 8; metadata stable",
+      "changes": "Non-system AND non-developer whole JSON arrays or fenced json in string/text parts, not arbitrary tools schema",
+      "submechanisms": [
+        {
+          "id": "headroom:1",
+          "description": "SmartCrusher parses arrays of objects, including heterogeneous/nested/nulls"
+        },
+        {
+          "id": "headroom:2",
+          "description": "Best-of-two vendored GCF and custom TOON encoding by character length; GCF wins ties"
+        },
+        {
+          "id": "headroom:3",
+          "description": "Legacy omni-tabular decoder/oracle; not default encoder"
+        },
+        {
+          "id": "headroom:4",
+          "description": "No replacement if candidate length >= original"
+        }
+      ],
+      "controls": {
+        "global": "headroom.minRows integer2..10000 default8",
+        "step": "config loose bag, engine enabled boolean defaulttrue and minRows; engine validator only lower bound checks",
+        "encoder": "no exposed GCF-vs-TOON choice; best character length automatically"
+      },
+      "risks_and_limits": "Representation-reversible only within verified JSON value domain, not byte lossless; parse can lose large integers, decimal spelling, duplicate keys. reconstructHeadroom exported test oracle has no production caller. Model understanding not established by round trip.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/headroom/smartcrusher.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/headroom/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "ccr",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 4,
+      "default_status": "optional; gated on advertised retrieve tool; durable disk tier on unless env false/cloud/failure",
+      "changes": "Large non-system, non-tool text incl user/assistant/developer; skips OpenAI tool and all-tool_result user messages",
+      "submechanisms": [
+        {
+          "id": "ccr:1",
+          "description": "Store original with principal+24hex content address; replace text with 200-char preamble plus marker"
+        },
+        {
+          "id": "ccr:2",
+          "description": "Inject retrieve protocol instruction for caller tools containing omniroute_ccr_retrieve"
+        },
+        {
+          "id": "ccr:3",
+          "description": "Full/ranged/query recovery; retrieval counts raise min size and stop after 3"
+        },
+        {
+          "id": "ccr:4",
+          "description": "Memory TTL/byte/entry limits plus best-effort SQLite durable second tier"
+        }
+      ],
+      "controls": {
+        "global": "ccr.minChars integer100..1000000 default600; ccr.retrievalRampFactor number1..100 default2",
+        "step": "loose bag; enabled boolean defaulttrue; minChars validator allows >=1 vs public global100 floor"
+      },
+      "risks_and_limits": "Not lossless in visible context. Requires actual reachable same-principal retrieval and awareness to fetch; advertised tool presence not proof. 2MiB block cap, 16MiB principal,64MiB global,5000 entries,24h default TTL/7d max,512KiB durability ceiling; queue may drop durable writes.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/ccr/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "llmlingua",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 35,
+      "default_status": "optional; async only; sync no-op; dependencies/model load required; metadata stable",
+      "changes": "Non-system prose segments, default all eligible roles; code/math/path constructs physically withheld",
+      "submechanisms": [
+        {
+          "id": "llmlingua:1",
+          "description": "ONNX worker via @atjsh/llmlingua-2"
+        },
+        {
+          "id": "llmlingua:2",
+          "description": "tinybert default 57MB or bert-base 710MB, fp32; not README MobileBERT current model selection"
+        },
+        {
+          "id": "llmlingua:3",
+          "description": "minTokens 2000 body floor; compressionRate .5; optional modelPath"
+        },
+        {
+          "id": "llmlingua:4",
+          "description": "60s cold/5s warm timeout, 5min idle eviction, lazy download"
+        }
+      ],
+      "controls": {
+        "step": "explicit stacked loose config bag; no global llmlingua subobject",
+        "fields": {
+          "enabled": "boolean defaulttrue",
+          "model": "tinybert|bert-base defaulttinybert",
+          "minTokens": "display0..100000; validator>=0;default2000",
+          "compressionRate": ".1...9 default.5",
+          "modelPath": "string optional offline override"
+        }
+      },
+      "risks_and_limits": "Returns original segment on worker failures, not a quality guarantee when successful. Internal helper inference/local resource cost, cold downloads and per-segment work count.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/llmlingua/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "ionizer",
+      "registered": true,
+      "in_public_catalog": false,
+      "writable_stacked_schema": false,
+      "priority": 13,
+      "default_status": "registered but absent public catalog, type enum, settings stacked union and DB normalizer; metadata stable",
+      "changes": "Oversized object arrays in eligible message text",
+      "submechanisms": [
+        {
+          "id": "ionizer:1",
+          "description": "Seeded uniform middle row sampling, schema/error rows/head/tail retained"
+        },
+        {
+          "id": "ionizer:2",
+          "description": "Full array stored CCR; sampling=true skips fidelity gate"
+        }
+      ],
+      "controls": {
+        "public_write": "not selectable in standard settings/combos stacked schema at pin",
+        "engine_fields": "enabled:boolean defaulttrue; threshold number display2..1000000 default200; targetRows display1..100000 default50"
+      },
+      "risks_and_limits": "Lossy; threshold 200,targetRows 50. Engine schema enabled true but no ordinary supported persisted profile at pin. Do not recommend hidden switch or registry injection.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/ionizer/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "relevance",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 18,
+      "default_status": "catalog/stacked selectable; standalone catalog bug; metadata stable",
+      "changes": "User-role text, INCLUDING latest query-bearing message; multipart only one text block",
+      "submechanisms": [
+        {
+          "id": "relevance:1",
+          "description": "Jaccard/boilerplate sentence ranking vs last user text"
+        },
+        {
+          "id": "relevance:2",
+          "description": "budgetPercent=.5 character budget and overlapThreshold=.1,boilerplateWeight=.5"
+        },
+        {
+          "id": "relevance:3",
+          "description": "Numbers/URLs/error/code/path/key=value sentences force-kept; retain at least one sentence"
+        }
+      ],
+      "controls": {
+        "step": "explicit stacked config bag only, top relevanceConfig not accepted PUT",
+        "fields": {
+          "enabled": "boolean defaultfalse but ignored by apply",
+          "overlapThreshold": "0..1 default.1",
+          "budgetPercent": "display .1..1, validator0..1; default.5",
+          "boilerplateWeight": "0..1 default.5"
+        }
+      },
+      "risks_and_limits": "enabled is resolved but apply does not check it; disabling selected step via config.enabled=false is ineffective. Catalog isSingleMode=true but SINGLE_MODE_OF lacks relevance -> undefined standalone plan; use explicit stacked step if ever trialed. No safe current-request qualification guard.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/relevance/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "llm",
+      "registered": true,
+      "in_public_catalog": false,
+      "writable_stacked_schema": false,
+      "priority": 38,
+      "default_status": "registered, default off, missing public config registry; injectable backend default no-op",
+      "changes": "Non-system prose, preservation-tombstoned code excluded",
+      "submechanisms": [
+        {
+          "id": "llm:1",
+          "description": "Generic async helper chat compressor seam setLlmCompressorBackend"
+        },
+        {
+          "id": "llm:2",
+          "description": "enabled=true and real backend injection required; sync no-op"
+        }
+      ],
+      "controls": {
+        "public_write": "not selectable in standard settings/combos stacked schema at pin",
+        "engine_fields": "enabled:boolean false; model:string;minTokens display0..100000 default2000;compressionRate .1...9 default.5; backend must be injected programmatically"
+      },
+      "risks_and_limits": "Not a working configured model compressor by setting model alone. Extra segment helper calls require provisioning/permissions/cost accounting. No ordinary settings recipe.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/llm/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "read-lifecycle",
+      "registered": true,
+      "in_public_catalog": false,
+      "writable_stacked_schema": false,
+      "priority": 5,
+      "default_status": "registered; default off; missing public catalog/type/API/DB union; metadata stable",
+      "changes": "Earlier file Read tool results when later Read/Write/Edit touches same exact path",
+      "submechanisms": [
+        {
+          "id": "read-lifecycle:1",
+          "description": "Anthropic/OpenAI tool IDs link calls/results"
+        },
+        {
+          "id": "read-lifecycle:2",
+          "description": "Replace superseded read contents with short stub"
+        }
+      ],
+      "controls": {
+        "public_write": "not selectable in standard settings/combos stacked schema at pin",
+        "engine_fields": "enabled:boolean defaultfalse, must be exactlytrue"
+      },
+      "risks_and_limits": "Lossy; later partial read or failed write can still be treated as superseding since path/invocation only, no range/success check. Not normal supported persisted profile.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/readLifecycle/index.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    },
+    {
+      "id": "omniglyph",
+      "registered": true,
+      "in_public_catalog": true,
+      "writable_stacked_schema": true,
+      "priority": 90,
+      "default_status": "opt-in experimental; stable=false; locked dependency 1.4.0; profile aggressive by default WHEN enabled",
+      "changes": "Context text converted to PNG, candidate tool descriptions/system/reminders/tool-results/history depending profile and preservation",
+      "submechanisms": [
+        {
+          "id": "omniglyph:1",
+          "description": "Native Anthropic/OpenAI Chat/Responses package transformers; package four semantic profiles"
+        },
+        {
+          "id": "omniglyph:2",
+          "description": "1-bit dense glyph rendering, reflow and exact-identifier factsheet overhead"
+        },
+        {
+          "id": "omniglyph:3",
+          "description": "History collapse/image slabs and profitability math"
+        },
+        {
+          "id": "omniglyph:4",
+          "description": "Requires vision=true, measured model scope and direct byte-preserving provider lane; async only"
+        },
+        {
+          "id": "omniglyph:5",
+          "description": "Package safe/balanced retain system/tools/current tool results, gate until sufficient older history"
+        }
+      ],
+      "controls": {
+        "global": "omniglyph.profile=coding-safe|balanced|aggressive|passthrough;defaultaggressive",
+        "step": "loose config bag profile override; preserveSystemPrompt handling; getConfigSchema empty, validateConfig unconditional true",
+        "dependency_version": "package-lock1.4.0, integrity verified from downloaded source tarball; not installed"
+      },
+      "risks_and_limits": "Production transport allowlist anthropic/claude only, so GPT wiring is not approved effective route. sampling=true exempts fidelity. 30/30 narrow lookup fixture not full task quality; published all-probe zero-confabulation marketing contradicted by rows. Retained text factsheet bounded; excludes blueprint Conservative and default Aggressive.",
+      "sources": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/omniglyphAdapter.ts"
+      ],
+      "evidence": "source-inspected; not an executed integration or savings result"
+    }
+  ],
+  "supporting_mechanisms": [
+    {
+      "id": "mcp-description",
+      "default_status": "default-on independently of prompt-compression master",
+      "changes": "Own MCP tools/prompts/resources descriptions and some list metadata; Caveman full regex+preservation, not schema-free lossless",
+      "controls": "mcpDescriptionCompressionEnabled:boolean; env OMNIROUTE_MCP_COMPRESS_DESCRIPTIONS or OMNIROUTE_MCP_DESCRIPTION_COMPRESSION accepts 0/false/off/no to disable",
+      "scope": "Global/MCP-server construction, not per inference key",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/mcp-server/descriptionCompressor.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "mcp-accessibility",
+      "default_status": "default-on independently; NOT in compression engine registry",
+      "changes": "smartFilterText removes generic/empty lines; collapses >30 repeated tree siblings keeping10 head5 tail; truncates all tool text beyond50000chars",
+      "controls": "mcpAccessibility config enabled,maxTextChars,collapseThreshold,collapseKeepHead,collapseKeepTail,minLengthToProcess via /api/settings/compression/mcp-accessibility; positive-integer schema, runtime maxTextChars floor600 else fallback50000.",
+      "scope": "Global MCP server result interception, before tool content reaches host LLM",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/mcpAccessibility/index.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "mcp-tool-cardinality",
+      "default_status": "optional default off",
+      "changes": "Drop advertised tools, avoiding schemas; not parameter-level semantics or automatic task search",
+      "controls": "MCP_TOOL_DENY and MCP_TOOL_ALLOW comma-separated exact names; maxTools/allowScopes in pure helper not env-wired",
+      "scope": "MCP server registration",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/mcp-server/toolCardinality.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "output-styles",
+      "default_status": "optional, selection empty",
+      "changes": "Inject BEFORE generation: terse-prose,less-code,ponytail,i-have-adhd,terse-cjk; five distinct prompt policies",
+      "controls": "outputStyles:[{id,level:lite|full|ultra}]; languageConfig for locale. cavemanOutputMode:{enabled,intensity,autoClarity} legacy shim",
+      "scope": "Global selection; named compression combo outputMode/outputModeIntensity; per-request off gate; key opt-out prompt gate",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/outputStyles/apply.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "reactive-context-fit",
+      "default_status": "active when global enabled and not excluded, independent of per-key/header prompt-off; native Codex passthrough bypass",
+      "changes": "Sequential2000char tool trim, old inline image pruning, older thinking-block deletion, oldest history deletion/tool-pair repair",
+      "controls": "compression namespace proactiveConfig:{thresholdRatio:0.7} DB reader accepts0.1..0.99, NOT compressionSettingsUpdateSchema; CONTEXT_KEEP_LATEST_IMAGES default2, CONTEXT_RESERVE_TOKENS. No independent per-key/request safety-stage off found.",
+      "scope": "Global enable/exclusions gate; downstream reactive stage",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/contextManager.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "adaptive-budget",
+      "default_status": "optional, contextBudget mode off default",
+      "changes": "Choose pipeline via modeled reduction-factor ladder; not real dry-run guarantee",
+      "controls": "contextBudget.mode=floor|replace-autotrigger|off; policy=reserve-output|percentage|absolute;outputReserve,safetyMargin,pct,absoluteBudget,ladderOverride[{engine,intensity}]",
+      "scope": "Global config/runtime resolver; header off can escalate over target because only mode rank is checked; master/key disabled still blocks resolver. Proposed profiles set mode off.",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/adaptiveCompression/resolveAdaptivePlan.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "hard-budget",
+      "default_status": "optional runtime only, not PUT schema",
+      "changes": "After stacked engines drops low-salience lines/sentences until text target or guard exhaustion; can affect system strings, no role skip",
+      "controls": "CompressionConfig.targetTokens or targetRatio; targetTokens wins. Not accepted settings fields at pin",
+      "scope": "Programmatic config only; no approved normal persisted profile",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/hardBudget.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "provider-context-edit",
+      "default_status": "optional contextEditing.enabled=false default; independent global prompt-enabled flag read",
+      "changes": "Provider clears old tool pairs, separate from native preserved thinking edits",
+      "controls": "contextEditing:{enabled:boolean}; inject clear_tool_uses_20250919 trigger100000 input tokens keep3 tool_uses; no writable trigger/keep detail",
+      "scope": "Global flag passed executor; provider/protocol-specific support; retries400 rejection without param",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/config/contextEditing.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "cache-aware-protection",
+      "default_status": "automatic planner safeguard when provider recognized caching",
+      "changes": "Preserve system according to mode; aggressive/ultra standalone downgrade to standard; stacked not similarly downgraded",
+      "controls": "preserveSystemPromptMode=always|whenNoCache|never; legacy preserveSystemPrompt boolean projection; connection supportsPromptCaching/cacheControlPassthrough",
+      "scope": "Global with connection/provider/body context",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/cacheAwareConfig.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "prefix-freeze",
+      "default_status": "optional default off",
+      "changes": "After repeated system-prefix hash observation preserve it, not token deletion",
+      "controls": "COMPRESSION_PREFIX_FREEZE_ENABLED=true; COMPRESSION_PREFIX_FREEZE_THRESHOLD default3",
+      "scope": "Process memory observations,5000 entries",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/prefixFreeze.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "live-zone",
+      "default_status": "optional default off",
+      "changes": "Reuse already transformed exact raw prefix and compress new tail/tool outputs; protects provider prefix-cache stability",
+      "controls": "liveZone:{enabled:boolean};cacheMinutes1..60 default5;x-omniroute-session-id",
+      "scope": "Principal/session/model/provider/config/prefix keyed RAM cache;100entries,2MiB/entry,32MiB total",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/liveZone.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "compression-result-memo",
+      "default_status": "optional runtime flag, not accepted settings PUT; default off",
+      "changes": "Cache deterministic compression result, NOT final LLM answer; avoids repeated CPU only",
+      "controls": "memoizeCompressionResults:true programmatic; lite/standard/rtk or stacked subset lite,caveman,rtk; principal required",
+      "scope": "Per-principal/config/body,model/vision included when relevant;5000 entries",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/resultMemo.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "quantum-lock",
+      "default_status": "optional runtime config, not settings PUT",
+      "changes": "Move volatile system identifiers to tail with placeholders to stabilize cache prefix; content relocation, not free exact no-change",
+      "controls": "quantumLock:{enabled,categories:[uuid,unix_ts,long_hex,jwt,api_key_shape,request_id]}",
+      "scope": "Programmatic global/request config; caching provider only",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/quantumLock/quantumPatterns.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "fidelity-gate",
+      "default_status": "optional runtime config, not settings PUT; default disabled",
+      "changes": "Check substring survival of selected protected tokens/numbers/JSONkeys/diff hunks; reject stage on detected failure; not semantic oracle",
+      "controls": "fidelityGate:{enabled,minTokenSurvivalPercent(default95),minJsonKeyPercent(default90),checkNumericIntegrity(defaulttrue),checkDiffHunks(defaulttrue)}",
+      "scope": "Programmatic stacked options/config; sampling engines bypass; internal errors pass",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/fidelityGate.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "risk-gate",
+      "default_status": "optional runtime config, not settings PUT",
+      "changes": "Mask sensitive detected spans before compression; lexical detections can miss qualifiers; internal errors no spans",
+      "controls": "riskGate:{enabled,categories:[stack_trace,private_key,secret_assignment,k8s_secret,db_migration,legal]}",
+      "scope": "Programmatic entrypoint wrappers; not default active",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/riskGate/riskGate.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "inflation-bailout-breaker",
+      "default_status": "aggregate inflation guard default-on; per-step bailout/breaker optional",
+      "changes": "Whole-stack token increase reverts original; per-step minGainPercent skips weak stage, breaker temporarily skips failed engine",
+      "controls": "bailout:{enabled,minGainPercent(default10)} programmatic only; pipelineCircuitBreaker:{enabled,failureThreshold(default3),cooldownMs(default30000)}; COMPRESSION_PIPELINE_BREAKER_ENABLED/_THRESHOLD/_COOLDOWN_MS",
+      "scope": "Aggregate stacked guard; options or env breaker, not settings PUT fields",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/stackedStepCore.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "response-cache",
+      "default_status": "enabled by default as distinct cache; temp0 required",
+      "changes": "So-called semantic cache: normalized exact SHA256 response reuse with synthetic stream; HIT avoids provider inference",
+      "controls": "semanticCacheEnabled:boolean; per key cacheDefaultMode=legacy|bypass; x-omniroute-no-cache:true; SEMANTIC_CACHE_MAX_SIZE/MAX_BYTES/TTL_MS; UI TTL/max size fields require actual consumption audit",
+      "scope": "API-key namespaced; signature model+normalized role/content+temp+top_p, omits tools,instructions,effort,output limit and other request state",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/semanticCache.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "native-prompt-cache",
+      "default_status": "supported/automatic per provider, default promptCacheEnabled=true reported",
+      "changes": "Prefix cache read discounts/compute reuse, not fewer logical tokens",
+      "controls": "Declared promptCacheEnabled/promptCacheStrategy fields do not establish runtime consumers. Inspect the actual provider cache-control path; alwaysPreserveClientCache=auto|always|never and native cache_control are route-specific.",
+      "scope": "Provider account/connection; cache-optimized routing changes affinity separately",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/utils/cacheControlPolicy.ts",
+      "caveat": "Static source only. Declaration or schema acceptance is not evidence that promptCacheEnabled/promptCacheStrategy controls effective caching; verify the live consumer and provider receipts. No runtime provider or gateway was exercised."
+    },
+    {
+      "id": "reasoning-replay-cache",
+      "default_status": "protocol-dependent active helper",
+      "changes": "Retain/replay required reasoning content when client omits it; can ADD input, prevents provider validation failures, not new answer reuse",
+      "controls": "Provider/model requiresReasoningReplay;2h TTL,200memory entries,10000byte entry; database second tier",
+      "scope": "Protocol-specific tool-call/assistant-message keys; not compression recipe",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/reasoningCache.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "request-idempotency",
+      "default_status": "response-replay surface exists; default5s window",
+      "changes": "Avoid duplicate request processing, not prompt compression",
+      "controls": "idempotency-key or x-request-id; idempotencyWindowMs; exact route/principal wiring requires integration review",
+      "scope": "In-process keyed store; not safe cached write success guarantee",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/idempotencyLayer.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "worker-offloading",
+      "default_status": "automatic eligible CPU-work path",
+      "changes": "Runs RTK/Caveman compression in worker threads; saves event-loop blocking, no inherent token delta",
+      "controls": "OMNI_COMPRESSION_WORKERS,OMNI_COMPRESSION_WORKER_TIMEOUT_MS,OMNI_COMPRESSION_WORKER_IDLE_MS",
+      "scope": "Process pool; fail-open original if worker errors; not agent delegation or LLM helper",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/compressionWorkerProtocol.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    },
+    {
+      "id": "output-token-cap",
+      "default_status": "provider-context safety always checked in chatCore path",
+      "changes": "Caps requested generated tokens to context availability; a generation ceiling not post-generation shortening",
+      "controls": "max_tokens,max_completion_tokens,max_output_tokens; enforcement body/context inputs",
+      "scope": "Per request/provider translator; not unchanged-quality savings lever",
+      "source_url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/handlers/chatCore/outputTokenBudget.ts",
+      "caveat": "Static source inspected. No repository tests, runtime provider, helper or gateway executed."
+    }
+  ],
+  "counts": {
+    "registered_engines": 15,
+    "normal_config_choices": 12,
+    "supporting_groups": 22
+  },
+  "registry_source": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/index.ts",
+  "schema_source": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/shared/validation/compressionConfigSchemas.ts",
+  "runtime_tested": false
+}

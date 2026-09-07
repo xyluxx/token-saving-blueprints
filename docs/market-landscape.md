@@ -14,7 +14,7 @@ Its useful contribution is a documented operating method: identify the route, ke
 
 The scan reused retained primary-source research, then added current GitHub repository searches and web discovery across compression, retrieval/indexing, exact and semantic reuse, reasoning budgets, agent turns, data execution, commercial gateways and token accounting. It yielded 143 result records across 21 queries. Grouping GitHub subpages under their repository and normalizing other destinations produced 136 canonical source/repository destinations with 7 repeated occurrences. A literal URL comparison after trimming trailing slashes gives 139 distinct page URLs. These include project pages, documentation and secondary articles, not 136 fully audited repositories.
 
-The [catalog](../catalog/market.json) contains 53 selected decision records: 6 core methods, 17 optional choices, 20 experimental references and 10 important exclusions. A method, vendor service and repository are different kinds of records. The [source catalog](../catalog/sources-market.json) identifies their supporting sources and evidence limits.
+The [catalog](../catalog/market.json) contains 53 selected decision records: 6 core methods, 18 optional choices, 20 experimental references and 9 important exclusions. A method, vendor service and repository are different kinds of records. The [source catalog](../catalog/sources-market.json) identifies their supporting sources and evidence limits.
 
 Representative GitHub queries were `token compression stars:>100`, `llm cache stars:>500`, `agent context retrieval stars:>500`, `llm gateway stars:>1000`, `token usage stars:>500` and `reasoning token budget`. Searches used the first page, at most 20 results, sorted by stars. Several had more hits than retrieved. Exact-name web queries supplemented these, including QMD, llmtrim and Compresr. Empty broad web searches were followed by simpler controls and direct primary-source access, not treated as proof that no project exists.
 
@@ -74,7 +74,7 @@ Native usage receipts are the first choice. ccusage can read supported local log
 
 ## Important exclusions and identity traps
 
-OmniRoute is not the default because its broader routing/broker features exceed the approved scope. llmtrim’s documented setup includes a private CA, shell changes and subscription routing, so its installer is excluded. This blueprint never needs a CA, pooled human seats, hidden fallback or a new provider to deliver its basic method.[176][166][23]
+OmniRoute is a [conditional optional API add-on](addons/omniroute.md), not the default and not a blanket project exclusion. Its native-subscription brokering, all-features presets, automatic fallback and free-pool claims do not become approved simply because a restricted route is being considered. The add-on documents the current source gates and narrower candidates. llmtrim’s documented setup includes a private CA, shell changes and subscription routing, so its installer remains excluded. This blueprint never needs a CA, pooled human seats or hidden fallback to deliver its basic method.[176][166][23]
 
 pxpipe’s own README discloses silent exact-string failures, so text-to-image conversion is not a recommended substitute for protected instructions, tool definitions or exact identifiers. LMCache changes inference-serving infrastructure, a surface that ordinary API/subscription clients do not own.[170][172]
 

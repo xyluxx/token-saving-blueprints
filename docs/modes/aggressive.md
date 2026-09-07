@@ -77,6 +77,12 @@ Do not replay writes, copy approvals to a different action, or patch provider st
 
 Use [the paired trial](../measurement.md). Include compressor/helper use, cache churn, restores, retries and final verification. Check hard task strata as well as the average. Do not count a smaller first prompt as the final saving.
 
+## Optional delegation and OmniRoute
+
+Use [delegation](../delegation.md) with explicit worker scope, model/effort, permissions and verification. A cheaper worker is a separate economic option, not another compression percentage.
+
+The [OmniRoute profile](../addons/omniroute.md) selects one eligible output owner after its API route gates pass. It does not mean turning on the gateway’s `aggressive` or every registered engine. [Free-provider lanes](../addons/free-provider-lanes.md) have their own entitlement, spending and privacy checks.
+
 ## Optional later methods
 
 Only after simpler methods are useful: task-specific media detail/crops, validated transcripts for word-only tasks, narrow calibrated semantic answer caching for static low-risk questions, and bounded recursive processing of very large corpora.

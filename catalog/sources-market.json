@@ -950,5 +950,53 @@
     "checked_on": "2026-09-06",
     "evidence_type": "author-benchmark",
     "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked. Locally parsed: 503 A plus 503 B LongBench records and two extra probes; accuracy fields in A/B are null."
+  },
+  {
+    "id": "OMNI-ADDON-01",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/compression/engines/index.ts",
+    "title": "OmniRoute pinned add-on source: index.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
+  },
+  {
+    "id": "OMNI-ADDON-02",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/shared/validation/compressionConfigSchemas.ts",
+    "title": "OmniRoute pinned add-on source: compressionConfigSchemas.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
+  },
+  {
+    "id": "OMNI-ADDON-03",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/handlers/chatCore.ts",
+    "title": "OmniRoute pinned add-on source: chatCore.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
+  },
+  {
+    "id": "OMNI-ADDON-04",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/modelFamilyFallback.ts",
+    "title": "OmniRoute pinned add-on source: modelFamilyFallback.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
+  },
+  {
+    "id": "OMNI-ADDON-05",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/open-sse/services/autoCombo/strictZeroCostFilter.ts",
+    "title": "OmniRoute pinned add-on source: strictZeroCostFilter.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
+  },
+  {
+    "id": "OMNI-ADDON-06",
+    "url": "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/cloudSync.ts",
+    "title": "OmniRoute pinned add-on source: cloudSync.ts",
+    "checked_on": "2026-09-07",
+    "evidence_type": "source inspection",
+    "caveat": "Pinned source read, not a gateway/account trial or measured incremental saving."
   }
 ]

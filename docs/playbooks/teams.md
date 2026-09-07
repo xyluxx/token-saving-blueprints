@@ -2,6 +2,10 @@
 
 Share useful authorized work, not human subscription credentials or unrestricted conversation memory. A solo user does not need this coordination layer.
 
+## Delegating a bounded worker
+
+Use the [delegation guide](../delegation.md) and [worker packet](../../templates/delegation-packet.md) when a separate worker is useful. A gateway can route its inference; the host still owns tools, permissions, task state and verification. Authorized API accounts can be separated by project, but do not pool personal subscription seats.
+
 ## The common handoff
 
 Use [handoff record](../../templates/handoff.md) with the actual task, source revisions, completed criteria, unresolved issues, exact artifact locations and current permission boundary.

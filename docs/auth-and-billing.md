@@ -76,6 +76,12 @@ Report these separately:
 
 Some benefits are capacity rather than cash savings. Both matter, but calling them the same number undermines trust.
 
+## Optional worker and gateway routes
+
+A native subagent, another API model, a headless harness and an API-only helper are different execution paths. Use [Delegation](delegation.md) to select the host first, then the approved account/model. No extra GUI is needed for supported headless/API operation, but runtimes and tool permissions do not disappear.
+
+Use [OmniRoute](addons/omniroute.md) only through its restricted API gates. Keep native consumer login outside credential-brokering paths. [Free-provider choices](addons/free-provider-lanes.md) distinguish real account tiers from promotional credits, local compute and zero-price metadata.
+
 ## Native account terms are independent of open-source licenses
 
 A repository's MIT/Apache license does not grant access to its upstream providers. A technical OAuth forwarding example does not override the account contract. For example, [Claude Code's legal guidance](https://code.claude.com/docs/en/legal-and-compliance) distinguishes supported native use from credential intermediation. [OpenAI's terms](https://openai.com/policies/terms-of-use/) govern its accounts separately from a CLI code license.

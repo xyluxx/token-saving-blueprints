@@ -58,6 +58,12 @@ For prose, avoid repeated preambles and restating source data, but do not impose
 
 Use the same acceptance criteria as the baseline. Record failed attempts, restores, extra calls and human repair. Retain a change only if it helps the actual task. A filter that saved input but caused extra troubleshooting may be a loss.
 
+## Optional workers and API add-on
+
+[Delegation](../delegation.md) can keep a bounded job in a smaller, complete worker context. The parent verifies the result. Cheaper/free worker models require a separate cost/quality choice; do not silently change the main model or effort.
+
+The [OmniRoute add-on](../addons/omniroute.md) is a restricted API pilot, not a default gateway. Its narrow structured-data candidate needs the route, parsing, coverage and request-size gates. If those cannot be met, leave gateway compression off. Native subscription login stays on its supported native route.
+
 ## Do not add these by default
 
 - Generic summaries that replace native history.

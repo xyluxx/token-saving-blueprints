@@ -36,6 +36,10 @@ Product migrations and maintenance-only entries are deliberate compatibility gui
 
 [Grokbot / Grok Bot](grokbot.md) is an identity guide. Several different products use similar names, including official and community surfaces. Do not automatically install one or reuse its auth instructions for another.
 
+## Delegation across these tools
+
+[The delegation guide](../delegation.md) separates native child contexts, alternate API models, headless harnesses and analysis-only calls. It records different model/effort controls rather than copying one config across all tools. The [OmniRoute add-on](../addons/omniroute.md) is an optional API path, not a prerequisite.
+
 ## How to read the guides
 
 Each guide separates who it is for, billing routes, Conservative steps, Aggressive limits, verification/rollback and sources. Stable identities and allowed route display names are in [the harness identity registry](../../catalog/harnesses.json). The machine-readable [primary routes](../../catalog/routes-primary.json) and [editor routes](../../catalog/routes-editors.json) carry the same distinction for assistants and maintainers.
