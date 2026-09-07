@@ -1,9 +1,76 @@
 {
   "kind": "repository-validation-record",
-  "status": "in-progress",
-  "scope": "Documentation, route schemas and synthetic accounting fixtures",
+  "status": "pass",
+  "validated_at_utc": "2026-09-07T01:09:20.626870+00:00",
+  "scope": "Blueprint documentation, catalogue integrity, privacy-pattern checks and synthetic accounting fixtures; not native account or token-savings certification",
+  "validated_content_commit": "a0fac073212e398953117340f2945a61709a46d8",
+  "clean_checkout": true,
+  "unit_tests": [
+    {
+      "interpreter": "CPython 3.10.12",
+      "os": "Linux",
+      "tests": 42,
+      "result": "pass"
+    },
+    {
+      "interpreter": "CPython 3.11.15",
+      "os": "Linux",
+      "tests": 42,
+      "result": "pass"
+    }
+  ],
+  "repository_command": "python3 scripts/validate.py",
+  "repository_command_result": "pass",
+  "harness_identities": 19,
+  "auth_provider_routes": 91,
+  "market_records": 53,
+  "market_sources": 119,
+  "synthetic_accounting_examples": 2,
+  "syntax_checks": {
+    "json_fences": 3,
+    "toml_fences": 2,
+    "shell_fences_bash_n": 16,
+    "shell_snippets_executed": false
+  },
+  "native_help_checks": [
+    {
+      "client": "claude",
+      "available": true,
+      "version": "2.1.205 (Claude Code)",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    },
+    {
+      "client": "codex",
+      "available": true,
+      "version": "codex-cli 0.149.0",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    },
+    {
+      "client": "aider",
+      "available": true,
+      "version": "aider 0.86.2",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    }
+  ],
   "native_authenticated_trials": false,
   "savings_benchmark": false,
   "remote_ci_executed": false,
-  "notes": "Final clean-checkout results replace this development record before delivery."
+  "windows_macos_executed": false,
+  "independent_review": {
+    "initial_reviews": "operator and technical; bounded material corrections identified and applied",
+    "closure_verdict": "ready-as-blueprint",
+    "remaining_material_blockers": 0,
+    "reviewed_commit": "a0fac073212e398953117340f2945a61709a46d8"
+  },
+  "notes": [
+    "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
+    "Source dates and guide support labels retain their own scope.",
+    "No universal average, exact-quality guarantee or market-wide perfection claim is established."
+  ]
 }
