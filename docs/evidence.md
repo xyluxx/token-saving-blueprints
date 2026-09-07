@@ -68,7 +68,7 @@ TRACE v1 supplies a newer caution: AppWorld test-normal, 168 tasks, two independ
 
 ### A fresh artifact check: leanctx’s hardware difference
 
-The `jia-gao/leanctx` README reports a CPU run adding compression after ClawRouter on 503 LongBench v2 items. Local parsing verified 503 A records and 503 B records, plus two unrelated agent probes in the same file. The retained token totals are 13,277,567 for A and 10,799,469 for B, a 18.66% additional payload reduction. All accuracy fields in those A/B records are null: this local check establishes payload arithmetic, not evaluated answers.[203][272]
+The `jia-gao/leanctx` README reports a CPU run adding compression after ClawRouter on 503 LongBench v2 items. Local parsing verified 503 A records and 503 B records, plus two unrelated agent probes in the same file. The retained token totals are 13,277,567 for A and 10,799,469 for B, an 18.66% additional payload reduction. All accuracy fields in those A/B records are null: this local check establishes payload arithmetic, not evaluated answers.[203][272]
 
 The linked earlier GPU report instead gives 24.1% payload reduction and accuracy 45.3% to 43.5% using Haiku 4.5. The README explains CPU timeout/fail-open and hardware differences. The CPU token figure and GPU quality figure are not one coupled reproduced trial. Its prose-heavy estimates reweight the observed traffic mix; they are scenarios, not an empirical average for business work.[203][204]
 

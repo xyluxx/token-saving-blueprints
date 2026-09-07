@@ -1,12 +1,16 @@
 # Authentication, providers and money
 
-**Identify the paying route before changing the workflow.** The harness is the application; the model is what reasons; the provider is where inference runs; authentication determines which account and entitlement are used. These can be four different things.
+**Identify the paying route before changing the workflow.** The harness is the application; the model is what reasons; the provider is where inference runs; authentication identifies or authorizes an account or client; entitlement and billing are separate facts that must be confirmed for the selected service and route. These can be four different things.
 
 Use a [route passport](../templates/route-passport.md), then the exact [harness guide](harnesses/index.md).
 
+## Classify auth, entitlement and protocol separately
+
+OAuth is an authorization mechanism, not the opposite of API transport. An API-facing gateway can use OAuth, API keys, cloud identity or a CLI-owned connection upstream. A subscription can also use a dedicated API key. Record the application/runtime, credential owner and refresh mechanism, upstream service and protocol, account entitlement/billing, provider policy and actual tested behavior separately.
+
 ## Native subscriptions and OAuth
 
-Keep the unmodified supported client and its own sign-in. Do not extract session tokens, pool colleagues' accounts or turn a consumer subscription into a shared API.
+Our default recommendation is to retain the supported client and its own sign-in. A separately approved provider-specific OAuth integration or CLI-owned bridge can also be technically supported. Do not share colleagues' credentials, evade quotas, or infer permission for a gateway from successful login. Consult the exact provider's current terms; native CLI execution and direct credential intermediation are different mechanisms.
 
 The immediate goal is more useful completed work within the account's actual allowance, fewer unnecessary resets/retries and less additional paid usage where applicable. The flat monthly fee does not fall just because a task uses fewer tokens.
 
@@ -80,7 +84,7 @@ Some benefits are capacity rather than cash savings. Both matter, but calling th
 
 A native subagent, another API model, a headless harness and an API-only helper are different execution paths. Use [Delegation](delegation.md) to select the host first, then the approved account/model. No extra GUI is needed for supported headless/API operation, but runtimes and tool permissions do not disappear.
 
-Use [OmniRoute](addons/omniroute.md) only through its restricted API gates. Keep native consumer login outside credential-brokering paths. [Free-provider choices](addons/free-provider-lanes.md) distinguish real account tiers from promotional credits, local compute and zero-price metadata.
+OmniRoute is API-facing and can connect OAuth as well as API-key upstreams. Use its provider-specific capability/policy matrix and common route gates. Keep native CLI-owned login distinct from direct token custody in the gateway. [Free-provider choices](addons/free-provider-lanes.md) distinguish real account tiers from promotional credits, local compute and zero-price metadata.
 
 ## Native account terms are independent of open-source licenses
 

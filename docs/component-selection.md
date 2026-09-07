@@ -14,7 +14,7 @@ Choose a capability, not a bundle. None of the optional or experimental entries 
 
 ## Optional delegation and OmniRoute
 
-Use [host-native delegation](delegation.md) before adding another orchestrator. The [restricted OmniRoute add-on](addons/omniroute.md) is now an explicit optional method, not a blanket exclusion. It has source-level compression candidates and concrete activation gates; it is not a universal safe preset or a promised extra percentage. Keep the main native subscription outside the proxy. [Free-provider choices](addons/free-provider-lanes.md) are a separate account/data/cost decision.
+Use [host-native delegation](delegation.md) before adding another orchestrator. The [restricted OmniRoute add-on](addons/omniroute.md) is now an explicit optional method, not a blanket exclusion. It has source-level compression candidates and concrete activation gates; it is not a universal safe preset or a promised extra percentage. Keeping the main native subscription outside a new proxy is our initial rollout recommendation. OAuth-capable gateways and CLI-owned bridges exist; evaluate the exact provider-specific capability, terms and account independently. [Free-provider choices](addons/free-provider-lanes.md) are a separate account/data/cost decision.
 
 ## Fast choice by situation
 
@@ -223,7 +223,7 @@ Gates: Elastic License 2.0 source available; substantial hosted/managed-service 
 <a id="litellm"></a>
 ### LiteLLM
 
-Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway. [129][130]
+Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately. [129][130]
 
 Control and best fit: Approved application endpoint/SDK and optionally request logging. Teams already operating API applications. Marginal mechanism: Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.
 
@@ -234,7 +234,7 @@ Gates: MIT outside enterprise; audited proxy extra includes litellm-enterprise. 
 <a id="bifrost"></a>
 ### Bifrost
 
-Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway. [131][132]
+Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately. [131][132]
 
 Control and best fit: Approved application endpoint/SDK and optionally request logging. Teams already operating API applications. Marginal mechanism: Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.
 
@@ -245,7 +245,7 @@ Gates: Apache-2.0 core; enterprise features and third-party notices/dependency o
 <a id="portkey"></a>
 ### Portkey AI Gateway
 
-Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway. [194][195]
+Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately. [194][195]
 
 Control and best fit: Approved application endpoint/SDK and optionally request logging. Teams already operating API applications. Marginal mechanism: Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.
 
@@ -256,7 +256,7 @@ Gates: MIT gateway code; hosted and enterprise governance are commercial product
 <a id="helicone"></a>
 ### Helicone
 
-Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway. [154][155]
+Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately. [154][155]
 
 Control and best fit: Approved application endpoint/SDK and optionally request logging. Teams already operating API applications. Marginal mechanism: Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.
 

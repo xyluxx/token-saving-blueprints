@@ -66,7 +66,7 @@ claude -p --model "$APPROVED_CLAUDE_MODEL" --effort "$APPROVED_EFFORT" --tools "
 
 These are example bounds, not guarantees of completion. Verify installed help and inherited hooks/plugins. `--tools` concerns built-ins; MCP has its own restrictions. Do not use permission-bypass flags to make a blocked worker run.[2]
 
-The current official Agent SDK support article starts with a June 15 update pausing its announced separate-credit change: SDK and `claude -p` use currently remain within subscription usage limits. The lower historical credit table is not current billing. Use this with current legal/account rules, not as permission to export OAuth tokens to OmniRoute or pool personal seats.[3][4]
+The current official Agent SDK support article starts with a June 15 update pausing its announced separate-credit change: Claude Agent SDK, `claude -p`, and third-party app usage still draw from subscription usage limits under the current pause notice. The lower historical credit table is not current billing. Use this with current legal/account rules, not as permission to export OAuth tokens to OmniRoute or pool personal seats.[3][4]
 
 ### Codex
 
@@ -78,7 +78,7 @@ Do not assume a per-child provider field identical to OpenCode's. Machine-local 
 codex exec -C "$WORKSPACE" --sandbox read-only -m "$APPROVED_MODEL" -c "model_reasoning_effort=\"$APPROVED_EFFORT\"" --json - < brief.md
 ```
 
-Inspect the actual custom provider/credential helper and Responses protocol. Read-only shell access does not revoke independently authorized remote MCP writes. Native ChatGPT login and API-key billing are different routes; do not transplant credential caches.[6][7]
+Inspect the actual custom provider/credential helper and Responses protocol. Read-only shell access does not revoke independently authorized remote MCP writes. Native ChatGPT login and API-key billing are different routes. Do not move credentials as an incidental optimization or share them with others. Codex documents secure own-account cache transfer to trusted headless/CI environments as a fallback; that is not permission for arbitrary token brokering.[6][7]
 
 ### OpenCode
 

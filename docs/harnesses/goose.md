@@ -47,11 +47,11 @@ Restore the hints file and previous extension selection. If separately approved 
 
 ## Limits and evidence
 
-Documented provider and native-tool capabilities; no authenticated execution or savings benchmark. Approval UI is not a substitute for read-only source credentials, filesystem boundaries or an approved processing provider. Even local inference can transmit data through remote extensions. Do not export subscription credentials or use a self-hosted third-party OAuth relay. Availability of a goose-documented integration is not a universal license to use another service outside its terms.[15][58][68]
+Documented provider and native-tool capabilities; no authenticated execution or savings benchmark. Approval UI is not a substitute for read-only source credentials, filesystem boundaries or an approved processing provider. Even local inference can transmit data through remote extensions. Do not export credentials or add a self-hosted relay as an incidental optimization. A separately approved OAuth integration or native-agent bridge needs its own provider-specific terms, account, credential-custody and runtime review. Availability of a goose-documented integration is not a universal license to use another service outside its terms.[15][58][68]
 
 ## Sources
 
-[15] https://block.github.io/goose/docs/getting-started/providers
+[15] https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md
 [56] https://block.github.io/goose/docs/guides/context-engineering/using-goosehints
 [58] https://block.github.io/goose/docs/getting-started/using-extensions
 [68] https://block.github.io/goose/docs/guides/managing-tools/goose-permissions

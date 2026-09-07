@@ -522,3 +522,65 @@ def validate_assets(root):
                     if "url(" in value.lower() and not re.fullmatch(r"url\(\s*#[A-Za-z0-9_-]+\s*\)", value):
                         findings.append(f"{label}: external SVG resource is not allowed")
     return findings
+
+
+PLATFORM_IDS = {'microsoft-copilot-chat', 'chatgpt-desktop-codex', 'claude-apps-cowork', 'librechat', 'dify', 'copilot-studio', 'zed', 'pydanticai', 'flowise-legacy', 'bolt', 'github-copilot-sdk', 'langflow', 'devin-cloud', 'codex-cloud', 'roo-code-legacy', 'n8n', 'openai-agents-sdk', 'microsoft-agent-framework', 'google-adk', 'mastra', 'openhands', 'agno', 'gemini-notebook', 'chatgpt-web', 'vercel-ai-sdk', 'open-webui', 'claude-agent-sdk', 'lovable', 'langgraph', 'replit-agent', 'crewai', 'kiro', 'gemini-apps', 'amazon-q-developer'}
+PLATFORM_TIERS = {"documented configurable interface", "limited native/workflow-only support", "legacy or migration-only", "legacy documented configurable interface", "unsupported interface", "unverified"}
+
+
+def validate_platform_coverage(root):
+    from datetime import date, datetime, timezone
+    root = Path(root).resolve()
+    try:
+        data = load_json_within(root, root / "catalog/coverage.json")
+    except (OSError, ValueError):
+        return ["missing or invalid platform coverage"]
+    if not isinstance(data, list) or not all(isinstance(x, dict) and isinstance(x.get("id"), str) for x in data):
+        return ["invalid platform records"]
+    findings = []
+    ids = [x["id"] for x in data]
+    if len(ids) != len(set(ids)) or set(ids) != PLATFORM_IDS:
+        findings.append("platform identity coverage mismatch")
+    for row in data:
+        label = row["id"]
+        for key in ("name", "category", "evidence_level"):
+            if not isinstance(row.get(key), str) or not row[key].strip(): findings.append(label + ": missing " + key)
+        for key in ("current_status", "conservative", "aggressive", "delegation", "omniroute_interface", "upstream_auth", "billing"):
+            if not isinstance(row.get(key), dict) or not row[key]: findings.append(label + ": missing " + key)
+        interface = row.get("omniroute_interface")
+        if not isinstance(interface, dict) or interface.get("tier") not in PLATFORM_TIERS:
+            findings.append(label + ": invalid interface evidence tier")
+        refs = row.get("sources")
+        if not isinstance(refs, list) or not refs or not all(_http_url(x) for x in refs): findings.append(label + ": missing primary sources")
+        limits = row.get("limitations")
+        if not isinstance(limits, list) or not limits or not all(isinstance(x, str) and x.strip() for x in limits): findings.append(label + ": missing limits")
+        try:
+            if date.fromisoformat(row.get("checked_on", "")) > datetime.now(timezone.utc).date(): findings.append(label + ": future check date")
+        except (TypeError, ValueError): findings.append(label + ": invalid check date")
+    return findings
+
+
+OMNI_AUTH_IDS = {'devin-cli', 'codex', 'codebuddy-cn', 'zed', 'grok-cli', 'openference', 'zed-hosted', 'agy', 'gitlab-duo', 'qoder', 'github', 'cline', 'trae', 'amazon-q', 'antigravity', 'claude', 'kimi-coding', 'cursor', 'xai-oauth', 'devin-desktop', 'ghe-copilot', 'clinepass', 'kilocode', 'kiro'}
+
+def validate_auth_matrix(root):
+    root = Path(root).resolve()
+    try:
+        data = load_json_within(root, root / "catalog/omniroute-auth.json")
+    except (OSError, ValueError): return ["missing or invalid authentication matrix"]
+    if not isinstance(data, dict) or data.get("kind") != "source-inspected-authentication-matrix": return ["invalid authentication matrix kind"]
+    findings = []
+    if data.get("runtime_tested") is not False or data.get("pin") != OMNI_PIN: findings.append("auth matrix evidence/pin mismatch")
+    rows = data.get("rows")
+    if not isinstance(rows, list) or not all(isinstance(x, dict) for x in rows): return findings + ["invalid auth matrix rows"]
+    ids = []
+    for row in rows:
+        names = row.get("provider_ids")
+        if not isinstance(names, list) or not names or not all(isinstance(x, str) for x in names): findings.append("invalid auth provider IDs")
+        else: ids.extend(names)
+        for key in ("technical_support", "interface_runtime", "policy_status", "account_test_boundary"):
+            if not isinstance(row.get(key), str) or not row[key].strip(): findings.append("auth matrix missing " + key)
+        refs = row.get("source_urls")
+        if not isinstance(refs, list) or not refs or not all(_http_url(x) for x in refs): findings.append("auth matrix missing source")
+        if row.get("runtime_tested") is not False: findings.append("auth row runtime boundary changed")
+    if len(ids) != len(set(ids)) or set(ids) != OMNI_AUTH_IDS: findings.append("auth provider coverage mismatch")
+    return findings

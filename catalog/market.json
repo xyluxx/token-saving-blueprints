@@ -608,7 +608,7 @@
     "category": "API gateway and governance",
     "url": "https://github.com/BerriAI/litellm",
     "disposition": "optional",
-    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately.",
     "license_status": "MIT outside enterprise; audited proxy extra includes litellm-enterprise. Commercial terms and exact dependency closure are separate.",
     "evidence_scope": "README, license and pyproject inspected; gateway/provider support and accounting, not a universal token-reduction benchmark.",
     "overlapping_with": [
@@ -647,7 +647,7 @@
     "category": "API gateway and governance",
     "url": "https://github.com/maximhq/bifrost",
     "disposition": "optional",
-    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately.",
     "license_status": "Apache-2.0 core; enterprise features and third-party notices/dependency obligations remain separate.",
     "evidence_scope": "README and retained pinned license/dependency evidence inspected; throughput claims measure gateway overhead, not tokens saved.",
     "overlapping_with": [
@@ -684,7 +684,7 @@
     "category": "API gateway and governance",
     "url": "https://github.com/Portkey-AI/gateway",
     "disposition": "optional",
-    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately.",
     "license_status": "MIT gateway code; hosted and enterprise governance are commercial products.",
     "evidence_scope": "README, cache cookbook and middleware source inspected; simple and semantic cache are different policies.",
     "overlapping_with": [
@@ -723,7 +723,7 @@
     "category": "API gateway and governance",
     "url": "https://github.com/Helicone/helicone",
     "disposition": "optional",
-    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. For this initial API-governance recommendation, leave existing native subscription routes unchanged; provider-specific OAuth support and permission must be assessed separately.",
     "license_status": "Apache-2.0 repository; hosted gateway/observability and enterprise deployment terms are separate.",
     "evidence_scope": "README and license inspected; trace/cost visibility is not a measured reduction. Async logging is an alternative to proxy insertion.",
     "overlapping_with": [
@@ -1415,7 +1415,7 @@
     "control_surface": "Approved API call lane with effective key/model/connection policy; not universal native-harness or tenant control.",
     "best_tasks": "Small stateless approved API analysis lane first; conditional ordinary-JSON or repetitive-output experiments after the route gate.",
     "marginal_savings": "Unmeasured over the existing blueprint. Compression, lower-price workers and native subscription capacity remain separate. No extra20-30% average is established.",
-    "adoption_and_rollback": "Follow docs/addons/omniroute.md. Keep native baseline. No auto/combo/consumer-token/CA path; verify fixed post-alias model and all attempts, upstream spend bounds, data policy and layered bypass. Restore the original route if gates fail.",
+    "adoption_and_rollback": "Follow docs/addons/omniroute.md. Keep native baseline. For the initial pilot, no automatic account/model expansion or CA interception. OAuth and CLI-owned upstreams require their own capability/policy/account classification; verify resolved model, every attempt, spend bounds, privacy and layered bypass. Restore the original route if gates fail.",
     "authority_maturity": "Source-inspected existing project; conditional pilot, not a validated universal preset. Certain fallback, cache and free-pool limits remain at the pin.",
     "repository_snapshot": {
       "full_name": "diegosouzapw/OmniRoute",

@@ -4,7 +4,7 @@ Do not begin by installing a compressor. Begin by identifying what you are payin
 
 ## 1. Pick your route
 
-Open the [harness index](docs/harnesses/index.md). Match the actual application, then its authentication path:
+Open [platform coverage](docs/platform-coverage.md) for desktop/web apps, frameworks and builders, or the [harness index](docs/harnesses/index.md) for detailed CLI/IDE routes. Match the actual application, then its authentication path:
 
 - Native subscription or OAuth sign-in.
 - Direct provider API key.

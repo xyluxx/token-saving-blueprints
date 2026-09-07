@@ -1,4 +1,4 @@
-# OmniRoute: optional, restricted API add-on
+# OmniRoute: optional API-facing gateway, including OAuth upstreams
 
 [Start here](../../START-HERE.md) · [Delegation](../delegation.md) · [Compression inventory](omniroute-compression.md) · [Free-provider choices](free-provider-lanes.md)
 
@@ -10,7 +10,9 @@ Inspected pin: `diegosouzapw/OmniRoute` at `b345c7f6cd4e1590d1177540813302375a75
 
 OmniRoute provides provider connections, routing, protocol translation, compression, caches and some multi-model/protocol operations. That can be useful when an API workflow genuinely needs them. It does not make a free model an authorized tool worker or remove the main harness's responsibility for context, permissions, verification and completion.[1][2]
 
-The initial candidate is a separately approved, small API analysis lane. Do not route the main native subscription through a new proxy just to try compression. Do not install multiple apps merely to call another model; an existing host can make an approved API call. Tool-capable workers still need their actual harness/runtime. See [Delegation](../delegation.md).
+The initial recommendation remains a small, separately approved analysis lane. It can use a compatible permitted API-key or OAuth upstream, or a CLI-owned bridge after verifying its extra runtime semantics. Retaining the main native route is a conservative default, not a statement that OAuth gateways are technically impossible. Do not install multiple apps merely to call another model; an existing host can make an approved API call. Tool-capable workers still need their actual harness/runtime. See [Delegation](../delegation.md).
+
+Read the [authentication capability and policy matrix](omniroute-auth.md) first. It covers gateway OAuth, API keys and CLI-owned login as separate mechanisms; [machine-readable auth data](../../catalog/omniroute-auth.json) preserves the source-inspected boundaries.
 
 ## Choose one of these paths
 
@@ -27,7 +29,7 @@ These are blueprint profiles, **not the gateway's identically named presets**. B
 
 1. Keep an existing direct/native baseline. Use only an already authorized isolated OmniRoute instance, or obtain separate installation approval. Do not copy a global profile over a shared service.
 2. Record the exact version, effective settings, provider/account/project, model after alias resolution, worker identity, data scope, retention and rollback. Use the [route passport](../../templates/route-passport.md) and [add-on trial](../../templates/addon-trial.md).
-3. Use an API account/key belonging to the operator or authorized organization. No consumer cookie/OAuth imports, personal seat pooling, undocumented keyless access, stealth/TLS interception or quota evasion.
+3. Select one owned, approved upstream route: provider API key/cloud identity, gateway-managed provider OAuth, or a CLI-owned native bridge. Verify each separately in the OAuth capability matrix. API-key-only was the initial pilot policy, not an OmniRoute limitation. Cookie capture and credential imports are distinct technical mechanisms and are not enabled by this recommendation. No personal seat pooling, undocumented entitlement, stealth/TLS interception or quota evasion.
 4. Keep cloud sync/tunnel endpoints unconfigured for the isolated lane unless separately approved. Inspect the process environment and secret source. The inspected sync bundle can carry credentials; a flag about inbound credential overwrite is not an outbound secret filter.[11]
 5. Provider connection creation is not necessarily offline: `POST /api/providers` automatically tests a newly created connection. Authorize possible upstream traffic **before** clicking Add/Test or sending a create request.[10]
 6. Use a restricted database-backed inference key, not a dashboard/management key or deployment environment key. Worker credentials must not grant provider creation, routing changes or management access.[3]

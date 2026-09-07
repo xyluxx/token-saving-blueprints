@@ -1,12 +1,12 @@
 # Token Saving Blueprints
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Modes: 2](https://img.shields.io/badge/modes-2-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 51 local tests](https://img.shields.io/badge/checks-51%20local-44cc11?style=plastic)](VALIDATION.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-007ec6?style=plastic)](LICENSE) [![Modes: 2](https://img.shields.io/badge/modes-2-007ec6?style=plastic)](#choose-the-mode-by-the-work) [![Checks: 53 local tests](https://img.shields.io/badge/checks-53%20local-44cc11?style=plastic)](VALIDATION.md)
 
 **Practical Conservative and Aggressive methods for the AI tools you already use.**
 
 For developers, executives and teams who want less wasted AI spend without replacing their working system. This is a set of blueprints, configuration recipes and verification checklists. It is **not** a new agent, proxy service or subscription broker.
 
-[Start here](START-HERE.md) · [Conservative](docs/modes/conservative.md) · [Aggressive](docs/modes/aggressive.md) · [Choose your harness](docs/harnesses/index.md) · [Evidence](docs/evidence.md)
+[Platform compatibility](docs/platform-coverage.md) · [Start here](START-HERE.md) · [Conservative](docs/modes/conservative.md) · [Aggressive](docs/modes/aggressive.md) · [Choose your harness](docs/harnesses/index.md) · [Evidence](docs/evidence.md)
 
 ## What you get
 
@@ -46,7 +46,7 @@ For recurring work, use validated recipes and change detection where appropriate
 
 A subscription is not an API key. A compatible endpoint is not proof that it preserves your tools, context state, billing or provider permissions.
 
-- **Native subscription/OAuth:** keep the original client and its supported sign-in. Optimize instructions, source access and supported tools around it. Do not copy session tokens into a new proxy.
+- **Native subscription/OAuth:** retain the supported native route by default. Provider-specific OAuth integrations and CLI-owned bridges are separate optional paths, not generic interchangeable tokens. Check technical support, provider terms, account entitlement and actual billing independently.
 - **Direct API:** keep the selected model and account. Native caching, task preparation and eligible request changes can affect the bill; measure the complete task.
 - **Cloud or managed provider:** retain the organization’s endpoint, identity and policy. Confirm which features the actual route exposes.
 - **Mixed setup:** identify which route each job used. Switching between subscriptions and APIs requires an approved, equivalent path and an explicit spending decision.
@@ -69,7 +69,7 @@ These are operating methods and templates, not claims that a new runtime enforce
 
 Use [native or headless delegation](docs/delegation.md) when a bounded worker helps. API models do not each need a separate app window, but tool-capable workers still need their actual runtime and permissions. The main agent remains accountable.
 
-[OmniRoute](docs/addons/omniroute.md) is an optional, restricted API add-on for either mode, with a [complete compression inventory](docs/addons/omniroute-compression.md). It is not an all-features preset or a subscription-token broker. Its route, fallback, cache and data gates must pass first; otherwise stay native.
+[OmniRoute](docs/addons/omniroute.md) is an optional API-facing gateway with API-key, OAuth and CLI-owned upstream paths. Either blueprint mode can use an independently approved compatible route. Its [compression inventory](docs/addons/omniroute-compression.md) describes source-inspected controls, not authenticated account tests. It is not an all-features preset or a subscription-token broker. Its route, fallback, cache and data gates must pass first; otherwise stay native.
 
 [Cheaper/free worker models](docs/addons/free-provider-lanes.md) are separately consented cost choices. They can change dollars without reducing tokens, and no extra 20–30% is promised. Do not enable every layer or pool human accounts.
 
@@ -98,6 +98,8 @@ For a fixed subscription, fewer tokens do not automatically lower the monthly fe
 ## Scope and validation
 
 The guides prioritize major official tools and established ecosystems. Explicitly requested ambiguous names receive identity guidance, not invented installation recipes. A market scan has a disclosed scope; it is not a claim to have inspected every Internet project.
+
+The [factual revalidation note](docs/revalidation.md) records the coverage, corrections and unresolved boundaries.
 
 [VALIDATION.md](VALIDATION.md) separates documentation checks, source inspection, local fixture tests and native account trials. A passing repository checker does not certify every provider login or prove unchanged model quality.
 

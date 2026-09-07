@@ -1,0 +1,2416 @@
+[
+  {
+    "id": "chatgpt-web",
+    "name": "ChatGPT web and Projects",
+    "category": "hosted-chat-surface",
+    "current_status": {
+      "state": "active",
+      "family": "OpenAI ChatGPT and Codex",
+      "surface_scope": "Browser chat/Projects; not Codex CLI or a configurable API client",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official globally available free/paid Projects documentation and native workspace support; included as an essential user-facing surface, not because a new proxy is available. OpenAI also publishes business customer stories for Cisco, Morgan Stanley and others, and positions Codex for engineering work. This is family-level relevance, not a measured user count for each surface.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+        "https://openai.com/business/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Project instructions",
+      "Selected project sources",
+      "Separate chats and reviewed handoff",
+      "Native tools where entitled"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Open an existing private project. In Project settings, add a short task contract and only the relevant authoritative files.",
+        "Ask for exact source references and complete requested coverage. Use native data tools for all-row computation when available; validate the resulting artifact."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Save a reviewed decision/handoff note as a project source and start a focused new chat without deleting the original.",
+        "A new chat in the same project may use project memory; do not claim an empty context or precise token reduction."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "limited workflow-only",
+      "mechanism": "Manual separation of work into chats; entitled native agent/research modes are different features, not programmable subagent APIs."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Browser session after ChatGPT sign-in; account/workspace access is distinct from OpenAI API keys.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "ChatGPT plan and feature-specific usage limits. Do not report API-price savings from manually shorter prompts.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Project retrieval does not prove every uploaded file is always fully read.",
+      "Connected-app OAuth authorizes the app/tool, not replacement of ChatGPT inference.",
+      "No generic proxy endpoint setting established for browser chat.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+      "https://learn.chatgpt.com/docs/auth.md",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://openai.com/business/"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "chatgpt-desktop-codex",
+    "name": "ChatGPT desktop app, including Codex local work",
+    "category": "desktop-surface",
+    "current_status": {
+      "state": "active",
+      "family": "OpenAI ChatGPT and Codex",
+      "surface_scope": "Current destination of the former /codex/app documentation URL; inspect Chat versus Work versus Codex",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "First-party product documentation distributes the desktop app across macOS, Windows and Linux and makes Codex one mode in the app; extension of an established family, not an extra product tally. OpenAI also publishes business customer stories for Cisco, Morgan Stanley and others, and positions Codex for engineering work. This is family-level relevance, not a measured user count for each surface.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://learn.chatgpt.com/docs/app.md",
+        "https://openai.com/business/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Project/folder context",
+      "Native file tools",
+      "Parallel visible chats",
+      "Local Codex configuration only when verified for that mode"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Identify the selected mode and location before applying a CLI recipe. Open the task folder/project and attach a concise task contract.",
+        "Use native files and exact outputs; preserve the permission profile. Review actual artifacts, not just completion messages."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Write a reviewed handoff and start a focused chat, preserving old chats and original files.",
+        "Treat model-visible history and shared project memory as mode-dependent. Do not assume the whole desktop app accepts a CLI provider declaration."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native workflow",
+      "mechanism": "Parallel projects/chats and long-running work; no API-equivalent delegation contract inferred for every mode."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Current auth docs support ChatGPT sign-in and API-key sign-in for local Codex workflows in the desktop app. This does not make browser ChatGPT API-key configurable.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "ChatGPT subscription route versus OpenAI Platform API usage for local Codex. Workspace/cloud-dependent features can be unavailable on API-key auth.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "The /codex/app URL currently redirects to ChatGPT desktop app docs; retain old naming as a discovery alias, not a second product.",
+      "A generic OmniRoute route for every app mode was not established. Reuse the Codex CLI provider guide only after verifying the local Codex mode and installed configuration surface.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/app.md",
+      "https://learn.chatgpt.com/docs/auth.md",
+      "https://learn.chatgpt.com/docs/reference/settings.md",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://openai.com/business/"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "codex-cloud",
+    "name": "Codex cloud and web task surface",
+    "category": "hosted-coding-surface",
+    "current_status": {
+      "state": "active",
+      "family": "OpenAI ChatGPT and Codex",
+      "surface_scope": "Cloud tasks distinct from local Codex CLI and desktop local work",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Current first-party cloud workflow supports repository tasks and GitHub, GitLab, Linear and Slack entry points; an established Codex surface, not a separate framework. OpenAI also publishes business customer stories for Cisco, Morgan Stanley and others, and positions Codex for engineering work. This is family-level relevance, not a measured user count for each surface.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://learn.chatgpt.com/docs/cloud",
+        "https://openai.com/business/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Task prompt and repository context",
+      "Cloud environment setup",
+      "Parallel isolated tasks",
+      "Diff and task-log review"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Select the existing approved repository environment. Provide exact target files, acceptance criteria and tests before launching a task.",
+        "Review task logs and the full diff; avoid repeated attempts caused by missing setup context."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Split independent tasks with separate scopes and explicit merge ownership; retain full logs and patches.",
+        "Use reviewed handoffs instead of replaying long transcripts. Count failed attempts and result-integration work."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native",
+      "mechanism": "Parallel tasks in isolated cloud environments; supported integration handoffs. This is not an OpenAI Agents SDK run."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Codex cloud requires ChatGPT sign-in; local API-key auth is not evidence of cloud entitlement.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Applicable ChatGPT workspace/plan and cloud usage. Local API pricing cannot establish cloud cost.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Environment variables/secrets configure the task environment, not automatically the managed inference backend.",
+      "No generic OmniRoute model-endpoint setting established for the hosted task surface.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/cloud",
+      "https://learn.chatgpt.com/docs/auth.md",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://openai.com/business/"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "claude-apps-cowork",
+    "name": "Claude chat, Desktop and Cowork",
+    "category": "hosted-chat-and-work-surface",
+    "current_status": {
+      "state": "active",
+      "family": "Anthropic Claude",
+      "surface_scope": "Chat/Projects and Cowork are modes/surfaces; Claude Code and Agent SDK remain separately covered",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Anthropic publishes current customer stories and explicitly lists Claude Cowork, Claude Enterprise and Claude Agent SDK as product filters. This is vendor-reported ecosystem relevance, not a count of Cowork users.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://claude.com/customers"
+      ]
+    },
+    "optimization_surfaces": [
+      "Project instructions and knowledge",
+      "Cowork task/project context",
+      "Approved connectors and file access",
+      "Native Cowork subagents/plugins"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "For chat, use an existing project with concise instructions and relevant sources. For Cowork, choose a bounded file/task scope and review intended actions.",
+        "Use chat for simple questions and Cowork only when file access or extended execution is needed. Keep the actual model and approval settings fixed."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Retain original documents and results; carry a reviewed checkpoint into a focused task rather than repeatedly attaching all intermediate output.",
+        "Cowork can run remotely in the cloud in beta. Verify where this session runs and which local capabilities remain desktop-only."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native, mode-specific",
+      "mechanism": "Cowork supports subagents through its native work/plugin system. Ordinary chat is not a programmable Claude Agent SDK session."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Claude account login. Cowork is on paid plans, with surface/admin conditions. Connector OAuth and local MCP auth are separate from model auth.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Claude plan allocation and optional additional usage. Cowork can consume more allocation than chat. Console/API billing is a separate route.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not retain the obsolete desktop-only/local-only Cowork description. Current docs describe web, desktop, mobile and cloud sessions in beta; some local-MCP capabilities remain desktop-only.",
+      "The reviewed Claude apps gateway documentation describes Claude Code clients. Its name alone does not prove a generic Claude chat/Cowork proxy route.",
+      "MCP controls its own tools/data; no universal inference interception is established.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://support.claude.com/en/articles/9517075-what-are-projects",
+      "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+      "https://code.claude.com/docs/en/claude-apps-gateway",
+      "https://claude.com/customers",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "gemini-apps",
+    "name": "Gemini Apps and Gems",
+    "category": "hosted-chat-surface",
+    "current_status": {
+      "state": "active",
+      "family": "Google Gemini Apps",
+      "surface_scope": "Consumer/workspace Gemini app surface; not Gemini CLI, Antigravity or ADK",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "The Google LLC Google Play listing displays 1B+ downloads for Gemini. This is a platform distribution threshold, not active users, desktop adoption or the number using Gems.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://support.google.com/gemini/answer/15235603?hl=en",
+        "https://play.google.com/store/apps/details?id=com.google.android.apps.bard&hl=en"
+      ]
+    },
+    "optimization_surfaces": [
+      "Gem instructions",
+      "Selected reference files",
+      "Native chat and research features where available"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "In the Gemini web app, use Explore Gems > New Gem or edit an existing Gem; provide task, context and output requirements.",
+        "Add only relevant authoritative reference files, preview behavior and save explicitly. Preserve complete review scope."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Create a reviewed source-linked handoff for a fresh focused chat; keep original files and old chats.",
+        "Do not equate fewer attached files with full-file review or guarantee an exact context reduction."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "limited workflow-only",
+      "mechanism": "Separate native chats/tasks; no general SDK delegation contract established from Gems configuration."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Google account and applicable Gemini/workspace entitlement. Gemini API and Google cloud identities are distinct routes.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Native account/plan usage; no Gemini API invoice reduction inferred from app prompts.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "A Gem is a native instruction/context customization, not a custom model endpoint.",
+      "Do not transfer Gemini CLI or ADK configuration into Gemini Apps.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://support.google.com/gemini/answer/15235603?hl=en",
+      "https://gemini.google/overview/",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://play.google.com/store/apps/details?id=com.google.android.apps.bard&hl=en"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "kiro",
+    "name": "Kiro",
+    "category": "ide-cli-web-family",
+    "current_status": {
+      "state": "active",
+      "family": "Kiro",
+      "surface_scope": "Unified harness across IDE, CLI, Web and Mobile; surface-specific permissions and preview status",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "AWS/Kiro actively documents a migration from Q Developer IDE and CLI, multiple supported surfaces, enterprise administration and paid plans. This is distribution and strategic relevance, not an audited install count. Its official feedback repository has 4,267 stars. That is an interest signal only, strengthened by the documented AWS product migration.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://kiro.dev/docs/",
+        "https://api.github.com/repos/kirodotdev/Kiro"
+      ]
+    },
+    "optimization_surfaces": [
+      ".kiro/steering instructions",
+      "Specs and task plans",
+      "Custom agents and isolated subagents",
+      "Compaction and checkpoints",
+      "CLI headless mode"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Identify the current IDE/CLI generation and selected model/effort; inspect existing .kiro/ configuration before editing.",
+        "Use a task-specific steering file and spec with exact files, dependencies and tests. Preserve current native auth, tools and permissions."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Retain a reviewed handoff before native compaction. Inspect what the installed version retains instead of assuming old Q CLI behavior.",
+        "Use focused subagents only for independent tasks; include their full cost and verify evidence returned to the parent."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native",
+      "mechanism": "Custom agents can run as parallel subagents with isolated context; CLI headless and ACP are separate documented interfaces, not model APIs."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Native browser/device sign-in supports GitHub, Google, AWS Builder ID and organizational identity paths, with device-flow limitations. KIRO_API_KEY is documented for eligible paid Kiro CLI automation, not a provider BYOK credential.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Kiro credits, plan allowances and add-on/enterprise billing. Model multipliers and region/plan availability differ; a Kiro key does not fund arbitrary Bedrock or Anthropic API calls.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not say Kiro is simply the old Amazon Q product everywhere. Current docs describe a unified family and version-specific migrations.",
+      "No arbitrary model-endpoint/BYOK route established here. A Kiro CI API key authenticates Kiro.",
+      "Auto is a model-routing choice and may not preserve a fixed model baseline. Do not switch to Auto as token optimization.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://kiro.dev/docs/",
+      "https://kiro.dev/docs/getting-started/authentication/",
+      "https://kiro.dev/docs/steering/",
+      "https://kiro.dev/docs/models/available-models/",
+      "https://kiro.dev/pricing/",
+      "https://kiro.dev/docs/upgrade-guides/migrating-from-q/",
+      "https://kiro.dev/docs/custom-agents/subagents.md",
+      "https://kiro.dev/docs/compaction.md",
+      "https://kiro.dev/docs/cli/headless.md",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://api.github.com/repos/kirodotdev/Kiro"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "amazon-q-developer",
+    "name": "Amazon Q Developer, existing-user transition",
+    "category": "cloud-assistant-transition",
+    "current_status": {
+      "state": "transition",
+      "family": "Amazon Q Developer",
+      "surface_scope": "AWS console/web/chat capabilities and existing IDE plugins; CLI migration points to Kiro",
+      "admission": "existing-user transition coverage",
+      "adoption_signal": "The official AWS Amazon Q Visual Studio Marketplace listing displays 1,841,827 installs. This is a distribution count, not active users; it supports existing-user transition coverage alongside the AWS EOS notice.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+        "https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.amazon-q-vscode"
+      ]
+    },
+    "optimization_surfaces": [
+      "Native AWS context and scoped questions",
+      "Existing IDE code context",
+      "Migration decision boundary"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Identify whether the user is in AWS console/chat, an IDE plugin or the old CLI. Do not auto-migrate.",
+        "Use precise resource/file/task context and verify outputs with existing authorized AWS/IDE tools."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use retained result artifacts and reviewed handoffs; no invented CLI hooks or history transformer.",
+        "Treat migration to Kiro as a separately approved product/configuration change, not an optimization toggle."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "limited, surface-dependent",
+      "mechanism": "Do not infer Kiro subagents or CLI flags for Q Developer console/IDE. No new delegation setup provided."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "AWS IAM/organization access for AWS surfaces; AWS Builder ID is documented for IDE sign-in. Existing Free/Pro routes have separate eligibility.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Amazon Q Developer Free/Pro and applicable AWS usage; no assumption that Kiro credits or provider API credits are interchangeable.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "AWS says IDE plugin support ends April 30, 2027. This is not a statement that all Amazon Q Developer or Amazon Q Business is retired.",
+      "Kiro is the next update of Q CLI; preserve exact current surface and migration terms.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+      "https://kiro.dev/docs/upgrade-guides/migrating-from-q-developer/",
+      "https://kiro.dev/docs/upgrade-guides/migrating-from-q/",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md",
+      "https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.amazon-q-vscode"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "openai-agents-sdk",
+    "name": "OpenAI Agents SDK",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "OpenAI Agents SDK",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository openai/openai-agents-python has 29,230 stars, is not archived, and shows pushed_at 2026-09-05T11:16:53Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/openai/openai-agents-python"
+      ]
+    },
+    "optimization_surfaces": [
+      "Agent instructions and tool contracts",
+      "Application-owned session input",
+      "Model provider/client selection",
+      "Handoff input filters"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Declare the existing model/effort explicitly. Keep task instructions small and return complete deterministic tool results with source references.",
+        "Use the documented session mechanism for continuity; do not send duplicate application history and session history."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use a reviewed session-input policy or handoff input filter to pass only task-relevant context, preserving paired tool events and original artifacts.",
+        "Separate agents-as-tools from transfer-of-control handoffs; account for every agent, retry and tracing path."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native",
+      "mechanism": "Handoffs transfer control to another agent; agents-as-tools are a different orchestration pattern. A fresh context is not automatic for every handoff."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "AsyncOpenAI(base_url=..., api_key=...) with OpenAIChatCompletionsModel for Chat Completions; OpenAIResponsesModel only with an endpoint implementing the required Responses features.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "OpenAI API key by default or the explicitly selected provider/cloud credential. A ChatGPT subscription is not the default SDK credential.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Responses is the recommended OpenAI path; many compatible providers support only Chat Completions.",
+      "Tracing is a separate data/auth destination. The SDK documents disabling it or using another processor when there is no OpenAI API key; do not silently send third-party data to a trace backend.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://openai.github.io/openai-agents-python/models/",
+      "https://openai.github.io/openai-agents-python/sessions/",
+      "https://openai.github.io/openai-agents-python/handoffs/",
+      "https://api.github.com/repos/openai/openai-agents-python",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "claude-agent-sdk",
+    "name": "Claude Agent SDK",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Claude Agent SDK",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository anthropics/claude-agent-sdk-python has 8,047 stars, is not archived, and shows pushed_at 2026-09-06T02:55:10Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/anthropics/claude-agent-sdk-python"
+      ]
+    },
+    "optimization_surfaces": [
+      "Programmatic Claude Code agent loop",
+      "Native hooks, sessions, tools and permissions",
+      "Subagents with isolated context",
+      "Project configuration loading"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use the SDK for application-owned Claude Code-style tool execution, not as a synonym for the lower-level Anthropic Client SDK.",
+        "Define allowed tools and an exact task contract; retain native permissions and existing model/effort. Verify how this SDK version loads project configuration."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Pass bounded tasks to SDK subagents and retain original outputs outside the model context.",
+        "Use documented session/hook controls only after testing the installed SDK contract, with an explicit evidence-restoration path."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native",
+      "mechanism": "SDK subagents provide focused contexts. Other-language automation can invoke the native CLI as a subprocess, a distinct interface from a direct OAuth gateway."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Anthropic-compatible model gateway through the underlying Claude Code runtime, conditional on its current gateway protocol/auth contract; not a Chat-Completions-only client.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "API/cloud methods are documented in the SDK quickstart. The current subscription article pauses the announced June 15 separate-credit change: Agent SDK, claude -p and third-party app usage still draw from subscription limits. Separately, SDK overview says third-party developers may not offer claude.ai login/rate limits in products without prior approval.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "API/cloud usage has its own bill. Current supported subscription SDK/headless usage remains within subscription usage limits per the June 15 pause notice; verify the exact mechanism/account. No credit table from the superseded section is applied.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "The paused billing change does not abolish the separately stated third-party login restriction.",
+      "Do not say all SDK/headless use requires extra credits, or that all personally owned native CLI login is a prohibited OAuth proxy.",
+      "A gateway accepting Anthropic Messages does not prove complete Claude Code semantics or a permitted upstream subscription mechanism.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/agent-sdk/overview",
+      "https://code.claude.com/docs/en/agent-sdk/quickstart",
+      "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan",
+      "https://code.claude.com/docs/en/agent-sdk/subagents",
+      "https://code.claude.com/docs/en/claude-apps-gateway",
+      "https://api.github.com/repos/anthropics/claude-agent-sdk-python",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "langgraph",
+    "name": "LangGraph and LangChain model integrations",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "LangGraph and LangChain model integrations",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository langchain-ai/langgraph has 41,148 stars, is not archived, and shows pushed_at 2026-09-06T00:55:48Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/langchain-ai/langgraph"
+      ]
+    },
+    "optimization_surfaces": [
+      "Graph nodes and state",
+      "Checkpointed short-term memory",
+      "Pre-model message selection",
+      "Explicit subgraphs/workflows"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Keep full source state/checkpoints and compute deterministic joins/counts outside the LLM.",
+        "Keep only task-relevant tools and exact model settings on graph nodes; return authoritative observations rather than repeated raw dumps."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Create a model-input projection before the model node rather than permanently deleting source state.",
+        "If using documented trimming or summarization, preserve tool-call/result pairing, protected requirements and a checkpoint restoration path."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented orchestration",
+      "mechanism": "Explicit graph/subgraph execution and state handoff; not an automatic free swarm."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "ChatOpenAI(base_url=..., api_key=...) for official OpenAI-specification fields, or an appropriate provider-specific model package; select Chat Completions versus Responses explicitly.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider API/cloud credentials. Current ChatOpenAI supports Azure OpenAI v1 with API key or a Microsoft Entra token-provider callable.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "ChatOpenAI explicitly does not preserve non-standard reasoning fields from third-party APIs; choose a provider-specific adapter when required.",
+      "Deleting messages from graph state is different from trimming a projection; neither proves lossless compression.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.langchain.com/oss/python/langgraph/overview",
+      "https://docs.langchain.com/oss/python/langgraph/add-memory",
+      "https://docs.langchain.com/oss/python/integrations/chat/openai",
+      "https://api.github.com/repos/langchain-ai/langgraph",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "pydanticai",
+    "name": "PydanticAI",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "PydanticAI",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository pydantic/pydantic-ai has 19,756 stars, is not archived, and shows pushed_at 2026-09-07T02:17:29Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/pydantic/pydantic-ai"
+      ]
+    },
+    "optimization_surfaces": [
+      "Typed tools and outputs",
+      "Message history and processors",
+      "Explicit provider objects",
+      "Application-owned multi-agent flows"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use typed results and deterministic validation for exact requested data. Set the model/provider explicitly.",
+        "Reuse relevant message history without duplicating it and keep tools narrowly scoped to the task."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use a history processor to construct a reviewed model-input projection while preserving raw records and tool events.",
+        "Follow current copy/replace semantics; do not mutate existing history parts in place. Include validation retries and SDK network retries in total usage."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "application-owned workflow",
+      "mechanism": "Call separate agents as explicit workflow/tool steps; pass required history deliberately and verify typed outputs. No free isolated context inferred."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "OpenAIProvider(base_url=..., api_key=...) with OpenAIChatModel for Chat Completions; OpenAIResponsesModel only when the endpoint supports that protocol.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider key/custom client; Azure can use the appropriate OpenAI client. No generic consumer subscription entitlement inferred.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Provider SDK retries can be independent of agent retry limits.",
+      "Changing providers or reusing history can alter instruction handling and feature support.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://pydantic.dev/docs/ai/overview/",
+      "https://pydantic.dev/docs/ai/models/openai/",
+      "https://pydantic.dev/docs/ai/core-concepts/message-history/",
+      "https://api.github.com/repos/pydantic/pydantic-ai",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "crewai",
+    "name": "CrewAI",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "CrewAI",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository crewAIInc/crewAI has 58,174 stars, is not archived, and shows pushed_at 2026-09-04T20:26:09Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/crewAIInc/crewAI"
+      ]
+    },
+    "optimization_surfaces": [
+      "Explicit tasks and expected outputs",
+      "Tools and deterministic workflow steps",
+      "Agent context controls",
+      "Optional delegation"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use a small crew/task graph with exact expected outputs. Keep existing model and effort fixed.",
+        "Use deterministic tools for mechanical work and review actual results. Native caching and context handling are the baseline."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Limit what one task passes to another with retained originals and exception recovery.",
+        "Inspect respect_context_window and any summarization already active. Treat a cap-induced best-effort answer as partial, not successful completion."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native opt-in",
+      "mechanism": "allow_delegation is documented and defaults false; enabling it adds other-agent work, not guaranteed savings."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "LLM(custom_openai=True, base_url=..., api_key=..., model=...) for a custom OpenAI-compatible gateway; provider-specific and LiteLLM paths are separate.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider/API/cloud credentials or selected gateway credential. The library is not a bundled subscription.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Current LLM docs distinguish native provider integrations from providers requiring the LiteLLM extra.",
+      "Model prefixes and custom_openai select dispatch behavior; an arbitrary base URL alone is not proof of the correct adapter.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.crewai.com/v1.15.20/en/concepts/llms",
+      "https://docs.crewai.com/v1.15.20/en/concepts/agents",
+      "https://api.github.com/repos/crewAIInc/crewAI",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "microsoft-agent-framework",
+    "name": "Microsoft Agent Framework",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Microsoft Agent Framework",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository microsoft/agent-framework has 13,358 stars, is not archived, and shows pushed_at 2026-09-07T04:29:28Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/microsoft/agent-framework"
+      ]
+    },
+    "optimization_surfaces": [
+      "Agents and graph/functional workflows",
+      "Context providers and sessions",
+      "Middleware",
+      "Explicit model clients"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Prefer a function for deterministic work and an agent only for reasoning. Use explicit model clients and scoped tools.",
+        "Keep session state and exact acceptance criteria available; collect execution and quality results."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use middleware/context providers to build a deliberate model-input projection without deleting authoritative state.",
+        "Coordinate independent agents through explicit workflow paths; verify supported features for the chosen language/runtime."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native orchestration",
+      "mechanism": "Agents/workflows and stateful multi-agent execution; language-specific support is not uniform."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "OpenAI client base_url/api_key or async_client configuration; exact Chat Completions/Responses client must match the gateway. The current source accepts a callable API key as well.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider-specific credentials. Azure/Foundry examples use Azure identities; OpenAI clients have keys/callables. These are not GitHub Copilot or Microsoft 365 subscription allowances.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Microsoft calls this the direct successor to AutoGen and Semantic Kernel. AutoGen is maintenance mode; do not recommend it as the default new Microsoft stack.",
+      "Go is explicitly public preview in the current overview; do not label all language bindings equally mature.",
+      "Provider/runtime differences require a real integration test.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://learn.microsoft.com/en-us/agent-framework/overview/",
+      "https://raw.githubusercontent.com/microsoft/agent-framework/main/README.md",
+      "https://raw.githubusercontent.com/microsoft/autogen/main/README.md",
+      "https://learn.microsoft.com/en-us/agent-framework/integrations/",
+      "https://raw.githubusercontent.com/microsoft/agent-framework/main/python/packages/openai/agent_framework_openai/_chat_client.py",
+      "https://api.github.com/repos/microsoft/agent-framework",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "google-adk",
+    "name": "Google Agent Development Kit (ADK)",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Google Agent Development Kit (ADK)",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository google/adk-python has 21,432 stars, is not archived, and shows pushed_at 2026-09-06T18:50:00Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/google/adk-python"
+      ]
+    },
+    "optimization_surfaces": [
+      "Agent tools and workflow agents",
+      "Sessions/events",
+      "Model connectors",
+      "Configurable context compaction"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use the existing model connector and explicit tools. Keep all required records available and do deterministic transformations in tools.",
+        "Record which language/runtime is used; do not copy a Python connector example into every binding."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use EventsCompactionConfig only in an approved trial with retained full events and protected requirements.",
+        "Measure summarization calls, recovery reads and multi-agent orchestration overhead against native baseline."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native orchestration",
+      "mechanism": "Agent/workflow composition; model routing and failover are separate cost/behavior choices, not token savings."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Python LiteLlm model connector for an approved compatible provider/gateway; exact LiteLLM provider/api_base configuration and protocol need validation. Native Gemini/Google routes remain distinct.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Google API/project/cloud credentials for native routes, or the chosen external provider credential through its connector. Gemini app subscription is not an ADK API entitlement.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "ADK is model-flexible, not limited to Gemini; supported connectors differ across languages.",
+      "Current ADK LiteLLM documentation requires litellm>=1.84 and flags compromised versions 1.82.7 and 1.82.8. Use the current security advisory, not an old unconstrained install snippet. No dependency was installed in this review.",
+      "Context compaction is lossy and configurable; docs examples do not establish fidelity for this task.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://adk.dev/",
+      "https://adk.dev/agents/models/",
+      "https://adk.dev/agents/models/litellm/",
+      "https://adk.dev/context/compaction/",
+      "https://api.github.com/repos/google/adk-python",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Vercel AI SDK",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository vercel/ai has 26,613 stars, is not archived, and shows pushed_at 2026-09-07T01:15:36Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/vercel/ai"
+      ]
+    },
+    "optimization_surfaces": [
+      "Application-owned tool loops",
+      "prepareStep and stop conditions",
+      "Provider adapters",
+      "Explicit prompt/message construction"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use deterministic code for bulk operations and a minimal explicit tool set.",
+        "Preserve existing provider/model/effort and collect full per-step usage; do not silently use a default gateway/provider."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use prepareStep to construct the next input from authoritative stored state rather than repeatedly forwarding everything.",
+        "If shortening history, preserve tool pairing and acceptance criteria and test restoration; stop conditions are not evidence of task completion."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "application-owned orchestration",
+      "mechanism": "Compose agent/tool loops and explicit specialist calls; no assumption of a universal isolated subagent implementation."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "createOpenAICompatible({name, baseURL, apiKey, includeUsage}) supplies Chat Completions models. Use a separate Responses-capable adapter when Responses semantics are required.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Selected provider or gateway API credential; key is used as Bearer auth when supplied. Cloud IAM must use the correct provider adapter.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "includeUsage requests streaming usage but cannot create provider usage that is absent.",
+      "The library, Vercel AI Gateway and Vercel hosting are different products and bills.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://ai-sdk.dev/docs/introduction",
+      "https://ai-sdk.dev/providers/openai-compatible-providers",
+      "https://ai-sdk.dev/docs/agents/loop-control",
+      "https://api.github.com/repos/vercel/ai",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "github-copilot-sdk",
+    "name": "GitHub Copilot SDK",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "GitHub Copilot SDK",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository github/copilot-sdk has 10,459 stars, is not archived, and shows pushed_at 2026-09-06T20:09:32Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/github/copilot-sdk"
+      ]
+    },
+    "optimization_surfaces": [
+      "Programmatic Copilot CLI runtime",
+      "Session instructions and tools",
+      "Explicit permission handler",
+      "BYOK provider selection"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use a bounded session with exact tools and a permission handler suited to the task. Do not copy approve_all from a quickstart.",
+        "Retain full result and usage events; verify which CLI version is bundled or launched."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Pass an explicit task packet to a separate session and retain original evidence; verify session controls before changing model-visible history.",
+        "Count CLI runtime work as well as outer SDK work."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented runtime interface",
+      "mechanism": "SDK communicates with Copilot CLI server over JSON-RPC; process lifecycle may be SDK-owned. It is not a raw model REST call."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Session provider type openai/anthropic/azure with baseUrl or base_url and explicit wireApi/wire_api (responses or completions for OpenAI paths).",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Native stored Copilot CLI OAuth, GitHub app/env token routes, or BYOK. Official BYOK docs allow use without GitHub authentication; README limits BYOK to key-based auth, not Entra/managed identities.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Native usage follows the Copilot CLI entitlement/meter. BYOK bypasses GitHub model auth and bills the selected provider. Do not reuse stale universal premium-request arithmetic.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not infer IDE/CLI settings from SDK provider objects or vice versa.",
+      "Node/Python/.NET bundle the CLI according to current README; other bindings differ.",
+      "SDK README billing wording is not a substitute for the current Copilot billing policy/account meter.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/github/copilot-sdk/main/README.md",
+      "https://raw.githubusercontent.com/github/copilot-sdk/main/docs/auth/byok.md",
+      "https://api.github.com/repos/github/copilot-sdk",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "mastra",
+    "name": "Mastra",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Mastra",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository mastra-ai/mastra has 27,745 stars, is not archived, and shows pushed_at 2026-09-07T02:25:49Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/mastra-ai/mastra"
+      ]
+    },
+    "optimization_surfaces": [
+      "Typed application agents/workflows",
+      "Input/output processors",
+      "Memory projections",
+      "Native subagents"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Keep explicit model/effort and tight tools. Use deterministic workflow steps for mechanical work.",
+        "Inspect existing memory processors and state before adding another optimizer."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use a reviewed inputProcessor for model-visible context; outputProcessors operate after generation and cannot retroactively reduce input tokens.",
+        "Keep raw messages and test memory/processor ordering and restoration before enabling history/token limiters."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native",
+      "mechanism": "Configured subagents with bounded tool/context scopes; include parent integration and child costs."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "model object with id, url and optional apiKey for an OpenAI-compatible endpoint. Direct provider/model and gateway/provider/model routing forms differ.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider or gateway credential. Application end-user authentication and model-provider API keys are separate concerns.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not replace url with a guessed baseURL field in the Mastra model object.",
+      "Input and output processor ordering affects stored memory and model-visible content; reducers can lose evidence.",
+      "Model fallback changes are separate experiments.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://mastra.ai/models.md",
+      "https://mastra.ai/docs/agents/processors.md",
+      "https://mastra.ai/docs/subagents.md",
+      "https://api.github.com/repos/mastra-ai/mastra",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "agno",
+    "name": "Agno",
+    "category": "sdk-framework",
+    "current_status": {
+      "state": "active",
+      "family": "Agno",
+      "surface_scope": "Application-owned runtime, not a consumer chat app",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository agno-agi/agno has 42,077 stars, is not archived, and shows pushed_at 2026-09-07T04:24:51Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/agno-agi/agno"
+      ]
+    },
+    "optimization_surfaces": [
+      "Agents, teams and workflows",
+      "Explicit history selection",
+      "Typed results and tools",
+      "Application database/session state"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Set model and embedding choices explicitly; use scoped tools and deterministic workflow steps.",
+        "Retain full session/source state and validate final artifacts instead of accepting a team summary alone."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use explicit history/context settings for a bounded projection and keep the original session database.",
+        "Split genuinely independent work through Teams/workflows; count members, coordinators and retry work."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native orchestration",
+      "mechanism": "Agent, Team and Workflow primitives; not merely a wrapper around a hosted web chat."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "OpenAIChat(base_url=..., api_key=..., id=...) from the source-defined OpenAI Chat Completions client. Other model classes/protocols need separate verification.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Explicit provider/API/cloud client credentials. The inspected OpenAIChat client reads OPENAI_API_KEY when no key is supplied.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Library adoption does not include model inference. Provider API/cloud charges, local compute, hosting, tools and optional observability are separate.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "AgentOS runtime/control plane and the open-source SDK are distinct deployment/billing surfaces.",
+      "History limits are not lossless. No default-model or endpoint equivalence inferred across Agno versions.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.agno.com/features/sdk.md",
+      "https://raw.githubusercontent.com/agno-agi/agno/main/README.md",
+      "https://raw.githubusercontent.com/agno-agi/agno/main/libs/agno/agno/models/openai/chat.py",
+      "https://api.github.com/repos/agno-agi/agno",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "category": "visual-workflow-builder",
+    "current_status": {
+      "state": "active",
+      "family": "n8n",
+      "surface_scope": "AI nodes in existing workflows, not every n8n request",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository n8n-io/n8n has 203,584 stars, is not archived, and shows pushed_at 2026-09-07T03:13:59Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/n8n-io/n8n"
+      ]
+    },
+    "optimization_surfaces": [
+      "Deterministic workflow/code nodes",
+      "Prompt and tool-output fields",
+      "Memory nodes",
+      "Selected LLM credentials and API mode"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use deterministic nodes for filters, joins, validation and all-row calculations before calling the LLM.",
+        "Pass the exact fields the task needs, retaining full input/output and failure branches. Keep credentials and model fixed."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Use a separate retained full-result artifact plus an explicit compact observation in the LLM node.",
+        "Bound memory and delegate subwork only with a restoration path and full execution/usage accounting."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented node/workflow interfaces",
+      "mechanism": "AI Agent Tool and Call n8n Workflow Tool are available node types; exact agent wiring is version-specific."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "OpenAI credential Base URL (url) and API Key; current OpenAI Chat Model nodes have a Use Responses API selector. Verify selected node/version and protocol rather than relying on defaults.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider API key or approved gateway key for the selected credential; service connector OAuth is separate.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "n8n cloud/hosting/workflow costs plus model/provider usage. A workflow execution and an LLM call are different units.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Current source sets Responses true for the relevant new node path while the prose describes Chat Completions fallback: record the actual node/version/selector.",
+      "The current Base URL lives in the credential; old node-level Base URL examples are version-gated.",
+      "Built-in OpenAI tools require supported API features and node combinations; a gateway may not implement them.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.n8n.io/integrations/builtin/credentials/openai",
+      "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai",
+      "https://raw.githubusercontent.com/n8n-io/n8n/master/packages/@n8n/nodes-langchain/nodes/llms/LMChatOpenAi/LmChatOpenAi.node.ts",
+      "https://raw.githubusercontent.com/n8n-io/n8n/master/packages/nodes-base/credentials/OpenAiApi.credentials.ts",
+      "https://api.github.com/repos/n8n-io/n8n",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "dify",
+    "name": "Dify",
+    "category": "visual-agent-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Dify",
+      "surface_scope": "Dify Cloud/self-hosted workflows and provider plugins",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository langgenius/dify has 154,670 stars, is not archived, and shows pushed_at 2026-09-07T04:44:06Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/langgenius/dify"
+      ]
+    },
+    "optimization_surfaces": [
+      "Workflow input projection",
+      "Provider/model plugins",
+      "Prompt and retrieval scope",
+      "Explicit tool/result boundaries"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use deterministic workflow transforms before LLM nodes and pass source-linked relevant data.",
+        "Inspect workspace provider priority and every embedding/rerank/LLM role before measurement; do not change workspace defaults casually."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Retain full results and add compact explicit node observations with exception recovery.",
+        "Reduce unnecessary model calls before token counts when using response-priced AI credits."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "workflow composition",
+      "mechanism": "Application-owned workflow/agent/tool composition; not a guaranteed native isolated-subagent contract for every plugin."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Official OpenAI-API-compatible provider plugin exposes endpoint/model/API-key configuration. Scope is that selected plugin/model, not all Dify traffic.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider key or gateway credential managed by workspace owner/admin. Cloud AI credits and BYOK can coexist with Usage Priority/fallback.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Current Dify Cloud docs describe AI credits charged per model response, independent of token count within that response; model-dependent credit rates. BYOK uses provider billing.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Provider credentials and default models are workspace-wide, not safely session-local by default.",
+      "Do not describe fewer tokens in the same response as fewer Dify AI credits.",
+      "Model plugins and self-hosted/cloud versions may expose different fields.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.dify.ai/en/cloud/use-dify/workspace/model-providers",
+      "https://raw.githubusercontent.com/langgenius/dify-official-plugins/main/models/openai_api_compatible/provider/openai_api_compatible.yaml",
+      "https://api.github.com/repos/langgenius/dify",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "langflow",
+    "name": "Langflow",
+    "category": "visual-agent-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Langflow",
+      "surface_scope": "Model-driven components and flows",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository langflow-ai/langflow has 154,357 stars, is not archived, and shows pushed_at 2026-09-07T00:42:28Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/langflow-ai/langflow"
+      ]
+    },
+    "optimization_surfaces": [
+      "Prompt templates",
+      "Deterministic/custom components",
+      "Agent model connection",
+      "Global provider/model controls"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use a Prompt Template plus exact relevant input and deterministic components for data preparation.",
+        "Keep current model and approved tool scope, and test the full flow in Playground with real expected outputs."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Project complete raw results into a source-linked concise component output; preserve the original and all exceptions.",
+        "Use a focused new flow/task context after a reviewed checkpoint; verify actual memory handling."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "workflow composition",
+      "mechanism": "Agent/model/component flow wiring; isolated parallel delegation is not asserted for all components."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Settings > Model Providers > OpenAI Compatible can point to an OpenAI-compatible endpoint. Enable the intended model and connect the Language Model output to the Agent component.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider/gateway API key with model access; application login is distinct. Current docs say one key per provider in global model settings.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Provider usage plus local/managed hosting and any separate retrieval/embedding services.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Global provider changes can affect multiple flows.",
+      "Embedding model configuration is separate; changing the chat endpoint does not reroute every service.",
+      "A valid model list is not an end-to-end tool-call test.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.langflow.org/components-models",
+      "https://api.github.com/repos/langflow-ai/langflow",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "copilot-studio",
+    "name": "Microsoft Copilot Studio",
+    "category": "business-agent-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Microsoft Copilot Studio",
+      "surface_scope": "Low-code agents/workflows with multiple harnesses; not GitHub Copilot IDE or Microsoft Agent Framework",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Microsoft documents enterprise channels, governance and more than 1,400 external connectors on the current product page. This is vendor platform/distribution breadth, not an audited agent-user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio"
+      ]
+    },
+    "optimization_surfaces": [
+      "Agent instructions and knowledge",
+      "Topics and deterministic flows",
+      "Connector/tool outputs",
+      "Built-in evaluations"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Identify the selected harness first: current docs distinguish GitHub Copilot, standard and Copilot chat harnesses.",
+        "Use precise instructions, scoped knowledge and deterministic flows for repeatable work; test required cases in the native evaluator before publishing."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Return a concise explicit result from a flow/tool while retaining full business records in their source system.",
+        "Keep handoff state and all failed cases; do not treat reducing connector payloads as rewriting the managed model context."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native orchestration, harness-specific",
+      "mechanism": "Agents/workflows can coordinate and call agents. Do not transfer SDK or CLI subagent configuration into Studio."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Microsoft tenant/maker access and separately authorized data connectors. Connector OAuth is not a core model-provider credential.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Billing and feature availability depend on the selected Studio harness and contract. Do not assume one universal Copilot credit/token formula or an M365 seat covers all agent execution.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "The reviewed primary-model selector article applies to standard-harness agents; other harnesses differ.",
+      "Custom connectors can call external services, but that does not establish replacing the core orchestration model with OmniRoute.",
+      "No generic inference base URL is established here; an explicit gateway HTTP tool would be a separately governed tool call.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio",
+      "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model",
+      "https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "open-webui",
+    "name": "Open WebUI",
+    "category": "self-hosted-chat-ui",
+    "current_status": {
+      "state": "active",
+      "family": "Open WebUI",
+      "surface_scope": "Main chat UI; ecosystem Computer is a separate surface",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository open-webui/open-webui has 151,159 stars, is not archived, and shows pushed_at 2026-09-07T03:24:01Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/open-webui/open-webui"
+      ]
+    },
+    "optimization_surfaces": [
+      "Selected chat context and tools",
+      "Admin model connections",
+      "Native subagents when enabled",
+      "Application-managed context extensions"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use exact relevant files and narrow authorized tools in an existing chat/model profile.",
+        "Keep all required raw evidence and inspect which auxiliary features make model calls. Do not enable new scripts or global extensions just for this recipe."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Provide an explicit reviewed context projection and preserve original chats/files.",
+        "If subagents are already authorized, send exact attached-file IDs and bounded tasks; measure all children and restoration work."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native opt-in",
+      "mechanism": "Subagents are disabled by default; require global/model enablement and native function calling in UI chats. Direct API callers do not automatically receive delegate_task."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "Settings > Admin > Connections > Manage OpenAI API Connections > Add Connection, with URL, API Key and optional Model IDs (Filter). Main documented protocol is Chat Completions; Open Responses support is experimental.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Provider/gateway API credential; Open WebUI application login is separate from model inference credentials.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Provider/local compute and hosting costs; native subagents and auxiliary features add model usage.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Failed /models verification can reflect discovery incompatibility rather than failed chat; manually specified model IDs still need an actual trial.",
+      "Protocol compatibility is feature-specific, not proof that every provider tool/reasoning extension works.",
+      "Legacy Pipelines are not a new-deployment recommendation from this packet.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.openwebui.com/getting-started/quick-start/connect-a-provider/starting-with-openai-compatible/",
+      "https://docs.openwebui.com/features/chat-conversations/chat-features/subagents/",
+      "https://raw.githubusercontent.com/open-webui/open-webui/main/README.md",
+      "https://api.github.com/repos/open-webui/open-webui",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "librechat",
+    "name": "LibreChat",
+    "category": "self-hosted-chat-ui",
+    "current_status": {
+      "state": "active",
+      "family": "LibreChat",
+      "surface_scope": "Custom endpoints and application-native agent/chat features",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Official repository danny-avila/LibreChat has 42,876 stars, is not archived, and shows pushed_at 2026-09-07T04:38:59Z; an interest/activity signal, not user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://api.github.com/repos/danny-avila/LibreChat"
+      ]
+    },
+    "optimization_surfaces": [
+      "Custom endpoint/model selection",
+      "Prompt presets and source context",
+      "Native application agents/tools",
+      "Separate title/summary model controls"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use the current approved endpoint with an explicit model and task contract; attach only necessary authoritative files.",
+        "Inspect application-level auxiliary title/summary, retrieval and tool calls so the usage denominator includes them."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Retain complete original chats/files and use a reviewed handoff for a focused new context.",
+        "Any summary/history transformation must preserve protected details and paired tool events; test it against originals."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "application agent/tool capabilities; exact delegation unverified",
+      "mechanism": "Do not infer isolated subagent behavior from an Agents feature or an OpenAI-compatible endpoint. Separate specialist calls can be explicit workflow steps."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "librechat.yaml endpoints.custom entries expose name, baseURL, apiKey and models; request protocol and model behavior must match the chosen endpoint.",
+      "what_works": "The named client configuration is documented; it can target an authorized endpoint implementing that protocol. This is a conditional integration candidate, not a tested OmniRoute pairing.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Custom endpoint credential may be admin-managed or user-provided; LibreChat account login does not convey model-provider entitlement.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Provider usage, auxiliary calls, hosting and tools. A self-hosted UI is not free inference.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Current source includes SSRF validation and private-address exceptions for user-provided base URLs; do not disable network controls to reach a gateway.",
+      "An endpoint is not automatically the billing route for titles, embeddings, OCR, agents or other services.",
+      "Source-inspected configuration only; no deployment or route trial.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/danny-avila/LibreChat/main/librechat.example.yaml",
+      "https://api.github.com/repos/danny-avila/LibreChat",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "replit-agent",
+    "name": "Replit Agent",
+    "category": "hosted-app-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Replit",
+      "surface_scope": "Native build/work modes inside existing projects",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Current Replit homepage attributes use/testimonials to Zillow, Talkdesk and other business teams; vendor-published customer evidence, not an independent user count.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://replit.com/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Plan mode",
+      "Exact project context",
+      "Native task/checkpoint system",
+      "Diff/artifact verification"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use Plan mode to agree the exact files and acceptance checks before building.",
+        "Provide one coherent change request, then inspect the native diff/checkpoint and real output. Preserve the current build/model mode and paid-action approvals."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Split independent tasks only after assigning file ownership and integration checks.",
+        "Keep source artifacts and checkpoints, and use a reviewed handoff instead of repeated full-context prompting."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native task workflow",
+      "mechanism": "Background tasks vary by plan. Their presence does not grant a programmable model endpoint or unlimited parallel agents."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Replit account/workspace access and the selected mode/plan. API keys used by a generated app are not the Agent core inference credential.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Current docs distinguish Free, Power, Max and enterprise Auto behavior. Agent usage is separate from deployment and other app service charges; inspect actual Usage.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not preserve older universal per-checkpoint or per-request pricing as current.",
+      "Adding a provider key to generated application code does not reroute the builder agent.",
+      "Checkpoint rollback cannot reverse remote actions or spent usage.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.replit.com/features/agent/overview",
+      "https://docs.replit.com/billing/ai-billing",
+      "https://replit.com/",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "category": "hosted-app-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Lovable",
+      "surface_scope": "Native build/plan workflow; generated app integrations are separate",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Current first-party customer page says 40,000+ businesses use Lovable for work and names Nursa. This is a vendor claim, not audited active usage.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://lovable.dev/customers"
+      ]
+    },
+    "optimization_surfaces": [
+      "Plan and build prompts",
+      "Project context/knowledge",
+      "Focused change requests",
+      "Review of generated artifacts"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Start with a clear user flow and acceptance criteria. Plan one coherent change before generation.",
+        "Use exact project context and inspect the implemented result instead of repeatedly regenerating the full app."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Keep the authoritative project and source-linked checkpoint before a phase change.",
+        "Reduce redundant build calls rather than assuming shorter wording proportionally changes credits. Reopen exact originals on regressions."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "limited native workflow",
+      "mechanism": "Task/plan separation; no generic headless subagent contract established in this packet."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Lovable account/workspace login. Credentials connected to a deployed app or AI gateway are distinct from core builder authentication.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Current credits page describes a gradual unified balance rollout across Build, Cloud and deployed-app AI, with usage-specific grants. Some workspaces retain the earlier experience; inspect the actual workspace.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Do not say all credits are only build-chat tokens or apply one old balance layout universally.",
+      "A generated application can call an API without making the Lovable builder itself a configurable proxy client.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.lovable.dev/introduction/welcome",
+      "https://docs.lovable.dev/tips-tricks/from-idea-to-app",
+      "https://docs.lovable.dev/introduction/credits-and-usage",
+      "https://lovable.dev/customers",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "category": "hosted-app-builder",
+    "current_status": {
+      "state": "active",
+      "family": "Bolt",
+      "surface_scope": "Hosted Bolt builder; not the separate open-source bolt.diy project",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Current Bolt product page lists recognizable enterprise users/brands. This vendor trust-list signal supports relevance but is not audited adoption or proof of its savings claims.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://support.bolt.new/get-started/intro-bolt"
+      ]
+    },
+    "optimization_surfaces": [
+      "Exact prompts and project context",
+      "Native Code view",
+      "Plan/build workflow",
+      "Reviewable project output"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Give one bounded requirement with exact files and tests; avoid repeatedly rebuilding the whole project.",
+        "For deterministic simple edits, use native Code view when appropriate and verify the result. Keep existing agent/model mode."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Retain originals and create a reviewed handoff before a focused new task.",
+        "Reduce repeated project-reading/generation work and include all attempts; do not adopt vendor percentage claims as blueprint savings."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "limited native workflow",
+      "mechanism": "Plan/build task workflow only; no universal SDK/headless delegation endpoint established."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Bolt account and plan. App integration keys or a separate fork have different auth and cannot be treated as the hosted builder route.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Native token allowance and paid plan/additional usage; the token page says Code view direct edits do not use tokens. Fixed fees still do not fall automatically.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Native model auto-routing can change the effective model; preserve the chosen setting and disclose inability to hold it fixed.",
+      "The official homepage performance claims were not tested and are not counted as token-saving evidence.",
+      "No arbitrary OmniRoute model-base-URL setting established for hosted Bolt.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://support.bolt.new/get-started/intro-bolt",
+      "https://support.bolt.new/account-and-subscription/tokens",
+      "https://bolt.new/",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "devin-cloud",
+    "name": "Devin cloud",
+    "category": "hosted-coding-surface",
+    "current_status": {
+      "state": "active",
+      "family": "Cognition Devin",
+      "surface_scope": "Cloud counterpart to the existing Windsurf / Devin Desktop guide, not a new local-harness duplicate",
+      "admission": "admit coverage, not an instruction to adopt a new product",
+      "adoption_signal": "Cognition current homepage states Devin is deployed at major institutions; official docs describe business ticket, Slack/Teams and API workflows. These vendor/distribution signals are not audited customer counts.",
+      "adoption_signal_limits": "Repository stars measure interest, not active installations. Vendor customer/distribution statements are attributed signals, not independently audited usage.",
+      "adoption_sources": [
+        "https://docs.devin.ai/get-started/devin-intro"
+      ]
+    },
+    "optimization_surfaces": [
+      "Explicit ticket/task requirements",
+      "Embedded shell/IDE/browser output",
+      "Parallel cloud tasks",
+      "Native app/API task interface"
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation using documented surfaces",
+      "steps": [
+        "Use a precise ticket with completion criteria, setup context and verification steps.",
+        "Inspect shell/test logs and the actual patch or artifact; avoid another attempt until the concrete failure is understood."
+      ],
+      "invariants": "Keep the selected model, effort, auth, permissions and complete acceptance criteria. Existing native compaction/caching is the baseline, not new savings."
+    },
+    "aggressive": {
+      "kind": "optional blueprint policy, not a vendor preset",
+      "steps": [
+        "Assign independent cloud tasks with explicit scope and integration owner, retaining all artifacts.",
+        "Use reviewed handoffs between local and cloud work; do not assume local-agent context controls apply to the hosted worker."
+      ],
+      "recovery": "Retain original inputs and full outputs. Reopen them on missing requirements, source revision changes, missing rows, lost tool IDs or failed checks. A restored config does not restore discarded model-visible history."
+    },
+    "delegation": {
+      "support": "documented native task delegation",
+      "mechanism": "Cloud tasks via web/integrations and Devin API; local /handoff is a separate documented path. API task creation is not OpenAI model inference."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native task/context workflow only. This is not an OmniRoute connection. No generic model-base-URL route is established here for the named surface.",
+      "required_verification": "For a proposed gateway route, verify exact endpoint/protocol, model IDs, tools, streaming, structured output, reasoning/state items, cancellation, errors and usage. Include auxiliary calls and test restoration. No authenticated route was exercised in this review.",
+      "not_claimed": "No universal interception, subscription portability, provider permission, account entitlement or savings percentage."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Devin organization/account access, with its own API credential for task automation where entitled. Not a provider API key.",
+      "gateway_boundary": "Client authentication to a gateway is separate from gateway authentication to an upstream. OmniRoute documents upstream OAuth and API-key mechanisms. A configurable API client does not establish which upstream credential, entitlement or provider terms apply. This row authorizes none.",
+      "account_entitlement": "Not inspected. The account owner must confirm the specific seat, model, region, quotas, admin policy and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Plan/contract-dependent Devin usage; exact current cloud pricing and unit formula were not established in this packet. Do not reuse Desktop quotas or legacy ACUs as a universal formula.",
+      "measurement_policy": "Separate fixed fees, included allowance, additional usage, provider charges, tools, hosting and auxiliary model calls. Lower tokens need not lower a fixed bill or per-response credit charge."
+    },
+    "limitations": [
+      "Keep cloud coverage alongside the existing Devin Desktop family, not as a replacement name for Cascade or Devin Local.",
+      "A task API does not establish arbitrary backend model routing.",
+      "No paid task or API invocation was run.",
+      "No authenticated native or OmniRoute end-to-end test; no measured task-level savings."
+    ],
+    "sources": [
+      "https://docs.devin.ai/get-started/devin-intro",
+      "https://cognition.com/",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/README.md"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current first-party documentation and/or source inspection; recommendations explicitly labeled; runtime behavior untested"
+  },
+  {
+    "id": "zed",
+    "name": "Zed Agent, External Agents and Terminal Threads",
+    "category": "editor-agent-surface",
+    "current_status": {
+      "state": "active",
+      "family": "Zed Agent, External Agents and Terminal Threads",
+      "surface_scope": "editor-agent-surface",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Official dedicated model access documentation distinguishes native/editor and external-agent paths.",
+      "adoption_sources": [
+        "https://zed.dev/docs/ai/llm-providers"
+      ]
+    },
+    "optimization_surfaces": [
+      "Identify Zed-owned AI versus an External Agent/Terminal Thread first; their model access is configured separately.",
+      "Use scoped project evidence and native precise edits; keep required checks and model/effort."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "Identify Zed-owned AI versus an External Agent/Terminal Thread first; their model access is configured separately.",
+        "Use scoped project evidence and native precise edits; keep required checks and model/effort."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "Use reviewed focused threads and retain original sources; do not assume external-agent context controls apply to the Zed Agent."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "External Agents/Terminal Threads own their runtime, model access and authentication; configuring a Zed LLM provider does not configure them."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "language_models.openai_compatible.<provider>.api_url",
+      "what_works": "Zed-owned model features document compatible endpoint configuration. Actual OmniRoute protocol/feature acceptance remains untested.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Zed-hosted billing, provider API keys, documented existing-subscription paths and external-agent-owned sign-in are distinct. Environment keys can override system-keychain values.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Zed-hosted model billing differs from provider API charges and external agent subscription usage.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "Never store API keys in settings.json.",
+      "Set tools/reasoning capabilities from actual model support, not desired functionality.",
+      "No authenticated route test or whole-task savings benchmark."
+    ],
+    "sources": [
+      "https://zed.dev/docs/ai/llm-providers",
+      "https://zed.dev/docs/ai/use-api-access.html",
+      "https://zed.dev/docs/ai/use-an-existing-subscription.html"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  },
+  {
+    "id": "openhands",
+    "name": "OpenHands and its Software Agent SDK",
+    "category": "agent-platform-sdk",
+    "current_status": {
+      "state": "active",
+      "family": "OpenHands and its Software Agent SDK",
+      "surface_scope": "agent-platform-sdk",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Official maintained platform/SDK documentation and provider architecture establish the relevant product family.",
+      "adoption_sources": [
+        "https://docs.openhands.dev/sdk/arch/llm"
+      ]
+    },
+    "optimization_surfaces": [
+      "Use the documented LLM configuration for the exact OpenHands surface; retain model and task checks.",
+      "Scope source inputs and use execution tools for deterministic work. Count security/condenser helper calls separately."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "Use the documented LLM configuration for the exact OpenHands surface; retain model and task checks.",
+        "Scope source inputs and use execution tools for deterministic work. Count security/condenser helper calls separately."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "Consider native condenser/context controls only with retained events/sources and task acceptance; include retries and separate model calls."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "A real OpenHands agent/runtime supplies execution and tools; the LLM component alone is not a complete worker."
+    },
+    "omniroute_interface": {
+      "tier": "documented configurable interface",
+      "client_interface": "LLM.base_url with LiteLLM Chat Completions/Responses paths",
+      "what_works": "The SDK exposes a custom base URL. Gateway support must preserve the selected protocol, encrypted reasoning and tool events.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "SDK source includes API credentials and a subscription_login factory with OAuth/cache/refresh handling, including an OpenAI example. Code support is not a blanket provider-policy or entitlement certification.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Provider/API, native subscription path and hosted OpenHands service are separate billing/entitlement questions.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "Do not apply local SDK configuration assumptions to every hosted UI.",
+      "Model strings, retry settings and encrypted Responses state need route-specific checks.",
+      "No authenticated route test or whole-task savings benchmark."
+    ],
+    "sources": [
+      "https://docs.openhands.dev/sdk/arch/llm",
+      "https://docs.openhands.dev/usage/llms/llms",
+      "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/main/openhands-sdk/openhands/sdk/llm/llm.py"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  },
+  {
+    "id": "microsoft-copilot-chat",
+    "name": "Microsoft Copilot Chat / Microsoft 365 work surfaces",
+    "category": "hosted-business-chat",
+    "current_status": {
+      "state": "active",
+      "family": "Microsoft Copilot Chat / Microsoft 365 work surfaces",
+      "surface_scope": "hosted-business-chat",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Official Microsoft business chat documentation covers work/education deployment and metered agents.",
+      "adoption_sources": [
+        "https://learn.microsoft.com/en-us/copilot/overview"
+      ]
+    },
+    "optimization_surfaces": [
+      "Use specific source files and bounded requests; retain complete requested evidence and native IT/data policies.",
+      "Distinguish ordinary chat from metered agents before comparing costs."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "Use specific source files and bounded requests; retain complete requested evidence and native IT/data policies.",
+        "Distinguish ordinary chat from metered agents before comparing costs."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "Use reviewed handoffs and focused chats with originals retained; do not claim access to hidden model history."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "Agents can be exposed in chat under product/admin entitlements; Copilot Studio and external API workers are separate control/billing paths."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "No generic core-chat inference base-URL override is established by the cited overview. Workflow preparation remains applicable.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Native Microsoft work/education sign-in and tenant eligibility; connector OAuth does not replace the core inference route.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "The overview distinguishes secure chat and pay-as-you-go agents, with standard/priority access conditions. Do not convert a shorter answer to a lower fixed license charge.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "Microsoft 365 Copilot license, Copilot Chat and Copilot Studio are not identical products.",
+      "Availability and feature access depend on tenant/plan/service capacity.",
+      "No authenticated route test or whole-task savings benchmark."
+    ],
+    "sources": [
+      "https://learn.microsoft.com/en-us/copilot/overview",
+      "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  },
+  {
+    "id": "gemini-notebook",
+    "name": "Gemini Notebook (NotebookLM URL)",
+    "category": "source-grounded-research-app",
+    "current_status": {
+      "state": "current landing/help use Gemini Notebook",
+      "family": "Gemini Notebook (NotebookLM URL)",
+      "surface_scope": "source-grounded-research-app",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Official Google research application landing supports files, sources, citations and notebook outputs.",
+      "adoption_sources": [
+        "https://notebooklm.google/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Organize relevant authoritative sources into a focused notebook; preserve originals and ask for checkable source citations.",
+      "Do not treat a summary or retrieval hit as complete semantic review of every source."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "Organize relevant authoritative sources into a focused notebook; preserve originals and ask for checkable source citations.",
+        "Do not treat a summary or retrieval hit as complete semantic review of every source."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "Use reviewed extracted notes and focused notebooks only where permitted by the task; preserve qualifications and full source access."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "Native notebook outputs and features are not a programmable multi-agent worker pool."
+    },
+    "omniroute_interface": {
+      "tier": "limited native/workflow-only support",
+      "client_interface": null,
+      "what_works": "Native source preparation and review workflow only. No generic inference gateway setting is established by these sources.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Google account and applicable product/workspace policy; not interchangeable with a Gemini developer API key.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Use actual in-app plan/feature limits. No token meter or percentage saving is inferred from the marketing page.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "Current official notebooklm.google landing and help identify the product as Gemini Notebook; verify the account UI during rollout.",
+      "No automatic history interception or consumer-to-API entitlement transfer claimed.",
+      "No authenticated route test or whole-task savings benchmark."
+    ],
+    "sources": [
+      "https://notebooklm.google/",
+      "https://support.google.com/gemininotebook/?hl=en"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  },
+  {
+    "id": "roo-code-legacy",
+    "name": "Roo Code, legacy recognition",
+    "category": "legacy-editor-agent",
+    "current_status": {
+      "state": "official extension shutdown notice",
+      "family": "Roo Code, legacy recognition",
+      "surface_scope": "legacy-editor-agent",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Known VS Code coding-agent lineage; first-party shutdown notice warrants explicit recognition rather than silently omitting it.",
+      "adoption_sources": [
+        "https://docs.roocode.com/"
+      ]
+    },
+    "optimization_surfaces": [
+      "Preserve existing settings/source history and review migration options instead of following stale installation links."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "Preserve existing settings/source history and review migration options instead of following stale installation links."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "No new aggressive rollout recommended for the shut-down extension."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "Historical modes/orchestration do not establish current service support; a community fork requires its own review."
+    },
+    "omniroute_interface": {
+      "tier": "legacy or migration-only",
+      "client_interface": null,
+      "what_works": "No new integration recommendation; retained sources explain historical capabilities only.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "Existing-user credentials remain private; do not transfer them to a fork without permission and review.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Official documentation directs paying-user billing questions separately; current entitlement is not established.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "Official docs prominently state the extension shut down on May 15th.",
+      "Old getting-started text lower on the page does not override the shutdown notice.",
+      "No authenticated route test or whole-task savings benchmark."
+    ],
+    "sources": [
+      "https://docs.roocode.com/"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  },
+  {
+    "id": "flowise-legacy",
+    "name": "Flowise, archived repository / existing deployments",
+    "category": "legacy-business-builder",
+    "current_status": {
+      "state": "archived repository; official core-team EOL announced",
+      "family": "Flowise, archived repository / existing deployments",
+      "surface_scope": "legacy-business-builder",
+      "admission": "Coverage, not automatic adoption or a tested account",
+      "adoption_signal": "Large established visual-agent project with a current archive notice; included for existing-user recognition, not adoption promotion.",
+      "adoption_sources": [
+        "https://github.com/FlowiseAI/Flowise"
+      ]
+    },
+    "optimization_surfaces": [
+      "For an existing authorized deployment, retain its version/configuration and use deterministic nodes to avoid repeated inference.",
+      "Review maintenance and migration before choosing this as a new foundation."
+    ],
+    "conservative": {
+      "kind": "blueprint recommendation on documented surfaces",
+      "steps": [
+        "For an existing authorized deployment, retain its version/configuration and use deterministic nodes to avoid repeated inference.",
+        "Review maintenance and migration before choosing this as a new foundation."
+      ]
+    },
+    "aggressive": {
+      "kind": "optional task-specific recommendation, not vendor preset",
+      "steps": [
+        "Use bounded context/node-output changes only on retained supported deployments with rollback; no new default rollout."
+      ]
+    },
+    "delegation": {
+      "support": "source-documented or workflow-only as stated",
+      "mechanism": "Existing agent/flow nodes supply orchestration; adding a gateway alone does not supply tools or memory isolation."
+    },
+    "omniroute_interface": {
+      "tier": "legacy documented configurable interface",
+      "client_interface": "ChatOpenAI basePath maps to configuration.baseURL",
+      "what_works": "The archived source supports a custom endpoint for this node; not proof of every deployed version or current hosted service.",
+      "required_verification": "Verify exact version, endpoint, upstream auth, payer, model/tool/state semantics, all retries and task acceptance before traffic.",
+      "not_claimed": "No authenticated route, universal account entitlement or measured savings."
+    },
+    "upstream_auth": {
+      "documented_native_mechanism": "The inspected node uses the openAIApi credential and a gateway-compatible base path; this does not constrain how that gateway authenticates upstream.",
+      "gateway_boundary": "Gateway API transport and upstream OAuth/API-key authentication are separate axes.",
+      "account_entitlement": "Account not inspected; confirm provider terms, data scope, quota and payer."
+    },
+    "billing": {
+      "documented_meter_or_boundary": "Existing deployment/provider/hosted service charges must be checked separately.",
+      "measurement_policy": "Count full task, helpers, retries, cache effects, hosting and rework; fixed fees do not automatically fall."
+    },
+    "limitations": [
+      "GitHub marks the repository archived August 13, 2026. This is not proof that every hosted commercial service has ended.",
+      "The old documentation URL returned empty content; the actual archived node implementation supplies interface evidence.",
+      "No authenticated route test or whole-task savings benchmark.",
+      "Maintainer timeline specifies August 31, 2026 EOL for official core-team presence; retained code is not active maintenance."
+    ],
+    "sources": [
+      "https://github.com/FlowiseAI/Flowise",
+      "https://raw.githubusercontent.com/FlowiseAI/Flowise/main/packages/components/nodes/chatmodels/ChatOpenAI/ChatOpenAI.ts",
+      "https://github.com/FlowiseAI/Flowise/discussions/6727"
+    ],
+    "checked_on": "2026-09-07",
+    "evidence_level": "current primary documentation/source; workflow recommendations identified; runtime untested"
+  }
+]

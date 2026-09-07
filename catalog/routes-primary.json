@@ -302,7 +302,7 @@
     "support_level": "limited",
     "control": "unresolved",
     "guide": "docs/harnesses/qwen-code.md",
-    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "conservative": "Do not start new inference through this unavailable, discontinued or explicitly restricted route. Preserve local evidence and select a separately approved currently supported route; do not silently change the model or payer.",
     "aggressive": "Not supported for new setup. Select a separately approved current route.",
     "caveats": [
       "Official docs state free tier ended 2026-04-15.",
@@ -349,10 +349,10 @@
       "Separate API bill; retained session does not automatically switch to API billing."
     ],
     "sources": [
-      "https://docs.x.ai/build/enterprise.md",
-      "https://docs.x.ai/build/settings.md",
+      "https://docs.x.ai/build/enterprise",
+      "https://docs.x.ai/build/settings",
       "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md",
-      "https://docs.x.ai/developers/models/grok-4.6.md"
+      "https://docs.x.ai/developers/models/grok-4.6"
     ],
     "checked_on": "2026-09-06"
   },
@@ -372,7 +372,7 @@
       "Policy pins can override local settings."
     ],
     "sources": [
-      "https://docs.x.ai/build/enterprise.md",
+      "https://docs.x.ai/build/enterprise",
       "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md"
     ],
     "checked_on": "2026-09-06"
@@ -393,7 +393,7 @@
       "Endpoint capabilities and usage require a real trial."
     ],
     "sources": [
-      "https://docs.x.ai/build/settings.md",
+      "https://docs.x.ai/build/settings",
       "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md"
     ],
     "checked_on": "2026-09-06"
@@ -417,7 +417,7 @@
     "sources": [
       "https://raw.githubusercontent.com/pftq/GrokBot/main/README.md",
       "https://raw.githubusercontent.com/Franzferdinan51/GrokBot/main/README.md",
-      "https://docs.x.ai/grok-bot/overview.md",
+      "https://docs.x.ai/grok-bot/overview",
       "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/README.md"
     ],
     "checked_on": "2026-09-06"
@@ -450,7 +450,7 @@
     "support_level": "limited",
     "control": "unresolved",
     "guide": "docs/harnesses/gemini-cli.md",
-    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "conservative": "Do not start new inference through this unavailable, discontinued or explicitly restricted route. Preserve local evidence and select a separately approved currently supported route; do not silently change the model or payer.",
     "aggressive": "No old-route setup; use the separately approved current product path.",
     "caveats": [
       "Official notice says affected Gemini CLI requests stopped June 18, 2026.",
@@ -649,7 +649,7 @@
     "support_level": "unresolved",
     "control": "unresolved",
     "guide": "docs/harnesses/hermes.md",
-    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "conservative": "Do not start new inference through this unavailable, discontinued or explicitly restricted route. Preserve local evidence and select a separately approved currently supported route; do not silently change the model or payer.",
     "aggressive": "No new OAuth setup recipe.",
     "caveats": [
       "Not approved as a new free entitlement or automatic setup.",
@@ -845,7 +845,7 @@
     "support_level": "limited",
     "control": "unresolved",
     "guide": "docs/harnesses/opencode.md",
-    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "conservative": "Do not start new inference through this unavailable, discontinued or explicitly restricted route. Preserve local evidence and select a separately approved currently supported route; do not silently change the model or payer.",
     "aggressive": "Not supported through the prohibited subscription plugin route.",
     "caveats": [
       "Official OpenCode provider page states plugins prohibited and unbundled since 1.3.0.",

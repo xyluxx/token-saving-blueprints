@@ -62,7 +62,7 @@ Use the same acceptance criteria as the baseline. Record failed attempts, restor
 
 [Delegation](../delegation.md) can keep a bounded job in a smaller, complete worker context. The parent verifies the result. Cheaper/free worker models require a separate cost/quality choice; do not silently change the main model or effort.
 
-The [OmniRoute add-on](../addons/omniroute.md) is a restricted API pilot, not a default gateway. Its narrow structured-data candidate needs the route, parsing, coverage and request-size gates. If those cannot be met, leave gateway compression off. Native subscription login stays on its supported native route.
+The [OmniRoute add-on](../addons/omniroute.md) is a restricted API pilot, not a default gateway. Its narrow structured-data candidate needs the route, parsing, coverage and request-size gates. If those cannot be met, leave gateway compression off. Native subscription login stays on its supported native route by default. An already approved OAuth gateway or CLI-owned bridge can also use Conservative methods; creating or changing that route requires separate consent and provider-specific checks.
 
 ## Do not add these by default
 

@@ -66,7 +66,7 @@ The installed CLI identified as 2.1.205; live documentation contains later featu
 
 ## Native headless use and delegation
 
-The current official SDK support article starts with a June 15 update pausing the proposed separate-credit change: supported Agent SDK and `claude -p` usage currently still draw from subscription usage limits. Do not use the lower historical credit table as current pricing. Keep this distinction separate from provider restrictions on credential collection/intermediation. See [Delegation](../delegation.md) for bounded native workers and headless patterns.[71]
+The current official SDK support article starts with a June 15 update pausing the proposed separate-credit change: Claude Agent SDK, `claude -p`, and third-party app usage still draw from subscription usage limits under that notice. Do not use the lower historical credit table as current pricing. Keep this distinction separate from provider restrictions on credential collection/intermediation. See [Delegation](../delegation.md) for bounded native workers and headless patterns.[71]
 
 ## Sources
 

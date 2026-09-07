@@ -62,7 +62,7 @@ The official Grok Bot discovery does not resolve what an unspecified “Grokbot�
 
 [9] https://raw.githubusercontent.com/pftq/GrokBot/main/README.md — grokbot-pftq
 [10] https://raw.githubusercontent.com/Franzferdinan51/GrokBot/main/README.md — grokbot-franz
-[21] https://docs.x.ai/grok-bot/overview.md — grokbot-official
-[22] https://docs.x.ai/grok-bot/faq.md — grokbot-faq
+[21] https://docs.x.ai/grok-bot/overview — grokbot-official
+[22] https://docs.x.ai/grok-bot/faq — grokbot-faq
 [27] https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md — grok-auth-source
 [28] https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/README.md — grok-cli-source

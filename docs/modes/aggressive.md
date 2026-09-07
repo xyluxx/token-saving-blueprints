@@ -81,7 +81,7 @@ Use [the paired trial](../measurement.md). Include compressor/helper use, cache 
 
 Use [delegation](../delegation.md) with explicit worker scope, model/effort, permissions and verification. A cheaper worker is a separate economic option, not another compression percentage.
 
-The [OmniRoute profile](../addons/omniroute.md) selects one eligible output owner after its API route gates pass. It does not mean turning on the gateway’s `aggressive` or every registered engine. [Free-provider lanes](../addons/free-provider-lanes.md) have their own entitlement, spending and privacy checks.
+The [OmniRoute profile](../addons/omniroute.md) selects one eligible output owner after its protocol, provider-policy, account and runtime gates pass, whether the approved upstream authenticates with a key or OAuth. It does not mean turning on the gateway’s `aggressive` or every registered engine. [Free-provider lanes](../addons/free-provider-lanes.md) have their own entitlement, spending and privacy checks.
 
 ## Optional later methods
 

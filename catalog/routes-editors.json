@@ -554,7 +554,7 @@
       "Provider env/endpoint settings must be checked."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://block.github.io/goose/docs/guides/context-engineering/using-goosehints",
       "https://block.github.io/goose/docs/getting-started/using-extensions",
       "https://block.github.io/goose/docs/guides/managing-tools/goose-permissions",
@@ -577,7 +577,7 @@
       "Cloud consumption differs from a human subscription."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://github.com/aaif-goose/goose"
     ],
     "checked_on": "2026-09-06"
@@ -597,7 +597,7 @@
       "Remote extensions can still disclose data."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://block.github.io/goose/docs/getting-started/using-extensions",
       "https://github.com/aaif-goose/goose"
     ],
@@ -618,7 +618,7 @@
       "Quota is not necessarily an API token/cost meter."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://github.com/aaif-goose/goose"
     ],
     "checked_on": "2026-09-06"
@@ -638,7 +638,7 @@
       "No credential export to another endpoint."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://github.com/aaif-goose/goose"
     ],
     "checked_on": "2026-09-06"
@@ -658,7 +658,7 @@
       "No adapter installation or universal inner-history rewrite is part of recipe."
     ],
     "sources": [
-      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/getting-started/providers.md",
       "https://block.github.io/goose/docs/guides/managing-tools/goose-permissions",
       "https://github.com/aaif-goose/goose"
     ],

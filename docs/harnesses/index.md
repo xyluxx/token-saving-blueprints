@@ -2,6 +2,8 @@
 
 Start with the application you actually run, then choose its authentication/provider route. These are source-backed guides with explicit validation limits, not a claim that every account and version has been exercised.
 
+For ChatGPT/Claude/Gemini apps, SDKs, visual builders, Zed/OpenHands and legacy recognition, use [broader platform coverage](../platform-coverage.md). A listed native workflow is not automatically a proxy integration.
+
 ## Terminal and general-agent harnesses
 
 | Harness | Guide focus |

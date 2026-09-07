@@ -4,8 +4,12 @@ Fill this privately before changing a setup. Record credential names/presence, n
 
 - Harness and exact version/build:
 - Operating system and project/workspace scope:
-- Authentication path and account owner:
-- Provider/endpoint class:
+- Client protocol/interface and execution host:
+- Upstream authentication mechanism, credential owner and refresh owner:
+- Provider/service and exact endpoint class:
+- Account entitlement, quota/billing owner and plan:
+- Current provider permission/terms evidence:
+- Tested behavior, version and unverified limitations:
 - Selected model and reasoning setting:
 - Billing: flat subscription, product credits, metered API, cloud or mixed:
 - Native features already active: search, tool discovery, compaction, cache, edits, execution:

@@ -87,15 +87,15 @@ Official identity is verified; individual plan eligibility, deployed model acces
 
 ## Sources
 
-[1] https://docs.x.ai/build/enterprise.md — grok-enterprise
-[4] https://docs.x.ai/build/cli/headless-scripting.md — grok-headless
-[5] https://docs.x.ai/build/overview.md — grok-overview
-[16] https://docs.x.ai/build/settings.md — grok-settings
-[17] https://docs.x.ai/build/features/hooks.md — grok-hooks
-[18] https://docs.x.ai/build/features/mcp-servers.md — grok-mcp
-[19] https://docs.x.ai/build/features/project-rules.md — grok-rules
-[20] https://docs.x.ai/build/features/sessions.md — grok-sessions
+[1] https://docs.x.ai/build/enterprise — grok-enterprise
+[4] https://docs.x.ai/build/cli/headless-scripting — grok-headless
+[5] https://docs.x.ai/build/overview — grok-overview
+[16] https://docs.x.ai/build/settings — grok-settings
+[17] https://docs.x.ai/build/features/hooks — grok-hooks
+[18] https://docs.x.ai/build/features/mcp-servers — grok-mcp
+[19] https://docs.x.ai/build/features/project-rules — grok-rules
+[20] https://docs.x.ai/build/features/sessions — grok-sessions
 [27] https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md — grok-auth-source
 [28] https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/README.md — grok-cli-source
 [41] https://x.ai/cli — grok-site
-[68] https://docs.x.ai/developers/models/grok-4.6.md — grok-model-price
+[68] https://docs.x.ai/developers/models/grok-4.6 — grok-model-price

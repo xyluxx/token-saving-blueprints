@@ -590,5 +590,42 @@ class AddonAssetTests(unittest.TestCase):
             self.assertTrue(any("declaration" in x for x in v.validate_assets(root)))
 
 
+class CoverageTests(unittest.TestCase):
+    def test_oauth_matrix_preserves_mechanisms_and_untested_boundary(self):
+        import json
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_auth_matrix", None)))
+        self.assertEqual(v.validate_auth_matrix(ROOT), [])
+        for change in ("drop", "tested", "source", "mechanism"):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "catalog").mkdir()
+                data = json.loads((ROOT / "catalog/omniroute-auth.json").read_text())
+                if change == "drop": data["rows"].pop()
+                elif change == "tested": data["runtime_tested"] = True
+                elif change == "source": data["rows"][0]["source_urls"] = []
+                elif change == "mechanism": data["rows"][0].pop("technical_support")
+                (root / "catalog/omniroute-auth.json").write_text(json.dumps(data))
+                self.assertTrue(v.validate_auth_matrix(root))
+
+    def test_platform_catalogue_keeps_identity_sources_and_limits(self):
+        import json
+        v = load_validation(self)
+        self.assertTrue(callable(getattr(v, "validate_platform_coverage", None)))
+        self.assertEqual(v.validate_platform_coverage(ROOT), [])
+        for change in ("drop", "identity", "source", "tier", "type"):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "catalog").mkdir()
+                data = json.loads((ROOT / "catalog/coverage.json").read_text())
+                if change == "drop": data.pop()
+                elif change == "identity": data[0]["id"] = "invented"
+                elif change == "source": data[0]["sources"] = []
+                elif change == "tier": data[0]["omniroute_interface"]["tier"] = "fully runtime certified"
+                elif change == "type": data[0]["upstream_auth"] = None
+                (root / "catalog/coverage.json").write_text(json.dumps(data))
+                self.assertTrue(v.validate_platform_coverage(root))
+
+
 if __name__ == "__main__":
     unittest.main()

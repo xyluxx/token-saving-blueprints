@@ -74,7 +74,7 @@ Native usage receipts are the first choice. ccusage can read supported local log
 
 ## Important exclusions and identity traps
 
-OmniRoute is a [conditional optional API add-on](addons/omniroute.md), not the default and not a blanket project exclusion. Its native-subscription brokering, all-features presets, automatic fallback and free-pool claims do not become approved simply because a restricted route is being considered. The add-on documents the current source gates and narrower candidates. llmtrim’s documented setup includes a private CA, shell changes and subscription routing, so its installer remains excluded. This blueprint never needs a CA, pooled human seats or hidden fallback to deliver its basic method.[176][166][23]
+OmniRoute is a [conditional optional API add-on](addons/omniroute.md), not the default and not a blanket project exclusion. Its OAuth capability is real and is not synonymous with prohibited subscription brokering. Direct gateway token custody, native CLI-owned bridges, cookie imports, fallback and free-pool claims require separate technical, provider-policy and account decisions. An all-features preset is not approved by selecting a narrow route. The add-on documents the current source gates and narrower candidates. llmtrim’s documented setup includes a private CA, shell changes and subscription routing, so its installer remains excluded. This blueprint never needs a CA, pooled human seats or hidden fallback to deliver its basic method.[176][166][23]
 
 pxpipe’s own README discloses silent exact-string failures, so text-to-image conversion is not a recommended substitute for protected instructions, tool definitions or exact identifiers. LMCache changes inference-serving infrastructure, a surface that ordinary API/subscription clients do not own.[170][172]
 
@@ -87,6 +87,10 @@ Qdrant is excluded as a new mandatory dependency, not as a capable existing vect
 The method is useful if a reader can make one good change without changing who bills them, which model does the work or what “done” means. It is not differentiated merely by listing more tools or multiplying their advertised percentages.
 
 A successful recipe records the existing baseline, the missing surface, the selected owner, expected change, source/permission protections, observed outcome and a clean revert. Conservative work stops before introducing new lossy history transformations. Aggressive work adds only supported selective observation or checkpoint practices with protected state and tested restoration. If the harness has no supported seam, use explicit tools or stay native; do not invent an interception layer.
+
+## Broader platform applicability
+
+The [platform selector](platform-coverage.md) adds desktop/web, SDK, builder and configurable-chat surfaces without calling them all tested gateway integrations. Existing-user migration entries are labeled separately.
 
 ## Sources
 

@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import sys
 
-from validation import load_json_within, normalize_usage, validate_addon_inventory, validate_assets, validate_content, validate_links, validate_market, validate_routes
+from validation import validate_platform_coverage, validate_auth_matrix, load_json_within, normalize_usage, validate_addon_inventory, validate_assets, validate_content, validate_links, validate_market, validate_routes
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
     root = args.root.resolve()
-    findings = validate_links(root) + validate_routes(root) + validate_content(root) + validate_market(root) + validate_addon_inventory(root) + validate_assets(root)
+    findings = validate_links(root) + validate_routes(root) + validate_content(root) + validate_market(root) + validate_addon_inventory(root) + validate_assets(root) + validate_platform_coverage(root) + validate_auth_matrix(root)
     examples_checked = 0
     try:
         examples = load_json_within(root, root / "examples/usage-normalization.json")
