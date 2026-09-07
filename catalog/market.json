@@ -1,0 +1,1671 @@
+[
+  {
+    "id": "native-baseline",
+    "name": "Existing harness and provider built-ins",
+    "category": "native baseline",
+    "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+    "disposition": "core-method",
+    "rationale": "Keep the current model, effort, native login, permissions, compaction, tool discovery and cache as the comparator. No optimizer installation is required.",
+    "license_status": "Provider terms and the chosen harness license apply; no subscription credential redistribution.",
+    "evidence_scope": "First-party documentation and prior pinned harness-source inspection. No authenticated cross-harness smoke test in this scan.",
+    "overlapping_with": [
+      "headroom",
+      "context-mode",
+      "opencode-dcp"
+    ],
+    "sources": [
+      "https://www.anthropic.com/engineering/advanced-tool-use",
+      "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "https://code.claude.com/docs/en/legal-and-compliance",
+      "https://developers.openai.com/codex/auth"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Native context assembly, tool discovery and provider billing.",
+    "best_tasks": "Every task.",
+    "marginal_savings": "Avoid unnecessary schema loading; native caching discounts repeated prefixes rather than removing logical input tokens.",
+    "adoption_and_rollback": "Inventory effective route and built-ins before changing anything. Keep a settings snapshot; restore only changed project/session settings. Never rewrite opaque provider state.",
+    "authority_maturity": "First-party maintained capabilities; availability is route and version specific.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "source-scoped-reads",
+    "name": "Focused reads and exact coverage",
+    "category": "retrieval method",
+    "url": "https://github.com/BurntSushi/ripgrep",
+    "disposition": "core-method",
+    "rationale": "Start with exact filenames, IDs, source-side fields and relevant spans, not a new vector database. Full-reading and all-record requirements override top-k selection.",
+    "license_status": "Use existing permitted tools. ripgrep is dual MIT/Unlicense.",
+    "evidence_scope": "Source/README inspection of lexical search; method recommendation, not a measured task-saving estimate.",
+    "overlapping_with": [
+      "qmd",
+      "serena",
+      "aider",
+      "llamaindex",
+      "haystack"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/README.md",
+      "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/COPYING"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Source query and explicit read-tool inputs.",
+    "best_tasks": "Known-document lookup, repository exploration, research.",
+    "marginal_savings": "Less irrelevant material enters context and fewer repeated searches occur.",
+    "adoption_and_rollback": "Use existing read/search tools. Preserve source versions, qualifiers and coverage. Widen or restore full sources on missing evidence; remove optional search guidance to revert.",
+    "authority_maturity": "Established lexical tooling; search success alone does not establish semantic completeness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "BurntSushi/ripgrep",
+      "stargazers_count": 68010,
+      "forks_count": 2749,
+      "created_at": "2016-03-11T02:02:33Z",
+      "pushed_at": "2026-08-04T13:59:44Z",
+      "archived": false,
+      "default_branch": "master",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "deterministic-execution",
+    "name": "Deterministic data execution",
+    "category": "data method",
+    "url": "https://duckdb.org/docs/stable/sql/query_syntax/select.html",
+    "disposition": "core-method",
+    "rationale": "Parse, paginate, join, count, deduplicate and generate requested artifacts with existing code or SQL; ask the model to interpret verified results.",
+    "license_status": "Existing runtime terms; SQLite core is public domain; optional engines have separate dependencies.",
+    "evidence_scope": "Official SQL documentation and native code-execution documentation; no savings benchmark run here.",
+    "overlapping_with": [
+      "duckdb",
+      "context-mode",
+      "rlm"
+    ],
+    "sources": [
+      "https://duckdb.org/docs/stable/sql/query_syntax/select.html",
+      "https://www.sqlite.org/copyright.html",
+      "https://www.anthropic.com/engineering/code-execution-with-mcp"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Native approved execution tool or source database.",
+    "best_tasks": "Spreadsheets, paginated APIs, finance calculations, report generation.",
+    "marginal_savings": "Avoid serial model-mediated row handling and repeated generation of unchanged data.",
+    "adoption_and_rollback": "Use read-only snapshots first. Reconcile page and row counts, nulls, multiplicity and totals; retain source and output artifacts. Revert to the existing query/script. Never replay external writes.",
+    "authority_maturity": "Mature deterministic mechanism; calculation over all rows is not semantic review of every row.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "exact-reuse",
+    "name": "Versioned exact reuse",
+    "category": "reuse method",
+    "url": "https://developers.cloudflare.com/ai-gateway/features/caching",
+    "disposition": "core-method",
+    "rationale": "Reuse a verified read or deterministic result only when parameters, source versions, freshness and current authorization match. Matching question text alone is insufficient.",
+    "license_status": "No new required library. Existing store and retention terms apply.",
+    "evidence_scope": "Method recommendation grounded in exact-cache implementation and provider documentation; no hit-rate promise.",
+    "overlapping_with": [
+      "gptcache",
+      "vcache",
+      "cloudflare-ai-gateway",
+      "portkey"
+    ],
+    "sources": [
+      "https://developers.cloudflare.com/ai-gateway/features/caching",
+      "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/gptcache/similarity_evaluation/exact_match.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Application read cache, artifact store or unchanged source snapshot.",
+    "best_tasks": "Recurring reports, stable transformations, unchanged repository reads.",
+    "marginal_savings": "Avoid an entire redundant tool/model operation on valid hits; lookup and invalidation still cost work.",
+    "adoption_and_rollback": "Reuse existing artifacts keyed by exact dependencies and principal. On corrections, revocation or refresh, invalidate and reread. Disable cache to revert; never cache permission or a write confirmation.",
+    "authority_maturity": "Exact reuse is established; dependency completeness remains the integrator’s responsibility.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "ponytail",
+    "name": "Ponytail-inspired complete coding discipline",
+    "category": "agent-turn method",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "disposition": "core-method",
+    "rationale": "Adapt reuse, native-feature-first and smallest-complete-change guidance, not upstream scope reduction or one-check limits. Preserve every required feature, security boundary and project test.",
+    "license_status": "MIT upstream; independently written guidance here, no copied skill text.",
+    "evidence_scope": "Author real-agent benchmark: 12 features, Haiku 4.5, four runs per arm; 22% reported token reduction. Feature functionality was not fully exercised.",
+    "overlapping_with": [
+      "native-baseline",
+      "aider",
+      "dspy"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/skills/ponytail/SKILL.md",
+      "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/benchmarks/results/2026-06-18-agentic.md",
+      "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Task-scoped coding instructions, not model/provider routing.",
+    "best_tasks": "Feature delivery, fixes and refactors.",
+    "marginal_savings": "Less speculative code generation and repeated deliberation or scaffolding.",
+    "adoption_and_rollback": "Load short adapted rules only for the coding task. Verify full acceptance and existing tests; remove the added rules to revert. Do not auto-install the upstream full/ultra plugin.",
+    "authority_maturity": "Popular project with a real-agent author artifact and acknowledged benchmark corrections; not a universal quality guarantee. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "DietrichGebert/ponytail",
+      "stargazers_count": 129286,
+      "forks_count": 6925,
+      "created_at": "2026-06-12T00:52:37Z",
+      "pushed_at": "2026-09-04T12:35:29Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "aider",
+    "name": "Aider repository maps and native edit formats",
+    "category": "code navigation",
+    "url": "https://aider.chat/docs/repomap.html",
+    "disposition": "core-method",
+    "rationale": "For existing Aider users, keep its map and model-appropriate patch format. Do not install a second map simply to duplicate the overview.",
+    "license_status": "Apache-2.0 code; tree-sitter grammars and model-provider access are separate.",
+    "evidence_scope": "Official docs and repomap source: graph ranking under a token budget, with omissions and dynamic expansion. No incremental whole-task percentage claimed.",
+    "overlapping_with": [
+      "serena",
+      "qmd",
+      "source-scoped-reads"
+    ],
+    "sources": [
+      "https://aider.chat/docs/repomap.html",
+      "https://aider.chat/docs/more/edit-formats.html",
+      "https://raw.githubusercontent.com/Aider-AI/aider/main/aider/repomap.py",
+      "https://raw.githubusercontent.com/Aider-AI/aider/main/LICENSE.txt"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Existing harness repository map and edit format.",
+    "best_tasks": "Unknown code architecture and focused changes.",
+    "marginal_savings": "A ranked structural map replaces whole-repository dumps; patches avoid regenerating unchanged files.",
+    "adoption_and_rollback": "Use native settings and existing map. Read full edit targets and callers; restore the prior map/edit setting if navigation or patch retries regress.",
+    "authority_maturity": "Established coding harness; maps orient rather than prove exhaustive code review.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "rtk",
+    "name": "RTK",
+    "category": "command output",
+    "url": "https://github.com/rtk-ai/rtk",
+    "disposition": "optional",
+    "rationale": "Use explicit, narrowly selected repetitive command filters only when the native output is still noisy. Never filter complete diffs or forensic records by default.",
+    "license_status": "Apache-2.0; check chosen release binary and dependencies.",
+    "evidence_scope": "README, tee/tracking source and benchmark inspection. Up to 90% concerns eligible Bash output; the inspected counter estimates bytes/4, not provider receipts.",
+    "overlapping_with": [
+      "headroom",
+      "context-mode",
+      "leanctx",
+      "squeez"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/README.md",
+      "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/src/core/tee.rs",
+      "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/src/core/tracking.rs",
+      "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit shell wrapper; automatic input rewrites depend on the harness adapter.",
+    "best_tasks": "Repetitive test/build/status output.",
+    "marginal_savings": "Remove progress and repeated output before subsequent model ingestion.",
+    "adoption_and_rollback": "Pilot explicit invocations in one project, retain raw stdout/stderr and exit code independently. Bypass RTK to revert. Its bounded tee is not a durable archive; never rerun a write for raw output.",
+    "authority_maturity": "Established command-specific implementation and public tests; large payload savings are not end-to-end quality evidence. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "rtk-ai/rtk",
+      "stargazers_count": 79111,
+      "forks_count": 5008,
+      "created_at": "2026-01-22T16:54:16Z",
+      "pushed_at": "2026-09-05T00:00:59Z",
+      "archived": false,
+      "default_branch": "develop",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "serena",
+    "name": "Serena",
+    "category": "code navigation",
+    "url": "https://github.com/oraios/serena",
+    "disposition": "optional",
+    "rationale": "Add only if the current harness lacks healthy symbol navigation. Native diagnostics alone are not equivalent to definition/reference lookup.",
+    "license_status": "MIT core; language-server licenses/downloads and optional paid JetBrains backend require separate checks.",
+    "evidence_scope": "README, running guide and symbol-tools source inspected; no task-wide savings benchmark reproduced.",
+    "overlapping_with": [
+      "aider",
+      "source-scoped-reads",
+      "qmd"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/oraios/serena/main/README.md",
+      "https://raw.githubusercontent.com/oraios/serena/main/LICENSE",
+      "https://raw.githubusercontent.com/oraios/serena/main/src/serena/tools/symbol_tools.py",
+      "https://raw.githubusercontent.com/oraios/serena/13ac8c5b1d51873bd148aea440dcb22f85d3a439/docs/02-usage/020_running.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Per-project MCP symbol lookup and edit tools.",
+    "best_tasks": "Cross-file coding and references.",
+    "marginal_savings": "Retrieve relevant symbols rather than repeatedly reading entire files.",
+    "adoption_and_rollback": "Use a scoped stdio server and required language server; inspect read/edit permissions. Remove its MCP registration and stop its process to revert; code edits still need normal review.",
+    "authority_maturity": "Mature language-intelligence integration; dynamic imports, reflection and generated code need additional investigation. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "oraios/serena",
+      "stargazers_count": 28902,
+      "forks_count": 1964,
+      "created_at": "2025-03-23T22:35:24Z",
+      "pushed_at": "2026-09-06T11:51:53Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "toon",
+    "name": "TOON",
+    "category": "structured encoding",
+    "url": "https://github.com/toon-format/toon",
+    "disposition": "optional",
+    "rationale": "Compare against compact JSON and typed CSV before selecting TOON for regular records. Keep actual protocol schemas and signed payloads unchanged.",
+    "license_status": "MIT; validate runtime numeric precision and chosen encoder dependencies.",
+    "evidence_scope": "Encoder source and author retrieval benchmark: 244 questions across four models; about 14.45% fewer format tokens than compact JSON, not full-task savings.",
+    "overlapping_with": [
+      "deterministic-execution",
+      "headroom",
+      "context-mode"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/toon-format/toon/main/packages/toon/README.md",
+      "https://raw.githubusercontent.com/toon-format/toon/main/LICENSE",
+      "https://raw.githubusercontent.com/toon-format/toon/main/packages/toon/src/encode/encoders.ts",
+      "https://raw.githubusercontent.com/toon-format/toon/f151a5d830d001bc244395b891183cba37e0d935/benchmarks/results/retrieval-accuracy.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit model-visible data serialization.",
+    "best_tasks": "Uniform JSON arrays and repetitive keyed records.",
+    "marginal_savings": "Share field names instead of repeating them per record.",
+    "adoption_and_rollback": "Encode a retained copy, round-trip types/nulls/IDs/order and count the target tokenizer plus format instructions. Revert by returning the original compact JSON.",
+    "authority_maturity": "Published format and implementation; value round-trip does not guarantee model comprehension, and nested data can grow. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "toon-format/toon",
+      "stargazers_count": 25331,
+      "forks_count": 1119,
+      "created_at": "2025-10-22T18:17:32Z",
+      "pushed_at": "2026-09-03T07:09:24Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "qmd",
+    "name": "QMD by tobi",
+    "category": "local document retrieval",
+    "url": "https://github.com/tobi/qmd",
+    "disposition": "optional",
+    "rationale": "A practical local index for recurring notes/docs when lexical search is insufficient; not a replacement for a required full read.",
+    "license_status": "MIT code. Node/Bun and node-llama-cpp dependencies; GGUF embedding/reranking/expansion weights need their own terms and download approval.",
+    "evidence_scope": "README and MCP/store source inspected. Bench fixtures exist; no independently reproduced whole-task saving for this repository.",
+    "overlapping_with": [
+      "source-scoped-reads",
+      "llamaindex",
+      "haystack",
+      "serena"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/README.md",
+      "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/LICENSE",
+      "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/src/mcp/server.ts",
+      "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/src/store.ts"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Local CLI or scoped MCP index; lexical, vector and reranking modes.",
+    "best_tasks": "Repeated search across a permitted documentation collection.",
+    "marginal_savings": "Reuse an index and retrieve exact relevant spans instead of resending a corpus; neural stages add local compute.",
+    "adoption_and_rollback": "Start lexical-only on a small explicit collection. Check exclusions, stale entries and retrieval counts; multi_get has size limits. Remove the MCP entry and index configuration to revert, retaining original files. Avoid unauthenticated shared HTTP.",
+    "authority_maturity": "Substantial adoption and source-visible retrieval controls; collection filters are not an authorization system. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "tobi/qmd",
+      "stargazers_count": 29563,
+      "forks_count": 1840,
+      "created_at": "2025-12-08T14:22:57Z",
+      "pushed_at": "2026-08-18T14:26:31Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "llamaindex",
+    "name": "LlamaIndex",
+    "category": "application retrieval",
+    "url": "https://github.com/run-llama/llama_index",
+    "disposition": "optional",
+    "rationale": "Use when it is already the application’s retrieval owner or real connectors/pipelines are needed; not a mandatory agent install.",
+    "license_status": "MIT core; separately licensed integrations, embedding weights, parsers and paid LlamaCloud services.",
+    "evidence_scope": "README plus BM25 retriever/query-engine source inspected. Top-k and metadata filters exist; framework support does not establish recall or savings.",
+    "overlapping_with": [
+      "qmd",
+      "haystack",
+      "qdrant"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/README.md",
+      "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/LICENSE",
+      "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/llama-index-integrations/retrievers/llama-index-retrievers-bm25/llama_index/retrievers/bm25/base.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Application retriever, node selection, metadata filters and reranking.",
+    "best_tasks": "Existing RAG applications with governed sources.",
+    "marginal_savings": "Return fewer irrelevant chunks; persistent indices avoid repeated ingestion.",
+    "adoption_and_rollback": "In a project environment, select core and only required integrations; explicitly select the existing model and embedder. Test ACL/freshness/answer-span recall, then restore the prior pipeline to revert.",
+    "authority_maturity": "Established framework with extensive integrations; turnkey examples can introduce extra models and service charges. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "run-llama/llama_index",
+      "stargazers_count": 52039,
+      "forks_count": 8087,
+      "created_at": "2022-11-02T04:24:54Z",
+      "pushed_at": "2026-09-05T04:39:33Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "haystack",
+    "name": "Haystack",
+    "category": "application retrieval",
+    "url": "https://github.com/deepset-ai/haystack",
+    "disposition": "optional",
+    "rationale": "Alternative to LlamaIndex for an existing application, not an additional retrieval layer.",
+    "license_status": "Apache-2.0 core; integration/model terms and commercial Enterprise Platform are separate; review documented telemetry.",
+    "evidence_scope": "README and BM25 source inspected. Runtime filters default to replacing initialization filters; no default tenant-boundary guarantee.",
+    "overlapping_with": [
+      "llamaindex",
+      "qmd",
+      "qdrant"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/README.md",
+      "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/LICENSE",
+      "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/haystack/components/retrievers/in_memory/bm25_retriever.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Retrieval/ranking/pipeline components and approved application tools.",
+    "best_tasks": "RAG, document processing and existing Python pipelines.",
+    "marginal_savings": "Source filtering and retrieval selection can reduce irrelevant input; repeated indexing has overhead.",
+    "adoption_and_rollback": "Pilot a project-local pipeline with fixed source and authorization constraints; test filter replacement and telemetry policy. Restore the previous pipeline/config to revert.",
+    "authority_maturity": "Established deepset project with paid support/platform options; query filters must never be allowed to remove required ACL constraints. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "deepset-ai/haystack",
+      "stargazers_count": 26435,
+      "forks_count": 3092,
+      "created_at": "2019-11-14T09:05:28Z",
+      "pushed_at": "2026-09-04T17:04:23Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "duckdb",
+    "name": "DuckDB",
+    "category": "data execution",
+    "url": "https://github.com/duckdb/duckdb",
+    "disposition": "optional",
+    "rationale": "Choose only when existing Python/SQL tools do not comfortably handle the local analytical data; do not add a model to calculate totals.",
+    "license_status": "MIT core; extensions and remote-file access need separate approval.",
+    "evidence_scope": "Official SQL docs and repository/license inspected; no LLM token benchmark or installed-engine trial here.",
+    "overlapping_with": [
+      "deterministic-execution",
+      "context-mode"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/duckdb/duckdb/v2.0-cyanoptera/README.md",
+      "https://raw.githubusercontent.com/duckdb/duckdb/v2.0-cyanoptera/LICENSE",
+      "https://duckdb.org/docs/stable/sql/query_syntax/select.html"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Local analytical SQL over authorized source files.",
+    "best_tasks": "Large CSV/Parquet joins, aggregates and reports.",
+    "marginal_savings": "Model sees verified results and exceptions, not every row repeatedly.",
+    "adoption_and_rollback": "Use a scoped environment and read-only input copies; declare types and reconcile full row counts. Revert to the former query/script and retain original datasets.",
+    "authority_maturity": "Established analytical engine; numerical exactness and SQL selection must match the task. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "duckdb/duckdb",
+      "stargazers_count": 41038,
+      "forks_count": 3726,
+      "created_at": "2018-06-26T15:04:45Z",
+      "pushed_at": "2026-09-04T21:57:55Z",
+      "archived": false,
+      "default_branch": "v2.0-cyanoptera",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "tiktoken",
+    "name": "tiktoken",
+    "category": "token accounting",
+    "url": "https://github.com/openai/tiktoken",
+    "disposition": "optional",
+    "rationale": "Useful for eligible OpenAI text encodings; provider usage receipts remain authoritative for billing and full requests.",
+    "license_status": "MIT code; verify the exact encoding/model mapping.",
+    "evidence_scope": "Tokenizer API/source inspected, not an arbitrary-provider metering standard.",
+    "overlapping_with": [
+      "ccusage",
+      "native-baseline"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/README.md",
+      "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/LICENSE",
+      "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/tiktoken/core.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Offline tokenizer for a specified text payload.",
+    "best_tasks": "Comparing compact encodings and eligible output filters.",
+    "marginal_savings": "Does not save tokens itself; rejects transformations that only reduce bytes.",
+    "adoption_and_rollback": "Use the encoding for the actual model and count explanatory overhead. Stop using the comparator or remove the local dependency to revert; do not report text counts as complete multimodal billing.",
+    "authority_maturity": "First-party tokenizer; special tokens, hidden envelopes and non-OpenAI tokenizers differ. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "openai/tiktoken",
+      "stargazers_count": 19191,
+      "forks_count": 1606,
+      "created_at": "2022-12-01T23:22:11Z",
+      "pushed_at": "2026-08-17T05:25:57Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "ccusage",
+    "name": "ccusage by ryoppippi",
+    "category": "token accounting",
+    "url": "https://github.com/ryoppippi/ccusage",
+    "disposition": "optional",
+    "rationale": "Use supported local logs to inspect task/session totals before adding a proxy. Dollar columns may be API-equivalent estimates, not subscription charges.",
+    "license_status": "MIT app license; root LICENSE is a pointer, not the full grant. Inspect the selected package and log access.",
+    "evidence_scope": "Current README, cost-mode docs and Rust cost implementation inspected. Display mode uses zero for absent cost; absence is not evidence of free usage.",
+    "overlapping_with": [
+      "tiktoken",
+      "helicone",
+      "native-baseline"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/apps/ccusage/README.md",
+      "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/apps/ccusage/LICENSE",
+      "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/rust/crates/ccusage-core/src/cost.rs",
+      "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/docs/guide/cost-modes.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Read-only analysis of supported local usage logs.",
+    "best_tasks": "Native subscription and API coding-session accounting.",
+    "marginal_savings": "No direct reduction; reveals repeated work, cached input and expensive trajectories.",
+    "adoption_and_rollback": "Choose the correct adapter, time window and cost mode; reconcile sample events to logs and the provider account. Remove the optional reader to revert; retain original logs.",
+    "authority_maturity": "Established local analysis project, now with a unified CLI; log fields and adapters are version dependent. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "ccusage/ccusage",
+      "stargazers_count": 18395,
+      "forks_count": 818,
+      "created_at": "2025-05-29T16:56:50Z",
+      "pushed_at": "2026-09-06T18:18:13Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "headroom",
+    "name": "Headroom",
+    "category": "observation compression",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "disposition": "optional",
+    "rationale": "Specialist option for a controlled application or explicit tool boundary, not the default transparent proxy. Disable effort routing and reject sampling for exhaustive work.",
+    "license_status": "Apache-2.0 core with notices; optional dependency and model-weight closure requires review.",
+    "evidence_scope": "README, SmartCrusher source, limitations and four-scenario seeded payload artifact inspected. Tool-content tokens only, not complete task quality.",
+    "overlapping_with": [
+      "rtk",
+      "context-mode",
+      "llmlingua",
+      "kompress",
+      "leanctx"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/README.md",
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/headroom/transforms/smart_crusher.py",
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/docs/content/docs/limitations.mdx",
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/benchmarks/results/index_proof_table.txt",
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "SDK transformation, MCP tool or optional gateway; exact capabilities depend on configuration.",
+    "best_tasks": "Repetitive logs, structured observations and exploration.",
+    "marginal_savings": "Select/encode observations before model input; sample-based paths are lossy and restore costs matter.",
+    "adoption_and_rollback": "Prefer an explicit eligible new-output path. Verify raw recovery, no effort changes, telemetry and unchanged endpoint. Bypass that transform to revert; proxy trials require restoring original provider settings too.",
+    "authority_maturity": "Extensive source and benchmarks; the large popularity signal does not override documented lossiness or unmeasured cases. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "headroomlabs-ai/headroom",
+      "stargazers_count": 69137,
+      "forks_count": 5359,
+      "created_at": "2026-01-07T19:58:51Z",
+      "pushed_at": "2026-09-06T03:34:21Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "context-mode",
+    "name": "context-mode",
+    "category": "offloading and execution",
+    "url": "https://github.com/mksglu/context-mode",
+    "disposition": "optional",
+    "rationale": "Optional user-installed execution/indexing tool when built-ins are inadequate. Offloading is not proof that the agent reviewed omitted content.",
+    "license_status": "Elastic License 2.0 source available; substantial hosted/managed-service use needs separate permission. Not a permissive managed-service dependency.",
+    "evidence_scope": "README/license, Codex hook and v0.4 benchmark artifact inspected. 198337 to 12609 bytes over 13 examples; retrieval receipts are not finished answers.",
+    "overlapping_with": [
+      "rtk",
+      "headroom",
+      "qmd",
+      "deterministic-execution"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/README.md",
+      "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/tests/benchmark-results-v04.json",
+      "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/LICENSE",
+      "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/hooks/codex/posttooluse.mjs"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit execution/search MCP tools; lifecycle hooks vary by harness.",
+    "best_tasks": "Large tool outputs and searchable session material.",
+    "marginal_savings": "Keep bulk execution/index contents outside the prompt, returning results or selected spans.",
+    "adoption_and_rollback": "Scope the instance and verify execution permissions, retention and restart recovery. Remove its MCP/hooks and restore raw tools to revert; export needed evidence before session cleanup.",
+    "authority_maturity": "Source-visible integrations and byte fixtures; Codex event capture is not equivalent to output replacement. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "mksglu/context-mode",
+      "stargazers_count": 20490,
+      "forks_count": 1506,
+      "created_at": "2026-02-23T05:56:28Z",
+      "pushed_at": "2026-09-06T12:05:47Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "litellm",
+    "name": "LiteLLM",
+    "category": "API gateway and governance",
+    "url": "https://github.com/BerriAI/litellm",
+    "disposition": "optional",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "license_status": "MIT outside enterprise; audited proxy extra includes litellm-enterprise. Commercial terms and exact dependency closure are separate.",
+    "evidence_scope": "README, license and pyproject inspected; gateway/provider support and accounting, not a universal token-reduction benchmark.",
+    "overlapping_with": [
+      "bifrost",
+      "portkey",
+      "helicone",
+      "cloudflare-ai-gateway"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/README.md",
+      "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/LICENSE",
+      "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/pyproject.toml",
+      "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/enterprise/LICENSE.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Approved application endpoint/SDK and optionally request logging.",
+    "best_tasks": "Teams already operating API applications.",
+    "marginal_savings": "Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.",
+    "adoption_and_rollback": "Reuse the existing gateway if any. Snapshot endpoint/model/auth mapping, disable unapproved fallbacks and semantic cache, test tools/streaming/usage and privacy. Restore original endpoint and revoke trial keys to revert.",
+    "authority_maturity": "Established maintained gateway/observability project. Evaluate exact editions and protocols, not logo counts; no cross-provider quality guarantee. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "BerriAI/litellm",
+      "stargazers_count": 58169,
+      "forks_count": 11218,
+      "created_at": "2023-07-27T00:09:52Z",
+      "pushed_at": "2026-09-06T23:07:47Z",
+      "archived": false,
+      "default_branch": "litellm_internal_staging",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "bifrost",
+    "name": "Bifrost",
+    "category": "API gateway and governance",
+    "url": "https://github.com/maximhq/bifrost",
+    "disposition": "optional",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "license_status": "Apache-2.0 core; enterprise features and third-party notices/dependency obligations remain separate.",
+    "evidence_scope": "README and retained pinned license/dependency evidence inspected; throughput claims measure gateway overhead, not tokens saved.",
+    "overlapping_with": [
+      "litellm",
+      "portkey",
+      "helicone",
+      "cloudflare-ai-gateway"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/maximhq/bifrost/dev/README.md",
+      "https://raw.githubusercontent.com/maximhq/bifrost/dev/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Approved application endpoint/SDK and optionally request logging.",
+    "best_tasks": "Teams already operating API applications.",
+    "marginal_savings": "Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.",
+    "adoption_and_rollback": "Reuse the existing gateway if any. Snapshot endpoint/model/auth mapping, disable unapproved fallbacks and semantic cache, test tools/streaming/usage and privacy. Restore original endpoint and revoke trial keys to revert.",
+    "authority_maturity": "Established maintained gateway/observability project. Evaluate exact editions and protocols, not logo counts; no cross-provider quality guarantee. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "maximhq/bifrost",
+      "stargazers_count": 7841,
+      "forks_count": 1169,
+      "created_at": "2025-03-19T07:21:26Z",
+      "pushed_at": "2026-09-06T14:51:20Z",
+      "archived": false,
+      "default_branch": "dev",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "portkey",
+    "name": "Portkey AI Gateway",
+    "category": "API gateway and governance",
+    "url": "https://github.com/Portkey-AI/gateway",
+    "disposition": "optional",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "license_status": "MIT gateway code; hosted and enterprise governance are commercial products.",
+    "evidence_scope": "README, cache cookbook and middleware source inspected; simple and semantic cache are different policies.",
+    "overlapping_with": [
+      "litellm",
+      "bifrost",
+      "helicone",
+      "cloudflare-ai-gateway"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/README.md",
+      "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/LICENSE",
+      "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/src/middlewares/cache/index.ts",
+      "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/cookbook/getting-started/enable-cache.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Approved application endpoint/SDK and optionally request logging.",
+    "best_tasks": "Teams already operating API applications.",
+    "marginal_savings": "Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.",
+    "adoption_and_rollback": "Reuse the existing gateway if any. Snapshot endpoint/model/auth mapping, disable unapproved fallbacks and semantic cache, test tools/streaming/usage and privacy. Restore original endpoint and revoke trial keys to revert.",
+    "authority_maturity": "Established maintained gateway/observability project. Evaluate exact editions and protocols, not logo counts; no cross-provider quality guarantee. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "Portkey-AI/gateway",
+      "stargazers_count": 12915,
+      "forks_count": 1292,
+      "created_at": "2023-08-23T11:52:47Z",
+      "pushed_at": "2026-05-25T13:54:51Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "helicone",
+    "name": "Helicone",
+    "category": "API gateway and governance",
+    "url": "https://github.com/Helicone/helicone",
+    "disposition": "optional",
+    "rationale": "Consider for an existing approved API application needing central metering, budgets or routing. Keep native subscriptions outside the gateway.",
+    "license_status": "Apache-2.0 repository; hosted gateway/observability and enterprise deployment terms are separate.",
+    "evidence_scope": "README and license inspected; trace/cost visibility is not a measured reduction. Async logging is an alternative to proxy insertion.",
+    "overlapping_with": [
+      "litellm",
+      "bifrost",
+      "portkey",
+      "cloudflare-ai-gateway"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/Helicone/helicone/main/README.md",
+      "https://raw.githubusercontent.com/Helicone/helicone/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Approved application endpoint/SDK and optionally request logging.",
+    "best_tasks": "Teams already operating API applications.",
+    "marginal_savings": "Budgets prevent unintended work; exact hits can avoid inference; cheaper routing changes price, not inherently token count.",
+    "adoption_and_rollback": "Reuse the existing gateway if any. Snapshot endpoint/model/auth mapping, disable unapproved fallbacks and semantic cache, test tools/streaming/usage and privacy. Restore original endpoint and revoke trial keys to revert.",
+    "authority_maturity": "Established maintained gateway/observability project. Evaluate exact editions and protocols, not logo counts; no cross-provider quality guarantee. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "Helicone/helicone",
+      "stargazers_count": 6133,
+      "forks_count": 666,
+      "created_at": "2023-01-31T22:34:44Z",
+      "pushed_at": "2026-08-31T05:02:00Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "cloudflare-ai-gateway",
+    "name": "Cloudflare AI Gateway",
+    "category": "commercial cache and governance",
+    "url": "https://developers.cloudflare.com/ai-gateway/features/caching",
+    "disposition": "optional",
+    "rationale": "A managed option for approved API workloads, especially repeated static requests. Do not replace the existing route solely for a cache checkbox.",
+    "license_status": "Hosted service terms and pricing apply; not an OSS license grant.",
+    "evidence_scope": "Official caching docs inspected: default key includes provider, endpoint, model, auth header and full request body; HIT/MISS is observable.",
+    "overlapping_with": [
+      "portkey",
+      "litellm",
+      "bifrost",
+      "exact-reuse"
+    ],
+    "sources": [
+      "https://developers.cloudflare.com/ai-gateway/features/caching"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Approved gateway request cache and account settings.",
+    "best_tasks": "Static repeated API requests.",
+    "marginal_savings": "A valid exact hit avoids a provider call; native prefix caching does not.",
+    "adoption_and_rollback": "Scope one approved app, set retention/freshness and preserve key isolation. Verify HIT/MISS plus a changed-source MISS. Disable caching, purge relevant entries and restore direct endpoint to revert.",
+    "authority_maturity": "First-party commercial docs; defaults cannot encode every external data dependency and custom keys can weaken isolation.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "provider-batch",
+    "name": "Provider Batch APIs",
+    "category": "optional price lever",
+    "url": "https://developers.openai.com/api/docs/guides/batch",
+    "disposition": "optional",
+    "rationale": "For eligible asynchronous API work already approved for delayed execution. Keep selected models and exact work; this is not token compression.",
+    "license_status": "Provider API agreement and data-retention rules, separate from consumer subscription seats.",
+    "evidence_scope": "OpenAI first-party Batch guide: 50% lower API cost for eligible batch processing with a 24-hour turnaround; not fewer logical tokens.",
+    "overlapping_with": [
+      "native-baseline",
+      "litellm"
+    ],
+    "sources": [
+      "https://developers.openai.com/api/docs/guides/batch"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Native provider asynchronous request scheduling.",
+    "best_tasks": "Nonurgent independent extraction or classification jobs.",
+    "marginal_savings": "Lower price per eligible token; may reduce orchestration overhead, but no inherent token cut.",
+    "adoption_and_rollback": "Use existing batch tooling with explicit request IDs, result/error reconciliation and no duplicate writes. Stop submitting new batches; reconcile in-flight jobs before returning to synchronous requests.",
+    "authority_maturity": "First-party supported route, but availability, quotas and turnaround must fit the real task.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "llmlingua",
+    "name": "LLMLingua / LLMLingua-2",
+    "category": "learned prompt compression",
+    "url": "https://github.com/microsoft/LLMLingua",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "MIT code; exact checkpoint licenses differ (MIT and Apache-2.0 cards inspected); approve weights, tokenizer and local compute.",
+    "evidence_scope": "Primary papers and checkpoint/source evidence. Prompt-level compression and task-specific accuracy losses, not whole-agent quality equivalence.",
+    "overlapping_with": [
+      "kompress",
+      "leanctx-python",
+      "swe-pruner"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2403.12968v2",
+      "https://raw.githubusercontent.com/microsoft/LLMLingua/e0e9d99beb94098bbd924aa53c2c112eac41c758/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Local helper model prunes prompt tokens.",
+    "best_tasks": "Long retrieved prose outside protected instructions and exact-value work.",
+    "marginal_savings": "Fewer main-model input tokens, offset by classifier inference and possible recovery.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "kompress",
+    "name": "Kompress",
+    "category": "learned prompt compression",
+    "url": "https://huggingface.co/chopratejas/kompress-v2-base",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Model card declares Apache-2.0; base weights, tokenizer, conversion and dependencies need separate approval.",
+    "evidence_scope": "Model card and Headroom download/source path inspected; no matched full-task benchmark here.",
+    "overlapping_with": [
+      "llmlingua",
+      "headroom"
+    ],
+    "sources": [
+      "https://huggingface.co/chopratejas/kompress-v2-base/raw/b1563631b35bfdcee37587ad530147497d820d4c/README.md",
+      "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/headroom/transforms/kompress_compressor.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Optional local helper within a compression pipeline.",
+    "best_tasks": "Permitted experimental prose observations.",
+    "marginal_savings": "Prunes model-visible text; first use can download weights and incur local compute.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "swe-pruner",
+    "name": "SWE-Pruner",
+    "category": "goal-aware code pruning",
+    "url": "https://github.com/Ayanami1314/swe-pruner",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Separate repository, skimmer checkpoint and serving dependencies; redistribution/weight closure not cleared by this scan.",
+    "evidence_scope": "Primary study v4 and public inference README. 500 SWE-bench Verified tasks per model; 23.1%/38.3% reported token reductions, with separate code-completion regressions.",
+    "overlapping_with": [
+      "serena",
+      "llmlingua",
+      "headroom"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2601.16746v4",
+      "https://raw.githubusercontent.com/Ayanami1314/swe-pruner/96171b5f3ecaf89745cbeb436c8893b57f3400bd/swe-pruner/README.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit reading goal drives a separately served 0.6B skimmer selecting code lines.",
+    "best_tasks": "Exploratory code reading outside active edits.",
+    "marginal_savings": "Less code enters the main agent and trajectories may shorten; include skimmer overhead.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "agentdiet",
+    "name": "AgentDiet",
+    "category": "history reduction",
+    "url": "https://arxiv.org/html/2509.23586v2",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Paper evidence does not clear the exact code/helper distribution; GPT-5-mini helper requires approved API access.",
+    "evidence_scope": "Primary study v2: 200 held-out SWE-bench Verified and 300 Multi-SWE-bench Flash tasks, two agent models. Input savings exceed net cost savings.",
+    "overlapping_with": [
+      "acon",
+      "trace",
+      "observation-masking",
+      "opencode-dcp"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2509.23586v2"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Delayed reflection over eligible older agent steps.",
+    "best_tasks": "Long coding trajectories in a supported research harness.",
+    "marginal_savings": "Reduce recurring history input; helper calls, cache invalidation and retries reduce net benefit.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "acon",
+    "name": "ACON",
+    "category": "history-policy optimization",
+    "url": "https://arxiv.org/html/2510.00615v3",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Paper/policy study only; code, training data and any distilled model need separate rights and dependency review.",
+    "evidence_scope": "Primary study v3. AppWorld 168 tasks: aggregate quality can hide hard-task losses; peak context is not billed tokens.",
+    "overlapping_with": [
+      "agentdiet",
+      "trace",
+      "observation-masking"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2510.00615v3"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Offline failure-driven compression-guideline optimization; optional serving summarizer.",
+    "best_tasks": "Repeatable low-risk long application workflows.",
+    "marginal_savings": "Improve what a summary retains rather than blindly shorten it; policy search/helper cost is additional.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "trace",
+    "name": "TRACE",
+    "category": "compression evaluation",
+    "url": "https://arxiv.org/html/2608.06503v1",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "No license file located in the retained repository inventory; do not vendor code/data until terms are clarified.",
+    "evidence_scope": "Primary study plus pinned replay/rollout artifacts. AppWorld 168 tasks and two runs: full context still beats the compressed methods.",
+    "overlapping_with": [
+      "acon",
+      "agentdiet"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2608.06503v1",
+      "https://raw.githubusercontent.com/nokia-applied-research/Trace/9be7d66911bb7600fdec66e64f4825865397e944/README.md",
+      "https://raw.githubusercontent.com/nokia-applied-research/Trace/9be7d66911bb7600fdec66e64f4825865397e944/data/rollout_replay_pilot/README.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Matched pre/post-compaction continuation evaluation in isolated execution states.",
+    "best_tasks": "Evaluating a proposed summary before broader rollout.",
+    "marginal_savings": "Not itself a savings component; detects blocked actions, refetching and invented state.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "observation-masking",
+    "name": "The Complexity Trap: observation masking",
+    "category": "history method",
+    "url": "https://arxiv.org/html/2508.21433v3",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Study the independently described method; research repository code/data terms are separate.",
+    "evidence_scope": "Primary study v3 and retained per-instance/paired-CI artifacts. Results depend on model and scaffold; significant negative quality case exists.",
+    "overlapping_with": [
+      "agentdiet",
+      "acon",
+      "opencode-dcp",
+      "native-baseline"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2508.21433v3"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "A supported harness-owned history projection, not an arbitrary native transcript rewrite.",
+    "best_tasks": "Obsolete repetitive observations in a long supported agent run.",
+    "marginal_savings": "Avoid repeated ingestion without generative summarizer overhead; can break cache and omit dependencies.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "opencode-dcp",
+    "name": "OpenCode Dynamic Context Pruning",
+    "category": "native history plugin",
+    "url": "https://github.com/Opencode-DCP/opencode-dynamic-context-pruning",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "AGPL-3.0-or-later; review obligations for modifications and network use.",
+    "evidence_scope": "Current pinned README/license inspected. Summarization/deduplication and cache effects documented; stated cache rates lack a task-quality denominator.",
+    "overlapping_with": [
+      "native-baseline",
+      "agentdiet",
+      "observation-masking"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/11f6517780a502512a3467645074be447cb0369e/README.md",
+      "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/11f6517780a502512a3467645074be447cb0369e/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "OpenCode-specific compression tool and conversation projection.",
+    "best_tasks": "Long OpenCode sessions with a supported seam and explicit consent.",
+    "marginal_savings": "Remove repeated/old history; native pruning is the baseline and cache misses count against savings.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "Opencode-DCP/opencode-dynamic-context-pruning",
+      "stargazers_count": 4172,
+      "forks_count": 232,
+      "created_at": "2025-11-20T01:51:43Z",
+      "pushed_at": "2026-08-16T04:10:39Z",
+      "archived": false,
+      "default_branch": "master",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "leanctx",
+    "name": "LeanCTX by yvgude (lean-ctx)",
+    "category": "context toolkit",
+    "url": "https://github.com/yvgude/lean-ctx",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Apache-2.0 root; optional proxy, execution and dependency closure need separate review.",
+    "evidence_scope": "Current README/license checked against earlier pinned research. Broad context/login toolkit; no current native end-to-end trial here.",
+    "overlapping_with": [
+      "headroom",
+      "rtk",
+      "context-mode"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/yvgude/lean-ctx/main/README.md",
+      "https://raw.githubusercontent.com/yvgude/lean-ctx/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "CLI/MCP/proxy with context selection, reuse and session memory.",
+    "best_tasks": "Experimental code exploration in a scoped project.",
+    "marginal_savings": "Avoid unchanged reads and compress outputs; overlaps many surfaces, so assign one owner before any trial.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "yvgude/lean-ctx",
+      "stargazers_count": 3726,
+      "forks_count": 341,
+      "created_at": "2026-03-23T19:48:59Z",
+      "pushed_at": "2026-09-06T16:29:14Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "leanctx-python",
+    "name": "leanctx by jia-gao",
+    "category": "Python compression wrapper",
+    "url": "https://github.com/jia-gao/leanctx",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "MIT wrapper; optional LLMLingua-2 weights and dependencies are separate; first Lingua call downloads weights.",
+    "evidence_scope": "README reports an 18.7% CPU payload reduction on N=503 over ClawRouter; the earlier GPU report gives 24.1% and accuracy 45.3% to 43.5%. Different hardware/timeout accounting, not one coupled CPU quality trial. Raw file contains A/B records plus two non-LongBench probes.",
+    "overlapping_with": [
+      "llmlingua",
+      "headroom"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/jia-gao/leanctx/84329a47161c449c14817db88c1f3218e95e22fb/README.md",
+      "https://raw.githubusercontent.com/jia-gao/leanctx/main/LICENSE",
+      "https://raw.githubusercontent.com/jia-gao/leanctx/84329a47161c449c14817db88c1f3218e95e22fb/benchmarks/clawrouter/full_long_bench_evaluation_result.md"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit Python SDK request wrapper routing segments by tolerated loss.",
+    "best_tasks": "Permitted long prose in an application.",
+    "marginal_savings": "Additional pruning of eligible text; verbatim segments provide no marginal compression.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "jia-gao/leanctx",
+      "stargazers_count": 316,
+      "forks_count": 3,
+      "created_at": "2026-04-18T22:19:35Z",
+      "pushed_at": "2026-08-22T20:29:11Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "leanctx-go",
+    "name": "leanctx by mirkobrombin",
+    "category": "lexical compression",
+    "url": "https://github.com/mirkobrombin/leanctx",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "MIT; Go implementation with no learned weights in the documented path.",
+    "evidence_scope": "Current README/license only; small project, no full-task quality evidence established here. Distinct from both other LeanCTX projects.",
+    "overlapping_with": [
+      "llmlingua",
+      "leanctx-python"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/mirkobrombin/leanctx/master/README.md",
+      "https://raw.githubusercontent.com/mirkobrombin/leanctx/master/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "In-process query-aware lexical/statistical sentence selection.",
+    "best_tasks": "Noncritical prose experiments.",
+    "marginal_savings": "Deterministic pruning avoids helper inference; deterministic output does not imply semantic losslessness.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "mirkobrombin/leanctx",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "created_at": "2026-05-22T18:57:01Z",
+      "pushed_at": "2026-05-23T16:55:12Z",
+      "archived": false,
+      "default_branch": "master",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "gptcache",
+    "name": "GPTCache",
+    "category": "semantic answer cache",
+    "url": "https://github.com/zilliztech/GPTCache",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "MIT; optional vector/embedding packages and auto-install behavior require review.",
+    "evidence_scope": "README explicitly stops new API/model adapter support; use get/set API. Exact-match source compares question strings, not source freshness/authorization.",
+    "overlapping_with": [
+      "exact-reuse",
+      "vcache",
+      "portkey"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/README.md",
+      "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/LICENSE",
+      "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/gptcache/similarity_evaluation/exact_match.py"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Application response cache with exact or similarity matching.",
+    "best_tasks": "Static low-risk FAQ/classification with calibrated invalidation.",
+    "marginal_savings": "Valid cache hits avoid inference; false hits silently reuse wrong/stale answers.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "zilliztech/GPTCache",
+      "stargazers_count": 8179,
+      "forks_count": 595,
+      "created_at": "2023-03-24T05:51:16Z",
+      "pushed_at": "2025-07-11T09:04:36Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "vcache",
+    "name": "vCache",
+    "category": "semantic cache research",
+    "url": "https://arxiv.org/html/2502.03771v5",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Research/model/dependency rights must be checked for the chosen implementation; no new required install.",
+    "evidence_scope": "Primary study v5. 45000 classification samples: 18.1% hits and 0.4% error at delta=0.01; runtime rather than provider savings evidence.",
+    "overlapping_with": [
+      "gptcache",
+      "exact-reuse"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2502.03771v5"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Learned local cache thresholds with exploration/judging.",
+    "best_tasks": "Repeated low-risk labels with a stated acceptable error rate.",
+    "marginal_savings": "Avoid selected inference requests; embedding and judge costs remain even if asynchronous.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "tale",
+    "name": "TALE",
+    "category": "reasoning-budget research",
+    "url": "https://arxiv.org/html/2412.18547v5",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Prompting/research reference; serving and any post-trained checkpoint terms are separate.",
+    "evidence_scope": "Primary study v5. Output-token reductions trade against task accuracy; estimator calls and tight-budget retry effects matter.",
+    "overlapping_with": [
+      "routellm",
+      "dspy",
+      "ponytail"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2412.18547v5"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit budget estimation/prompting or separate post-training, not hidden effort changes.",
+    "best_tasks": "Repeatable reasoning tasks with quality labels and separate consent.",
+    "marginal_savings": "Generate fewer reasoning/output tokens; not guaranteed for opaque native reasoning or current models.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "rlm",
+    "name": "Recursive Language Models",
+    "category": "programmatic context research",
+    "url": "https://arxiv.org/html/2512.24601v1",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Research reference; runtime, helper model and data terms separately apply.",
+    "evidence_scope": "Primary paper inspected in prior research. Dollar comparison uses different helper models and exhibits costly recursive tails; not a native drop-in.",
+    "overlapping_with": [
+      "deterministic-execution",
+      "context-mode"
+    ],
+    "sources": [
+      "https://arxiv.org/html/2512.24601v1"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "External context in a REPL with optional bounded semantic model subcalls.",
+    "best_tasks": "Huge corpora needing programmatic inspection.",
+    "marginal_savings": "Avoid placing the whole corpus in one prompt; semantic review still incurs model work somewhere.",
+    "adoption_and_rollback": "Method reference, not a universal executable recipe. Adopt only through a documented supported harness/application seam in an isolated trial. Restore the native baseline/checkpoint to revert; never patch opaque subscription state or replay live external writes.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "dspy",
+    "name": "DSPy",
+    "category": "offline prompt optimization",
+    "url": "https://github.com/stanfordnlp/dspy",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "MIT core; optimizer/helper calls, datasets and any trained weights have separate gates.",
+    "evidence_scope": "README and linked published-study lineage inspected; no proof an arbitrary optimized prompt is shorter or cheaper.",
+    "overlapping_with": [
+      "ponytail",
+      "acon",
+      "tale"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/stanfordnlp/dspy/main/README.md",
+      "https://raw.githubusercontent.com/stanfordnlp/dspy/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Application programs and offline prompt/weight optimization.",
+    "best_tasks": "High-volume repeated tasks with an existing evaluation set.",
+    "marginal_savings": "May avoid bad prompts and retries; compilation can increase prompts and tuning cost.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "stanfordnlp/dspy",
+      "stargazers_count": 37807,
+      "forks_count": 3292,
+      "created_at": "2023-01-09T21:01:51Z",
+      "pushed_at": "2026-09-05T20:02:14Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "routellm",
+    "name": "RouteLLM",
+    "category": "optional model-price routing",
+    "url": "https://github.com/lm-sys/RouteLLM",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Apache-2.0 code; router weights, model licenses and API access separately apply.",
+    "evidence_scope": "README/license and published benchmark links inspected. Historical strong/weak-model comparisons are not unchanged-model token savings.",
+    "overlapping_with": [
+      "litellm",
+      "bifrost",
+      "portkey",
+      "tale"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/lm-sys/RouteLLM/main/README.md",
+      "https://raw.githubusercontent.com/lm-sys/RouteLLM/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit application router between approved model/provider choices.",
+    "best_tasks": "Separately authorized low-risk cost routing.",
+    "marginal_savings": "Lower price for some requests, not inherent token reduction; calibration and router overhead count.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "token-company",
+    "name": "The Token Company",
+    "category": "commercial compression",
+    "url": "https://thetokencompany.com/docs/llms.txt",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Hosted proprietary compression service; SDK licensing does not grant model weights. Contract, pricing, data region and retention must be agreed.",
+    "evidence_scope": "First-party API docs and retained vendor case material. No independent representative task-quality comparison established here.",
+    "overlapping_with": [
+      "compresr",
+      "llmlingua",
+      "headroom"
+    ],
+    "sources": [
+      "https://thetokencompany.com/docs/llms.txt"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit compression API before the chosen LLM request.",
+    "best_tasks": "Long permitted prose where a second processor is acceptable.",
+    "marginal_savings": "Reduce main-provider input tokens; compressor fees/network/quality and cache costs reduce net benefit.",
+    "adoption_and_rollback": "Procure only with explicit approval; confirm endpoint, contract, retention and protected-span behavior. Test permitted copies through one API call path. Bypass compression and revoke the trial credential to revert; request deletion under the agreement if applicable.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "compresr",
+    "name": "Compresr",
+    "category": "commercial compression",
+    "url": "https://compresr.ai",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Hosted service terms and proprietary model access; verify data processing, pricing and beta-model conditions.",
+    "evidence_scope": "Current query-specific API introduction inspected: latte_v1 and beta latte_v2. No provider-billed complete-task trial here.",
+    "overlapping_with": [
+      "token-company",
+      "llmlingua"
+    ],
+    "sources": [
+      "https://compresr.ai/docs/introduction"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Explicit query-specific compression API returning selected context.",
+    "best_tasks": "RAG context with a fixed question and authorized remote processing.",
+    "marginal_savings": "Select answer-bearing spans before main inference; query change invalidates the selection.",
+    "adoption_and_rollback": "Procure only with explicit approval; confirm endpoint, contract, retention and protected-span behavior. Test permitted copies through one API call path. Bypass compression and revoke the trial credential to revert; request deletion under the agreement if applicable.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness.",
+    "review_depth": "documented"
+  },
+  {
+    "id": "paritok",
+    "name": "Paritok-4B-v1",
+    "category": "learned code gateway",
+    "url": "https://github.com/Paritok-official/paritok-4b-v1",
+    "disposition": "experimental",
+    "rationale": "Evidence appendix or separately approved specialist trial, not a required dependency or a universal savings claim.",
+    "license_status": "Apache-2.0 repository; 4B compressor and additional embedding checkpoint/serving closure need separate approval.",
+    "evidence_scope": "Current README/license inspected; advertised end-to-end artifacts merit a separate trial, not a blanket non-destructive endorsement.",
+    "overlapping_with": [
+      "headroom",
+      "swe-pruner",
+      "native-baseline"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/Paritok-official/paritok-4b-v1/main/README.md",
+      "https://raw.githubusercontent.com/Paritok-official/paritok-4b-v1/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "Request-rewriting gateway with tool selection and recoverable context references.",
+    "best_tasks": "Isolated API coding experiments only.",
+    "marginal_savings": "Select tools and code/history before inference; native tool discovery may already remove much of that opportunity.",
+    "adoption_and_rollback": "Do not install by default. Use an isolated, consented task-specific trial only after route, rights, privacy and dependencies are cleared. Retain exact originals and compare full-task outcomes including helpers/restores; bypass the candidate and restore the previous pipeline/settings to revert.",
+    "authority_maturity": "Published study or source-visible project/vendor documentation as specified; evidence strength does not establish compatibility with every native harness. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "Paritok-official/paritok-4b-v1",
+      "stargazers_count": 1450,
+      "forks_count": 136,
+      "created_at": "2026-07-15T10:23:15Z",
+      "pushed_at": "2026-09-02T03:46:34Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "documented"
+  },
+  {
+    "id": "omniroute",
+    "name": "OmniRoute",
+    "category": "gateway bundle",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "disposition": "excluded",
+    "rationale": "Excluded from default recommendations: subscription pooling, stealth/MITM and automatic fallback features conflict with this blueprint’s no-broker/no-CA/no-hidden-route boundaries. A separately authorized plain API integration is a different decision.",
+    "license_status": "MIT root; transitive/native assets and provider contracts are separate.",
+    "evidence_scope": "Current README plus retained pinned code/license audit, not an installed trial.",
+    "overlapping_with": [
+      "litellm",
+      "bifrost"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/README.md",
+      "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "diegosouzapw/OmniRoute",
+      "stargazers_count": 62028,
+      "forks_count": 8659,
+      "created_at": "2026-02-13T12:38:31Z",
+      "pushed_at": "2026-09-06T21:36:27Z",
+      "archived": false,
+      "default_branch": "release/v3.8.51",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "llmtrim",
+    "name": "llmtrim",
+    "category": "transparent proxy",
+    "url": "https://github.com/fkiene/llmtrim",
+    "disposition": "excluded",
+    "rationale": "Excluded installation recipe: setup installs a private CA, alters shell proxy configuration and enables subscription routing. Recoverable results live in bounded RAM and disappear on restart; no universal zero-risk savings inference.",
+    "license_status": "MPL-2.0, not MIT; license is not the primary reason for exclusion.",
+    "evidence_scope": "Current README/license inspected; vendor 112-case claims not independently rerun.",
+    "overlapping_with": [
+      "headroom",
+      "omniroute"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/fkiene/llmtrim/main/README.md",
+      "https://raw.githubusercontent.com/fkiene/llmtrim/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "fkiene/llmtrim",
+      "stargazers_count": 227,
+      "forks_count": 23,
+      "created_at": "2026-06-07T19:58:56Z",
+      "pushed_at": "2026-09-01T17:01:46Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "pxpipe",
+    "name": "pxpipe",
+    "category": "text-to-image context",
+    "url": "https://github.com/teamchong/pxpipe",
+    "disposition": "excluded",
+    "rationale": "Excluded from the blueprint’s recommended recipes: exact identifiers can silently corrupt, and system/tool text conversion exceeds protected-state boundaries. Small vision demos cannot establish all-task fidelity.",
+    "license_status": "MIT repository; provider vision costs and transport/auth terms separate.",
+    "evidence_scope": "Current README discloses 13/15 and 0/15 exact-string results on its named model tests; author evidence only.",
+    "overlapping_with": [
+      "headroom"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/teamchong/pxpipe/main/README.md",
+      "https://raw.githubusercontent.com/teamchong/pxpipe/main/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "teamchong/pxpipe",
+      "stargazers_count": 7349,
+      "forks_count": 638,
+      "created_at": "2026-05-20T12:39:42Z",
+      "pushed_at": "2026-09-06T20:10:17Z",
+      "archived": false,
+      "default_branch": "main",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "lmcache",
+    "name": "LMCache and serving-side KV optimization",
+    "category": "inference infrastructure",
+    "url": "https://github.com/LMCache/LMCache",
+    "disposition": "excluded",
+    "rationale": "Excluded from client-side token recipes: requires inference-server ownership and primarily changes cache/compute/latency. An API or subscription user cannot install it inside the provider.",
+    "license_status": "Apache-2.0 core; serving/model dependencies separate.",
+    "evidence_scope": "Repository discovery and README/license inspection; no claim about fewer logical tokens.",
+    "overlapping_with": [
+      "native-baseline"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/LMCache/LMCache/dev/README.md",
+      "https://raw.githubusercontent.com/LMCache/LMCache/dev/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied. GitHub adoption/activity snapshot is recorded as a screening signal, not a quality score.",
+    "repository_snapshot": {
+      "full_name": "LMCache/LMCache",
+      "stargazers_count": 11682,
+      "forks_count": 1851,
+      "created_at": "2024-05-28T21:06:04Z",
+      "pushed_at": "2026-09-06T18:27:58Z",
+      "archived": false,
+      "default_branch": "dev",
+      "checked_on": "2026-09-06"
+    },
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "qdrant",
+    "name": "Qdrant as a new mandatory vector store",
+    "category": "retrieval infrastructure",
+    "url": "https://github.com/qdrant/qdrant",
+    "disposition": "excluded",
+    "rationale": "Excluded as a required token-saving install, not rejected as a database. Reuse an existing governed store; a new vector service alone saves no model tokens and creates indexing, ACL and operations work.",
+    "license_status": "Apache-2.0 repository; cloud service and embedding terms are separate.",
+    "evidence_scope": "Current README/license inspected; retrieval performance is not task-token savings.",
+    "overlapping_with": [
+      "qmd",
+      "llamaindex",
+      "haystack"
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/qdrant/qdrant/master/README.md",
+      "https://raw.githubusercontent.com/qdrant/qdrant/master/LICENSE"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "source-inspected"
+  },
+  {
+    "id": "claw-compactor",
+    "name": "claw-compactor",
+    "category": "multi-stage compressor",
+    "url": "https://github.com/open-compress/claw-compactor",
+    "disposition": "excluded",
+    "rationale": "Searched but not promoted: overlapping multi-stage compressor with insufficient route-specific quality/rollback review in this scan. No need to add another owner to the same observation.",
+    "license_status": "GitHub metadata reports MIT; file/dependency clearance not performed.",
+    "evidence_scope": "Discovery-only candidate. Its description is not benchmark evidence.",
+    "overlapping_with": [
+      "rtk",
+      "headroom"
+    ],
+    "sources": [
+      "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "discovery-only"
+  },
+  {
+    "id": "opentoken",
+    "name": "opentoken",
+    "category": "OpenCode compressor",
+    "url": "https://github.com/MrGray17/opentoken",
+    "disposition": "excluded",
+    "rationale": "Searched but not promoted: many-layer/zero-risk positioning is not evidence of marginal gain over native OpenCode. Prefer a supported single-owner baseline before further experiments.",
+    "license_status": "GitHub metadata reports MIT; full implementation license review not performed.",
+    "evidence_scope": "Discovery-only; no claim its advertised zero-risk behavior was verified.",
+    "overlapping_with": [
+      "opencode-dcp",
+      "rtk"
+    ],
+    "sources": [
+      "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "discovery-only"
+  },
+  {
+    "id": "blockify",
+    "name": "Blockify agentic data optimization",
+    "category": "enterprise retrieval",
+    "url": "https://github.com/iternal-technologies-partners/blockify-agentic-data-optimization",
+    "disposition": "excluded",
+    "rationale": "Searched but not promoted: vendor aggregate accuracy/compression ratios were not reconciled to matching task denominators. A separate procurement/evaluation decision, not a mandatory blueprint dependency.",
+    "license_status": "GitHub license detection is NOASSERTION; agreement and exact files need review.",
+    "evidence_scope": "Discovery-only vendor claims; no independent quality endorsement.",
+    "overlapping_with": [
+      "llamaindex",
+      "haystack"
+    ],
+    "sources": [
+      "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "discovery-only"
+  },
+  {
+    "id": "squeez",
+    "name": "squeez",
+    "category": "command/output compressor",
+    "url": "https://github.com/claudioemmanuel/squeez",
+    "disposition": "excluded",
+    "rationale": "Searched but not promoted: overlaps RTK and needs its own per-harness permission, exact-output and recovery checks; breadth of hook claims is not interchangeability.",
+    "license_status": "GitHub metadata reports Apache-2.0; distribution/dependency review not performed.",
+    "evidence_scope": "Discovery-only, no executed compatibility or savings comparison.",
+    "overlapping_with": [
+      "rtk",
+      "context-mode"
+    ],
+    "sources": [
+      "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "discovery-only"
+  },
+  {
+    "id": "tokenskip",
+    "name": "TokenSkip",
+    "category": "trained reasoning compression",
+    "url": "https://github.com/hemingkx/TokenSkip",
+    "disposition": "excluded",
+    "rationale": "Searched but excluded from unchanged-model recipes: trained chain-of-thought compression is not a switch available inside an arbitrary native subscription or fixed frontier model.",
+    "license_status": "GitHub metadata reports Apache-2.0; exact trained weights and data terms not reviewed.",
+    "evidence_scope": "Discovery-only published-paper lead; not independently evaluated here.",
+    "overlapping_with": [
+      "tale"
+    ],
+    "sources": [
+      "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20"
+    ],
+    "checked_on": "2026-09-06",
+    "control_surface": "",
+    "best_tasks": "",
+    "marginal_savings": "",
+    "adoption_and_rollback": "",
+    "authority_maturity": "Important searched exclusion; no universal ranking implied.",
+    "review_depth": "discovery-only"
+  }
+]

@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "cursor-ide-native",
+    "harness": "Cursor IDE",
+    "auth_path": "Existing Cursor account and seat",
+    "provider_path": "Cursor-hosted models and plan usage",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cursor.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Included allowance is not a cash refund.",
+      "Current plan and team fees vary.",
+      "preCompact is observational, not history rewriting."
+    ],
+    "sources": [
+      "https://cursor.com/docs/context/rules",
+      "https://cursor.com/docs/account/pricing",
+      "https://cursor.com/docs/hooks"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cursor-ide-byok",
+    "harness": "Cursor IDE",
+    "auth_path": "Provider API key in Settings > Models",
+    "provider_path": "Supported chat models through Cursor backend",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cursor.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Tab remains native.",
+      "BYOK data policy differs from Cursor ZDR.",
+      "Invalid key fails; team/enterprise Cursor Token Rate may coexist with provider billing."
+    ],
+    "sources": [
+      "https://cursor.com/docs/settings/api-keys",
+      "https://cursor.com/docs/account/pricing"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cursor-ide-cloud",
+    "harness": "Cursor IDE",
+    "auth_path": "Approved Azure or AWS credentials/IAM configuration",
+    "provider_path": "Azure OpenAI deployment or AWS Bedrock through Cursor",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cursor.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Preserve region/deployment and account policies.",
+      "This is not arbitrary subscription OAuth or whole-IDE rerouting."
+    ],
+    "sources": [
+      "https://cursor.com/docs/settings/api-keys",
+      "https://cursor.com/docs/account/pricing"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "copilot-vscode-native",
+    "harness": "GitHub Copilot in VS Code",
+    "auth_path": "Existing GitHub OAuth/account entitlement",
+    "provider_path": "Copilot models and GitHub AI Credits",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/copilot.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "AI credit usage differs from fixed seat cost and inline completion entitlement.",
+      "VS Code instructions do not govern inline suggestions."
+    ],
+    "sources": [
+      "https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals",
+      "https://code.visualstudio.com/docs/copilot/customization/custom-instructions"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "copilot-vscode-byok",
+    "harness": "GitHub Copilot chat in VS Code",
+    "auth_path": "Native Manage Language Models provider credentials",
+    "provider_path": "Direct supported API or local provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/copilot.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Chat BYOK need not require GitHub login or a Copilot seat.",
+      "Other features and Agent Host support differ; admin policy can disable BYOK.",
+      "Not equivalent to moving all Copilot traffic."
+    ],
+    "sources": [
+      "https://code.visualstudio.com/docs/copilot/customization/language-models",
+      "https://code.visualstudio.com/docs/copilot/customization/custom-instructions"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "copilot-vscode-azure",
+    "harness": "GitHub Copilot chat in VS Code",
+    "auth_path": "Native Azure/Entra ID provider configuration",
+    "provider_path": "Approved Azure OpenAI deployment",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/copilot.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Preserve tenant and deployment.",
+      "Cloud charges are separate from any Copilot seat."
+    ],
+    "sources": [
+      "https://code.visualstudio.com/docs/copilot/customization/language-models"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "copilot-cli-native",
+    "harness": "GitHub Copilot CLI",
+    "auth_path": "Official web/device OAuth or supported existing token",
+    "provider_path": "GitHub Copilot entitlement and AI Credits",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/copilot.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Use /context and, after preserving protected source state, approved /compact; restore raw details on verification failure.",
+    "caveats": [
+      "COPILOT_GITHUB_TOKEN then GH_TOKEN then GITHUB_TOKEN may select authentication.",
+      "Native large-output offloading/automatic compaction are baseline.",
+      "Compaction is lossy and not an IDE hook."
+    ],
+    "sources": [
+      "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+      "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management",
+      "https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals",
+      "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "copilot-cli-external-limited",
+    "harness": "GitHub Copilot CLI",
+    "auth_path": "Existing approved external-provider configuration only",
+    "provider_path": "CLI provider route pending installed help confirmation",
+    "support_level": "limited",
+    "control": "advisory",
+    "guide": "docs/harnesses/copilot.md",
+    "conservative": "Preserve existing route; inspect copilot help providers before any provider setup.",
+    "aggressive": "Explicit source views only; do not import VS Code or SDK config into CLI.",
+    "caveats": [
+      "Complete current CLI provider setup contract not recovered.",
+      "No unsupported inference proxy or subscription-token export."
+    ],
+    "sources": [
+      "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cline-account-usage",
+    "harness": "Cline IDE extension",
+    "auth_path": "Cline Google/GitHub/email sign-in",
+    "provider_path": "Cline usage-billed provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cline.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Cline login is not an unlimited model subscription.",
+      "Maintain explicit approvals; checkpoints do not undo external writes."
+    ],
+    "sources": [
+      "https://docs.cline.bot/getting-started/authorizing-with-cline",
+      "https://docs.cline.bot/features/cline-rules",
+      "https://docs.cline.bot/features/checkpoints",
+      "https://docs.cline.bot/core-workflows/working-with-files",
+      "https://docs.cline.bot/mcp/mcp-overview"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "clinepass-subscription",
+    "harness": "Cline IDE extension",
+    "auth_path": "Existing ClinePass subscription sign-in",
+    "provider_path": "ClinePass curated open-model catalog",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cline.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Quota economics differ from direct API pricing.",
+      "Vendor usage claims are not measured blueprint savings."
+    ],
+    "sources": [
+      "https://docs.cline.bot/getting-started/authorizing-with-cline",
+      "https://docs.cline.bot/features/cline-rules"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cline-direct-provider",
+    "harness": "Cline IDE extension",
+    "auth_path": "Existing provider key or local-runtime configuration",
+    "provider_path": "Direct model API, aggregator or approved local runtime",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cline.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Local tools may still contact remote services.",
+      "Do not silently switch Plan/Act providers or models."
+    ],
+    "sources": [
+      "https://docs.cline.bot/getting-started/authorizing-with-cline",
+      "https://docs.cline.bot/features/cline-rules",
+      "https://docs.cline.bot/core-workflows/working-with-files"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cline-cloud-provider",
+    "harness": "Cline IDE extension",
+    "auth_path": "Approved cloud credentials",
+    "provider_path": "AWS Bedrock provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cline.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Preserve cloud identity/region and provider contract.",
+      "API bills differ from Cline credits."
+    ],
+    "sources": [
+      "https://docs.cline.bot/getting-started/authorizing-with-cline"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "cline-claude-code-adapter",
+    "harness": "Cline IDE extension",
+    "auth_path": "Existing authenticated Claude Code CLI subscription",
+    "provider_path": "Cline-documented Claude Code provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/cline.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Adapter streaming/image/cache limitations.",
+      "No exported OAuth tokens; native agent permission/entitlement boundaries remain."
+    ],
+    "sources": [
+      "https://docs.cline.bot/provider-config/anthropic"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "devin-desktop-local-native",
+    "harness": "Devin Desktop, formerly Windsurf",
+    "auth_path": "Existing native Desktop account",
+    "provider_path": "Devin Local with self-serve quota or enterprise contract",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/windsurf.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Do not switch from Cascade as an unmeasured optimization.",
+      "Devin Local does not persist Cascade memories.",
+      "MCP approval behavior differs from Cascade."
+    ],
+    "sources": [
+      "https://docs.windsurf.com/windsurf/accounts/usage",
+      "https://docs.windsurf.com/windsurf/devin-local",
+      "https://docs.windsurf.com/windsurf/accounts/quota",
+      "https://docs.windsurf.com/windsurf/getting-started",
+      "https://cli.devin.ai/docs/extensibility/rules"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "windsurf-cascade-legacy",
+    "harness": "Devin Desktop / Windsurf Cascade",
+    "auth_path": "Existing native account",
+    "provider_path": "Legacy Cascade agent under actual plan contract",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/windsurf.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Current docs mix legacy credit wording and quota plans.",
+      "Keep loaded rule locations and legacy agent behavior distinct."
+    ],
+    "sources": [
+      "https://docs.windsurf.com/windsurf/accounts/usage",
+      "https://docs.windsurf.com/windsurf/cascade/memories",
+      "https://docs.windsurf.com/windsurf/accounts/quota",
+      "https://docs.windsurf.com/windsurf/cascade/cascade"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "windsurf-byok-limited",
+    "harness": "Devin Desktop / Windsurf",
+    "auth_path": "Existing BYOK route only; new setup unresolved",
+    "provider_path": "Provider/cloud route must be confirmed in current build",
+    "support_level": "limited",
+    "control": "advisory",
+    "guide": "docs/harnesses/windsurf.md",
+    "conservative": "Retain a known approved setup and source-scoped task; do not change provider.",
+    "aggressive": "Explicit views only on a confirmed working route.",
+    "caveats": [
+      "Current retrieved model page lacks an active BYOK setup contract.",
+      "Old index mentions are not proof of current support or removal."
+    ],
+    "sources": [
+      "https://docs.windsurf.com/llms.txt",
+      "https://docs.windsurf.com/windsurf/models"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "aider-api",
+    "harness": "Aider",
+    "auth_path": "Existing provider API key",
+    "provider_path": "Direct API or approved aggregator",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/aider.md",
+    "conservative": "Use /ls, /tokens, /read-only, /add and /drop; preserve models/effort and run all tests.",
+    "aggressive": "Use /run selective observations; approved /clear only after preserving evidence and reviewed handoff.",
+    "caveats": [
+      "Configuration and environment can change route.",
+      "/save retains file-selection commands, not history.",
+      "Local help only, not a model smoke test."
+    ],
+    "sources": [
+      "https://aider.chat/docs/usage/commands.html",
+      "https://aider.chat/docs/config/api-keys.html",
+      "https://aider.chat/docs/config/aider_conf.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "aider-cloud",
+    "harness": "Aider",
+    "auth_path": "Approved Azure or AWS credentials",
+    "provider_path": "Azure deployment or Bedrock model/inference profile",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/aider.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Use native file/context controls with full evidence retained.",
+    "caveats": [
+      "Cloud provider bills separately.",
+      "A model-name list does not prove endpoint availability."
+    ],
+    "sources": [
+      "https://aider.chat/docs/usage/commands.html",
+      "https://aider.chat/docs/llms/azure.html",
+      "https://aider.chat/docs/llms/bedrock.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "aider-local",
+    "harness": "Aider",
+    "auth_path": "Existing local runtime configuration",
+    "provider_path": "Ollama or approved OpenAI-compatible local endpoint",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/aider.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Use explicit context views or approved /clear with a recoverable handoff.",
+    "caveats": [
+      "Local compute is not costless.",
+      "No consumer subscription OAuth route is established.",
+      "Do not change the model as a default optimization."
+    ],
+    "sources": [
+      "https://aider.chat/docs/usage/commands.html",
+      "https://aider.chat/docs/llms.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-ai-chat-native",
+    "harness": "JetBrains Junie in AI Chat",
+    "auth_path": "Existing JetBrains AI subscription",
+    "provider_path": "Junie in AI Chat under JetBrains AI entitlement",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Use explicit attachments and task instructions; preserve model, effort, permissions and full required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "AI Chat and separate plugin settings differ.",
+      "A new .junie/AGENTS.md can hide other instructions."
+    ],
+    "sources": [
+      "https://www.jetbrains.com/help/ai-assistant/junie-agent.html",
+      "https://junie.jetbrains.com/docs/junie-ide-plugin.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-ide-byok-limited",
+    "harness": "JetBrains Junie IDE",
+    "auth_path": "Provider authentication must be confirmed for installed integration",
+    "provider_path": "Do not extrapolate AI Assistant or Junie CLI BYOK to all IDE agents",
+    "support_level": "limited",
+    "control": "advisory",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Use native subscription or an already confirmed approved route; no new BYOK setup recipe.",
+    "aggressive": "Explicit attachments/views only; no unknown auth bridge.",
+    "caveats": [
+      "Reviewed Junie IDE activation docs specify JetBrains AI subscription.",
+      "Current complete IDE-specific BYOK contract not established."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/byok.html",
+      "https://www.jetbrains.com/help/ai-assistant/junie-agent.html",
+      "https://junie.jetbrains.com/docs/junie-ide-plugin.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-cli-account",
+    "harness": "Junie CLI",
+    "auth_path": "JetBrains Account browser sign-in",
+    "provider_path": "JetBrains subscription model entitlement",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "BYOK for the same model takes priority if configured.",
+      "/new leaves other sessions running; stop concurrent writes first."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/junie-cli.html",
+      "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+      "https://junie.jetbrains.com/docs/environment-variables.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-cli-junie-api",
+    "harness": "Junie CLI",
+    "auth_path": "Junie API key / JUNIE_API_KEY",
+    "provider_path": "Junie usage-based billing",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Junie API key is not a direct provider key.",
+      "Inspect flags/environment without exposing credentials."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/junie-cli.html",
+      "https://junie.jetbrains.com/docs/environment-variables.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-cli-byok",
+    "harness": "Junie CLI",
+    "auth_path": "Native /account provider API keys",
+    "provider_path": "Direct OpenAI, Anthropic, Google, xAI or OpenRouter",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "BYOK wins over matching JetBrains subscription access.",
+      "Flags and provider environment settings can alter route/model/effort."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/byok.html",
+      "https://junie.jetbrains.com/docs/junie-cli.html",
+      "https://junie.jetbrains.com/docs/environment-variables.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-cli-copilot-oauth",
+    "harness": "Junie CLI",
+    "auth_path": "Junie-documented GitHub Copilot OAuth provider",
+    "provider_path": "Copilot entitlement through native provider integration",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Use the native integration, not token export.",
+      "Eligibility and quota remain subject to account/provider policy."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/byok.html",
+      "https://junie.jetbrains.com/docs/junie-cli.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-cli-custom-endpoint",
+    "harness": "Junie CLI",
+    "auth_path": "Existing approved custom endpoint credentials",
+    "provider_path": "Custom or self-hosted model endpoint",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "No new proxy installation is required or recommended.",
+      "Preserve endpoint, model, effort and source-data policy."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/junie-cli.html",
+      "https://junie.jetbrains.com/docs/environment-variables.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-api",
+    "harness": "goose Desktop / CLI",
+    "auth_path": "Existing provider credentials",
+    "provider_path": "Direct API or approved aggregator",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Hints are advisory; approval prompts are not full read isolation.",
+      "Provider env/endpoint settings must be checked."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://block.github.io/goose/docs/guides/context-engineering/using-goosehints",
+      "https://block.github.io/goose/docs/getting-started/using-extensions",
+      "https://block.github.io/goose/docs/guides/managing-tools/goose-permissions",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-cloud",
+    "harness": "goose Desktop / CLI",
+    "auth_path": "Approved cloud identity/credentials",
+    "provider_path": "Bedrock, Azure OpenAI or Vertex AI",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Keep approved project/region/deployment.",
+      "Cloud consumption differs from a human subscription."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-local",
+    "harness": "goose Desktop / CLI",
+    "auth_path": "Existing local-runtime configuration",
+    "provider_path": "Local model endpoint",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Local compute has costs.",
+      "Remote extensions can still disclose data."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://block.github.io/goose/docs/getting-started/using-extensions",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-chatgpt-oauth",
+    "harness": "goose Desktop",
+    "auth_path": "goose-documented Desktop ChatGPT browser sign-in",
+    "provider_path": "Codex models under eligible ChatGPT subscription",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Native project integration only, not a generic OAuth gateway.",
+      "Quota is not necessarily an API token/cost meter."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-copilot-oauth",
+    "harness": "goose Desktop / CLI",
+    "auth_path": "goose-documented GitHub device flow",
+    "provider_path": "GitHub Copilot infrastructure and entitlement",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Confirm organizational policy/eligibility.",
+      "No credential export to another endpoint."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "goose-native-agent-adapter",
+    "harness": "goose Desktop / CLI",
+    "auth_path": "Existing authenticated Cursor Agent or supported ACP agent",
+    "provider_path": "Documented native-agent provider adapter",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/goose.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Inner harness has its own permissions/context/billing.",
+      "No adapter installation or universal inner-history rewrite is part of recipe."
+    ],
+    "sources": [
+      "https://block.github.io/goose/docs/getting-started/providers",
+      "https://block.github.io/goose/docs/guides/managing-tools/goose-permissions",
+      "https://github.com/aaif-goose/goose"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "antigravity-ide-individual",
+    "harness": "Google Antigravity editor",
+    "auth_path": "Native individual Google account / eligible AI plan",
+    "provider_path": "Baseline model quotas and approved AI credit overages",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/antigravity.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Individual BYOK is not offered for quota top-up.",
+      "Do not enable credit overages or change shared permissions by default."
+    ],
+    "sources": [
+      "https://antigravity.google/docs/plans",
+      "https://antigravity.google/docs/rules-workflows",
+      "https://antigravity.google/docs/mcp",
+      "https://antigravity.google/docs/permissions"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "antigravity-cli-individual",
+    "harness": "Google Antigravity CLI",
+    "auth_path": "Native Antigravity account authentication",
+    "provider_path": "Antigravity quotas/credits, not Gemini CLI",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/antigravity.md",
+    "conservative": "Keep shared settings and route; use explicit task scope and inspect /usage.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "CLI settings synchronize with editor.",
+      "/usage is a quota display, not a promised per-task billing API."
+    ],
+    "sources": [
+      "https://antigravity.google/docs/plans",
+      "https://antigravity.google/docs/cli/commands/usage",
+      "https://antigravity.google/docs/cli/overview"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "antigravity-enterprise",
+    "harness": "Antigravity 2.0 / Antigravity CLI / supported IDE Extensions",
+    "auth_path": "Approved Google Cloud enterprise identity",
+    "provider_path": "Gemini Enterprise Agent Platform consumption or Gemini Enterprise license",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/antigravity.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Official enterprise integration differs from individual no-BYOK policy.",
+      "No arbitrary endpoint replacement or new billing/project setup.",
+      "Antigravity IDE (standalone) is explicitly excluded from enterprise deployments in the checked official documentation."
+    ],
+    "sources": [
+      "https://antigravity.google/docs/enterprise",
+      "https://antigravity.google/docs/permissions",
+      "https://antigravity.google/docs/cli/overview",
+      "https://antigravity.google/docs/enterprise.md"
+    ],
+    "checked_on": "2026-09-07"
+  },
+  {
+    "id": "antigravity-byok-limited",
+    "harness": "Google Antigravity individual",
+    "auth_path": "No documented individual BYOK/top-up endpoint route",
+    "provider_path": "Unsupported individual API-key substitution",
+    "support_level": "limited",
+    "control": "advisory",
+    "guide": "docs/harnesses/antigravity.md",
+    "conservative": "Keep native route; do not add a Gemini API key as quota top-up.",
+    "aggressive": "Use explicit source views on the native route only.",
+    "caveats": [
+      "Plans explicitly exclude BYOK/endpoint top-up.",
+      "Do not confuse Antigravity with Gemini CLI or MCP OAuth."
+    ],
+    "sources": [
+      "https://antigravity.google/docs/plans"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "continue-editor-existing",
+    "harness": "Continue editor extensions",
+    "auth_path": "Existing verified direct provider/local credentials",
+    "provider_path": "Legacy editor model/provider configuration",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/continue.md",
+    "conservative": "Maintenance only: back up effective local config, use explicit task context and full tests.",
+    "aggressive": "Operator-prepared views with raw evidence; no new compression integration.",
+    "caveats": [
+      "Repository no longer actively maintained.",
+      "Current compatibility/security must be independently checked.",
+      "Final 2.0.0 README says authentication was removed; older hosted-login docs do not apply."
+    ],
+    "sources": [
+      "https://docs.continue.dev",
+      "https://docs.continue.dev/reference",
+      "https://github.com/continuedev/continue",
+      "https://www.continue.dev",
+      "https://raw.githubusercontent.com/continuedev/continue/68d2702077bc3d8aecf282ec450ee5372da81cdf/README.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "continue-cli-existing",
+    "harness": "Continue CLI (cn)",
+    "auth_path": "Existing verified direct Anthropic key or approved local setup",
+    "provider_path": "Legacy standalone CLI configuration",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/continue.md",
+    "conservative": "Verify installed help; use read-only investigation and explicit file context; no new hosted login.",
+    "aggressive": "Retained-source handoff for maintenance or an approved migration.",
+    "caveats": [
+      "CLI is distinct from editor.",
+      "Do not assume every editor provider/config works in cn.",
+      "Final 2.0.0 README says authentication was removed; older hosted-login docs do not apply."
+    ],
+    "sources": [
+      "https://docs.continue.dev/cli/quickstart",
+      "https://github.com/continuedev/continue",
+      "https://www.continue.dev",
+      "https://raw.githubusercontent.com/continuedev/continue/68d2702077bc3d8aecf282ec450ee5372da81cdf/README.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "continue-hosted-limited",
+    "harness": "Continue editor / CLI hosted routes",
+    "auth_path": "Historical account login / CONTINUE_API_KEY",
+    "provider_path": "Hosted assistant/account services not verified current",
+    "support_level": "limited",
+    "control": "advisory",
+    "guide": "docs/harnesses/continue.md",
+    "conservative": "Preserve local data and confirm service status; do not onboard or purchase.",
+    "aggressive": "Not recommended; use retained local evidence for approved migration.",
+    "caveats": [
+      "Reachable legacy docs do not establish hosted service availability.",
+      "Exact sunset/export/billing deadlines not verified.",
+      "Final 2.0.0 README says authentication was removed; older hosted-login docs do not apply."
+    ],
+    "sources": [
+      "https://docs.continue.dev/cli/quickstart",
+      "https://github.com/continuedev/continue",
+      "https://www.continue.dev",
+      "https://raw.githubusercontent.com/continuedev/continue/68d2702077bc3d8aecf282ec450ee5372da81cdf/README.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-extension-gateway",
+    "harness": "Kilo Code VS Code extension",
+    "auth_path": "Existing Kilo account",
+    "provider_path": "Kilo Gateway balance-billed inference",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Credit purchase fee differs from inference pricing.",
+      "Legacy/project/global config can merge; inspect effective scope."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/getting-started/byok",
+      "https://kilo.ai/docs/customize/custom-rules",
+      "https://kilo.ai/docs/gateway/usage-and-billing",
+      "https://kilo.ai/docs/getting-started/settings"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-extension-gateway-byok",
+    "harness": "Kilo Code VS Code extension",
+    "auth_path": "Account/organization BYOK key stored in Kilo Gateway",
+    "provider_path": "Matching model provider billed directly; Gateway BYOK badge",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Invalid matching key fails without Kilo-key fallback.",
+      "Kilo-side zero cost is not zero provider cost.",
+      "Gateway is an additional data-processing path."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/getting-started/byok",
+      "https://kilo.ai/docs/gateway/usage-and-billing"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-extension-direct-provider",
+    "harness": "Kilo Code VS Code extension",
+    "auth_path": "Native Providers tab API/cloud credentials",
+    "provider_path": "Direct API, local runtime or approved Azure/Bedrock/Vertex route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Direct provider selection differs from Gateway BYOK.",
+      "Preserve cloud policies and any separate platform fees."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/ai-providers",
+      "https://kilo.ai/docs/ai-providers/openai",
+      "https://kilo.ai/docs/ai-providers/anthropic",
+      "https://kilo.ai/docs/getting-started/settings"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-extension-chatgpt-oauth",
+    "harness": "Kilo Code VS Code extension",
+    "auth_path": "Native Sign in to OpenAI Codex flow",
+    "provider_path": "Kilo-documented ChatGPT subscription / Codex catalog",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Cloud Agents/Deploy not included.",
+      "OAuth tokens are not in settings export.",
+      "No generic subscription-token proxy."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/ai-providers/openai-chatgpt-plus-pro"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-cli-gateway",
+    "harness": "Kilo Code CLI",
+    "auth_path": "Existing Kilo account",
+    "provider_path": "Kilo Gateway balance-billed inference",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Use effective project instructions and interactive task approvals; preserve model/provider.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "UI buttons in the guide are VS Code-specific.",
+      "No invented CLI settings flags; inspect installed controls.",
+      "Gateway BYOK and direct API billing must remain distinguishable."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/getting-started/byok",
+      "https://kilo.ai/docs/customize/custom-rules",
+      "https://kilo.ai/docs/gateway/usage-and-billing",
+      "https://kilo.ai/docs/getting-started/settings"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-cli-chatgpt-oauth",
+    "harness": "Kilo Code CLI",
+    "auth_path": "Existing Kilo-documented OpenAI Codex OAuth connection",
+    "provider_path": "ChatGPT subscription and Codex model catalog",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Use existing project instructions, exact task sources and required tests; preserve OAuth route.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Core CLI route only, not Kilo cloud services.",
+      "Settings backup does not back up OAuth credentials."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/customize/custom-rules",
+      "https://kilo.ai/docs/ai-providers/openai-chatgpt-plus-pro"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "junie-plugin-native",
+    "harness": "JetBrains Junie separate IDE plugin",
+    "auth_path": "Existing JetBrains AI subscription",
+    "provider_path": "Junie separate plugin tool window",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/junie.md",
+    "conservative": "Merge into the effective guidelines file without hiding root instructions; preserve model and approvals; run all tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Custom guideline path and .junie/AGENTS.md take precedence.",
+      "Separate plugin UI differs from AI Chat."
+    ],
+    "sources": [
+      "https://junie.jetbrains.com/docs/junie-ide-plugin.html"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-cli-gateway-byok",
+    "harness": "Kilo Code CLI",
+    "auth_path": "Existing Kilo Gateway account/organization BYOK",
+    "provider_path": "Matching provider key through Gateway",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Gateway BYOK badge/path differs from a direct provider.",
+      "Kilo zero cost does not mean zero external bill.",
+      "Invalid matching key does not fall back."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/getting-started/byok",
+      "https://kilo.ai/docs/customize/custom-rules",
+      "https://kilo.ai/docs/gateway/usage-and-billing"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "kilo-cli-direct-provider",
+    "harness": "Kilo Code CLI",
+    "auth_path": "Existing approved provider API/cloud credentials",
+    "provider_path": "Direct-provider CLI configuration",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/kilo-code.md",
+    "conservative": "Preserve route/model/effort; use task-scoped project rules, precise source coverage, minimal native edits and all required tests.",
+    "aggressive": "Retain full raw artifacts; provide selective observation views and a reviewed handoff to a retained-source fresh session.",
+    "caveats": [
+      "Preserve effective project config and endpoint.",
+      "Do not assume VS Code UI buttons exist in CLI."
+    ],
+    "sources": [
+      "https://kilo.ai/docs/ai-providers",
+      "https://kilo.ai/docs/ai-providers/openai",
+      "https://kilo.ai/docs/getting-started/settings"
+    ],
+    "checked_on": "2026-09-06"
+  }
+]

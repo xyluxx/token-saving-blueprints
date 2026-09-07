@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "synthetic-fixture",
+    "id": "responses-cached-and-reasoning-subsets",
+    "provider": "openai-responses",
+    "usage": {
+      "input_tokens": 1000,
+      "output_tokens": 200,
+      "input_tokens_details": {"cached_tokens": 400},
+      "output_tokens_details": {"reasoning_tokens": 80}
+    },
+    "expected_total": 1200
+  },
+  {
+    "kind": "synthetic-fixture",
+    "id": "messages-separate-cache-input",
+    "provider": "anthropic-messages",
+    "usage": {
+      "input_tokens": 300,
+      "cache_read_input_tokens": 600,
+      "cache_creation_input_tokens": 100,
+      "output_tokens": 200
+    },
+    "expected_total": 1200
+  }
+]

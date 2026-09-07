@@ -1,0 +1,857 @@
+[
+  {
+    "id": "claude-code-native-subscription",
+    "harness": "claude-code",
+    "auth_path": "Own Claude.ai browser login; eligible Pro/Max/Team/Enterprise seat",
+    "provider_path": "Native Anthropic Claude Code",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/claude-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/authentication",
+      "https://code.claude.com/docs/en/legal-and-compliance"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "claude-code-console-api",
+    "harness": "claude-code",
+    "auth_path": "Own API key or eligible Console OAuth profile",
+    "provider_path": "Anthropic API billing",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/claude-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Console OAuth is not consumer subscription billing.",
+      "Keyless Console login requires documented v2.1.242+ behavior.",
+      "Credential selectors/managed policies can override native login."
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/authentication"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "claude-code-cloud",
+    "harness": "claude-code",
+    "auth_path": "Approved AWS/GCP/Azure credentials or cloud key",
+    "provider_path": "Bedrock, Claude Platform on AWS, Google Agent Platform/Vertex, Microsoft Foundry",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/claude-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Cloud account, region and model deployment must be retained.",
+      "Not authenticated-tested across cloud routes."
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/third-party-integrations"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "claude-code-approved-gateway",
+    "harness": "claude-code",
+    "auth_path": "Approved organization gateway login or provider API credential",
+    "provider_path": "Claude apps gateway or documented Anthropic-protocol LLM gateway",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/claude-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Generic gateways are not equivalent to first-party corporate SSO gateway.",
+      "No subscription token brokerage or TLS interception.",
+      "Tool reference, streaming, usage and error compatibility require testing."
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/authentication",
+      "https://code.claude.com/docs/en/third-party-integrations",
+      "https://code.claude.com/docs/en/mcp"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-chatgpt-native",
+    "harness": "codex",
+    "auth_path": "Own ChatGPT browser/device-code login",
+    "provider_path": "Native OpenAI Codex subscription route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-openai-api",
+    "harness": "codex",
+    "auth_path": "Own Platform key through native stdin login",
+    "provider_path": "OpenAI API billing",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-enterprise-automation",
+    "harness": "codex",
+    "auth_path": "Workspace-authorized Codex access token or workload identity",
+    "provider_path": "OpenAI enterprise automation",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Requires exact workspace entitlement or federation setup.",
+      "Arbitrary cached OAuth tokens are not enterprise access tokens.",
+      "Version and account checks required."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-bedrock",
+    "harness": "codex",
+    "auth_path": "Approved AWS credential chain or named profile",
+    "provider_path": "Built-in amazon-bedrock provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Current docs; installed-version support and region/model access must be checked.",
+      "Separate AWS billing."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/config-advanced.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-azure",
+    "harness": "codex",
+    "auth_path": "Own Azure OpenAI credential",
+    "provider_path": "Custom Azure Responses deployment",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Exact deployment, endpoint and API version required.",
+      "Not a ChatGPT quota route."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/config-advanced.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "codex-gateway-local",
+    "harness": "codex",
+    "auth_path": "Own endpoint-specific credential or approved native credential helper; genuinely unauthenticated local endpoint only after effective-route inspection",
+    "provider_path": "Explicit custom provider, Ollama or LM Studio",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/codex.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "requires_openai_auth=true ignores env_key; never forward subscription tokens to an unrelated host.",
+      "Protocol and tool compatibility must be verified.",
+      "Routing/model changes are separate cost choices.",
+      "Current command-backed auth is separate from env_key/requires_openai_auth; inspect the effective auth table and headers without exposing tokens. Preserve the approved helper and verify installed-version support."
+    ],
+    "sources": [
+      "https://developers.openai.com/codex/auth.md",
+      "https://developers.openai.com/codex/config-advanced.md"
+    ],
+    "checked_on": "2026-09-07"
+  },
+  {
+    "id": "qwen-code-coding-plan",
+    "harness": "qwen-code",
+    "auth_path": "Own ModelStudio Coding Plan subscription key; /auth menu",
+    "provider_path": "Region-specific coding.dashscope endpoint",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "qwen-code-token-plan",
+    "harness": "qwen-code",
+    "auth_path": "Own ModelStudio Token Plan API key; explicit provider binding",
+    "provider_path": "Region-specific token-plan maas endpoint",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Usage-based billing, not Coding Plan monthly quota.",
+      "Provider-specific envKey alone does not select auth type.",
+      "Select actual endpoint-offered model IDs."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "qwen-code-standard-api",
+    "harness": "qwen-code",
+    "auth_path": "Own standard ModelStudio or direct provider API key",
+    "provider_path": "Standard DashScope or supported OpenAI/Anthropic/Gemini protocol",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "qwen-code-cloud",
+    "harness": "qwen-code",
+    "auth_path": "Own Google ADC/key or exact Azure deployment credential",
+    "provider_path": "Vertex AI or documented compatible Azure endpoint",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Explicitly select vertex-ai for keyless ADC; website and raw docs differ on auto-detection.",
+      "Azure endpoint/deployment compatibility needs a route-specific trial."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "qwen-code-third-party",
+    "harness": "qwen-code",
+    "auth_path": "Own selected third-party API key",
+    "provider_path": "Built-in third-party provider or approved custom/local endpoint",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "No generic consumer subscription OAuth passthrough.",
+      "Validate tools, streaming, reasoning and billing per endpoint."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "qwen-code-retired-oauth",
+    "harness": "qwen-code",
+    "auth_path": "Discontinued Qwen OAuth free tier; not a new setup route",
+    "provider_path": "Historical qwen.ai OAuth provider",
+    "support_level": "limited",
+    "control": "unresolved",
+    "guide": "docs/harnesses/qwen-code.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Not supported for new setup. Select a separately approved current route.",
+    "caveats": [
+      "Official docs state free tier ended 2026-04-15.",
+      "Not approved for automatic setup; cached-token code is not entitlement."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "grok-build-native",
+    "harness": "grok-build",
+    "auth_path": "Own first-party browser or device-code login",
+    "provider_path": "Official xai-org/grok-build native account route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/grok-build.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Account-specific Build entitlement/allowance must be verified.",
+      "Trial promotion is not unlimited free access.",
+      "No authenticated trial performed."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md",
+      "https://x.ai/cli"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "grok-build-xai-api",
+    "harness": "grok-build",
+    "auth_path": "Own XAI_API_KEY or explicit per-model env_key",
+    "provider_path": "Direct xAI API",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/grok-build.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Per-model api_key/env_key outrank session; session outranks fallback XAI_API_KEY.",
+      "Separate API bill; retained session does not automatically switch to API billing."
+    ],
+    "sources": [
+      "https://docs.x.ai/build/enterprise.md",
+      "https://docs.x.ai/build/settings.md",
+      "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md",
+      "https://docs.x.ai/developers/models/grok-4.6.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "grok-build-enterprise",
+    "harness": "grok-build",
+    "auth_path": "Approved OIDC/PKCE or existing organization auth_provider_command",
+    "provider_path": "Organization-approved Grok account/proxy route",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/grok-build.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Online and pinned docs disagree on OIDC TOML section; use verified common environment path and inspect.",
+      "Do not build or operate a consumer-token broker.",
+      "Policy pins can override local settings."
+    ],
+    "sources": [
+      "https://docs.x.ai/build/enterprise.md",
+      "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "grok-build-custom-provider",
+    "harness": "grok-build",
+    "auth_path": "Own endpoint-specific env_key",
+    "provider_path": "Explicit per-model Responses/Chat Completions/Messages endpoint",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/grok-build.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Not a universal cloud-IAM or consumer-subscription recipe.",
+      "Passive hook stdout is ignored; no generic post-result reducer asserted.",
+      "Endpoint capabilities and usage require a real trial."
+    ],
+    "sources": [
+      "https://docs.x.ai/build/settings.md",
+      "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "grokbot-unresolved-identity",
+    "harness": "grokbot",
+    "auth_path": "Unresolved; exact project, publisher and version required",
+    "provider_path": "Could mean a community desktop app, Windows script, official Grok Bot cloud product or Grok Build",
+    "support_level": "unresolved",
+    "control": "unresolved",
+    "guide": "docs/harnesses/grokbot.md",
+    "conservative": "Identify exact publisher, repository/product, release and use case; review permissions and auth before any installation.",
+    "aggressive": "Not executable until a human resolves identity and approves an exact route.",
+    "caveats": [
+      "NOT APPROVED FOR AUTOMATIC SETUP.",
+      "Do not choose a candidate or install/authenticate based on the generic name.",
+      "Official Grok Bot has mixed branding/eligibility documentation; no generic price or auth recipe certified.",
+      "Inclusion is a requested identity boundary, not mainstream adoption evidence."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/pftq/GrokBot/main/README.md",
+      "https://raw.githubusercontent.com/Franzferdinan51/GrokBot/main/README.md",
+      "https://docs.x.ai/grok-bot/overview.md",
+      "https://raw.githubusercontent.com/xai-org/grok-build/72a61251fcffb464bcc687aeb5a998e5a98ec0c9/README.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "gemini-cli-organization-login",
+    "harness": "gemini-cli",
+    "auth_path": "Own eligible Google organization login/project",
+    "provider_path": "Gemini Code Assist Standard/Enterprise",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/gemini-cli.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://geminicli.com/docs/get-started/authentication/",
+      "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "gemini-cli-individual-migration",
+    "harness": "gemini-cli",
+    "auth_path": "Historical individual/free/Google AI Pro-Ultra sign-in",
+    "provider_path": "Official transition to Antigravity for affected accounts",
+    "support_level": "limited",
+    "control": "unresolved",
+    "guide": "docs/harnesses/gemini-cli.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "No old-route setup; use the separately approved current product path.",
+    "caveats": [
+      "Official notice says affected Gemini CLI requests stopped June 18, 2026.",
+      "Do not promise current free/consumer Gemini CLI OAuth.",
+      "Do not silently substitute a different binary or billable API."
+    ],
+    "sources": [
+      "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "gemini-cli-direct-api",
+    "harness": "gemini-cli",
+    "auth_path": "Own GEMINI_API_KEY",
+    "provider_path": "Supported paid Gemini API route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/gemini-cli.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://geminicli.com/docs/get-started/authentication/",
+      "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "gemini-cli-vertex",
+    "harness": "gemini-cli",
+    "auth_path": "Own ADC/service account or Google Cloud API key",
+    "provider_path": "Vertex/Google cloud project route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/gemini-cli.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Project, location, IAM and selected auth mode must match.",
+      "Conflicting GOOGLE_API_KEY/GEMINI_API_KEY must not shadow intended ADC."
+    ],
+    "sources": [
+      "https://geminicli.com/docs/get-started/authentication/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "gemini-cli-gateway-boundary",
+    "harness": "gemini-cli",
+    "auth_path": "No generic gateway auth recipe established",
+    "provider_path": "Organization-specific Google-compatible connector only",
+    "support_level": "unresolved",
+    "control": "unresolved",
+    "guide": "docs/harnesses/gemini-cli.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Only explicit observations after a separately verified supported route exists.",
+    "caveats": [
+      "Not approved for automatic gateway setup.",
+      "Do not substitute OPENAI_BASE_URL or proxy consumer OAuth."
+    ],
+    "sources": [
+      "https://geminicli.com/docs/get-started/authentication/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-nous-codex-oauth",
+    "harness": "hermes",
+    "auth_path": "Own Nous Portal or ChatGPT/Codex provider login",
+    "provider_path": "Native Hermes provider picker",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Provider-specific entitlements differ.",
+      "Hermes docs leave some ChatGPT quota semantics unspecified.",
+      "Do not copy credential stores or pool human seats."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-other-native-oauth",
+    "harness": "hermes",
+    "auth_path": "Own provider-authorized xAI, MiniMax or Copilot login",
+    "provider_path": "Native documented Hermes provider integration",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Eligibility, protocol and billing are provider-specific.",
+      "xai-oauth is distinct from xai API-key mode.",
+      "No generic all-feature subscription billing guarantee."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers",
+      "https://hermes-agent.nousresearch.com/docs/guides/xai-grok-oauth"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-anthropic-max-extra",
+    "harness": "hermes",
+    "auth_path": "Documented Max OAuth plus purchased extra-usage credits",
+    "provider_path": "Hermes Anthropic integration, not native Claude Code allowance",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Hermes docs say included Max allowance is not consumed; Pro unavailable through this path.",
+      "Provider terms and commercial intermediation require separate review."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers",
+      "https://code.claude.com/docs/en/legal-and-compliance"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-direct-api",
+    "harness": "hermes",
+    "auth_path": "Own selected provider API key in private active-home secret source",
+    "provider_path": "OpenAI API/Anthropic/Gemini/xAI/Alibaba and documented provider APIs",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-cloud",
+    "harness": "hermes",
+    "auth_path": "Approved AWS chain, Vertex ADC/service account, or Azure Foundry credential",
+    "provider_path": "bedrock, vertex or azure-foundry provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-custom-gateway-local",
+    "harness": "hermes",
+    "auth_path": "Own endpoint-specific credential or authenticated approved local service",
+    "provider_path": "Documented custom/OpenRouter/local provider path",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Preserve original model/protocol/effort; fallback changes need approval.",
+      "execute_code is not an arbitrary MCP or credential bridge.",
+      "No subscription proxy installed."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "hermes-qwen-oauth-boundary",
+    "harness": "hermes",
+    "auth_path": "Picker entry exists but upstream free OAuth is discontinued",
+    "provider_path": "Historical qwen-oauth integration",
+    "support_level": "unresolved",
+    "control": "unresolved",
+    "guide": "docs/harnesses/hermes.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "No new OAuth setup recipe.",
+    "caveats": [
+      "Not approved as a new free entitlement or automatic setup.",
+      "Check upstream supported paid/API options separately."
+    ],
+    "sources": [
+      "https://hermes-agent.nousresearch.com/docs/integrations/providers",
+      "https://raw.githubusercontent.com/QwenLM/qwen-code/92a8a8d17957b800548d6aaca7feb2916fbe6593/docs/users/configuration/auth.md"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "openclaw-openai-native",
+    "harness": "openclaw",
+    "auth_path": "Own ChatGPT/Codex OAuth via current canonical openai provider",
+    "provider_path": "Native route selected by provider/runtime policy",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/openclaw.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Older openai-codex refs and JSON credential stores are version-dependent legacy state.",
+      "Record exact agent/runtime; no automatic migration or default replacement."
+    ],
+    "sources": [
+      "https://docs.openclaw.ai/concepts/oauth",
+      "https://docs.openclaw.ai/concepts/model-providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "openclaw-direct-api",
+    "harness": "openclaw",
+    "auth_path": "Own selected provider API key",
+    "provider_path": "OpenAI Platform, Anthropic and documented direct APIs",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/openclaw.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://docs.openclaw.ai/concepts/model-providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "openclaw-claude-reuse-boundary",
+    "harness": "openclaw",
+    "auth_path": "Project-documented Claude CLI reuse; commercial terms boundary",
+    "provider_path": "Exact supported native CLI mechanism only; no generic token proxy",
+    "support_level": "limited",
+    "control": "native-supported",
+    "guide": "docs/harnesses/openclaw.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Project says reuse is allowed; provider policy still governs intermediation.",
+      "API key is the project-recommended safer production path."
+    ],
+    "sources": [
+      "https://docs.openclaw.ai/concepts/oauth",
+      "https://code.claude.com/docs/en/legal-and-compliance"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "openclaw-vertex",
+    "harness": "openclaw",
+    "auth_path": "Own authorized ADC",
+    "provider_path": "google-vertex cloud route",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/openclaw.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "No new Gemini CLI/Antigravity OAuth profile setup claimed.",
+      "Verify cloud project, IAM, model and bill."
+    ],
+    "sources": [
+      "https://docs.openclaw.ai/concepts/model-providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "openclaw-custom-provider",
+    "harness": "openclaw",
+    "auth_path": "Own approved endpoint credential",
+    "provider_path": "Explicit custom provider plus verified agent runtime",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/openclaw.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Provider prefix does not alone select Codex runtime.",
+      "Pruning rollback may retain existing projections.",
+      "No opaque native-history rewrites."
+    ],
+    "sources": [
+      "https://docs.openclaw.ai/concepts/model-providers"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "opencode-supported-subscription",
+    "harness": "opencode",
+    "auth_path": "Own ChatGPT Plus/Pro, Copilot or GitLab Duo documented login",
+    "provider_path": "OpenCode native provider connection",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/opencode.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://opencode.ai/docs/providers/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "opencode-direct-api",
+    "harness": "opencode",
+    "auth_path": "Own provider API key",
+    "provider_path": "Selected direct API provider",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/opencode.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Documented, not authenticated-smoke-tested.",
+      "Keep credentials user-owned; confirm entitlement and actual billing before a live trial."
+    ],
+    "sources": [
+      "https://opencode.ai/docs/providers/",
+      "https://opencode.ai/docs/cli/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "opencode-cloud",
+    "harness": "opencode",
+    "auth_path": "Own AWS credentials, Google ADC/service account or Azure key/Entra identity",
+    "provider_path": "Bedrock, Vertex or Azure deployment",
+    "support_level": "documented",
+    "control": "native-supported",
+    "guide": "docs/harnesses/opencode.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Verify actual region, resource/deployment and SDK protocol.",
+      "Cloud billing is separate from consumer subscriptions."
+    ],
+    "sources": [
+      "https://opencode.ai/docs/providers/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "opencode-gateway-local",
+    "harness": "opencode",
+    "auth_path": "Own Zen/Go/gateway key or approved local endpoint",
+    "provider_path": "Configured provider SDK and baseURL",
+    "support_level": "limited",
+    "control": "explicit-tool-only",
+    "guide": "docs/harnesses/opencode.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Explicit source-linked observation views and reviewed checkpoints; only the native context controls described in the guide.",
+    "caveats": [
+      "Consumer tokens are not forwarded to unrelated gateways.",
+      "Check protocol, tools, reasoning and usage support.",
+      "Native pruning default documented false at this check."
+    ],
+    "sources": [
+      "https://opencode.ai/docs/providers/"
+    ],
+    "checked_on": "2026-09-06"
+  },
+  {
+    "id": "opencode-claude-subscription-boundary",
+    "harness": "opencode",
+    "auth_path": "Old Pro/Max plugin instructions are not supported current setup",
+    "provider_path": "Use separately approved API/cloud route instead",
+    "support_level": "limited",
+    "control": "unresolved",
+    "guide": "docs/harnesses/opencode.md",
+    "conservative": "Preserve route, model, effort and approvals; use exact native reads/patches, complete deterministic processing and full required checks.",
+    "aggressive": "Not supported through the prohibited subscription plugin route.",
+    "caveats": [
+      "Official OpenCode provider page states plugins prohibited and unbundled since 1.3.0.",
+      "Not approved for automatic Claude subscription setup."
+    ],
+    "sources": [
+      "https://opencode.ai/docs/providers/"
+    ],
+    "checked_on": "2026-09-06"
+  }
+]

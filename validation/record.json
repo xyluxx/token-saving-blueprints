@@ -1,0 +1,9 @@
+{
+  "kind": "repository-validation-record",
+  "status": "in-progress",
+  "scope": "Documentation, route schemas and synthetic accounting fixtures",
+  "native_authenticated_trials": false,
+  "savings_benchmark": false,
+  "remote_ci_executed": false,
+  "notes": "Final clean-checkout results replace this development record before delivery."
+}

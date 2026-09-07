@@ -1,0 +1,187 @@
+[
+  {
+    "id": "aider",
+    "name": "Aider",
+    "aliases": [
+      "Aider"
+    ],
+    "guide": "docs/harnesses/aider.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "antigravity",
+    "name": "Google Antigravity",
+    "aliases": [
+      "Antigravity 2.0 / Antigravity CLI / supported IDE Extensions",
+      "Google Antigravity CLI",
+      "Google Antigravity editor",
+      "Google Antigravity individual"
+    ],
+    "guide": "docs/harnesses/antigravity.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "aliases": [
+      "claude-code"
+    ],
+    "guide": "docs/harnesses/claude-code.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "cline",
+    "name": "Cline",
+    "aliases": [
+      "Cline IDE extension"
+    ],
+    "guide": "docs/harnesses/cline.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "codex",
+    "name": "Codex CLI",
+    "aliases": [
+      "codex"
+    ],
+    "guide": "docs/harnesses/codex.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "continue",
+    "name": "Continue",
+    "aliases": [
+      "Continue CLI (cn)",
+      "Continue editor / CLI hosted routes",
+      "Continue editor extensions"
+    ],
+    "guide": "docs/harnesses/continue.md",
+    "status": "maintenance-only"
+  },
+  {
+    "id": "copilot",
+    "name": "GitHub Copilot",
+    "aliases": [
+      "GitHub Copilot CLI",
+      "GitHub Copilot chat in VS Code",
+      "GitHub Copilot in VS Code"
+    ],
+    "guide": "docs/harnesses/copilot.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "aliases": [
+      "Cursor IDE"
+    ],
+    "guide": "docs/harnesses/cursor.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "aliases": [
+      "gemini-cli"
+    ],
+    "guide": "docs/harnesses/gemini-cli.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "goose",
+    "name": "Goose",
+    "aliases": [
+      "goose Desktop",
+      "goose Desktop / CLI"
+    ],
+    "guide": "docs/harnesses/goose.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "grok-build",
+    "name": "Grok Build",
+    "aliases": [
+      "grok-build"
+    ],
+    "guide": "docs/harnesses/grok-build.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "grokbot",
+    "name": "Grokbot identity boundary",
+    "aliases": [
+      "grokbot"
+    ],
+    "guide": "docs/harnesses/grokbot.md",
+    "status": "identity-only"
+  },
+  {
+    "id": "hermes",
+    "name": "Hermes Agent",
+    "aliases": [
+      "hermes"
+    ],
+    "guide": "docs/harnesses/hermes.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "junie",
+    "name": "JetBrains Junie",
+    "aliases": [
+      "JetBrains Junie IDE",
+      "JetBrains Junie in AI Chat",
+      "JetBrains Junie separate IDE plugin",
+      "Junie CLI"
+    ],
+    "guide": "docs/harnesses/junie.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "kilo-code",
+    "name": "Kilo Code",
+    "aliases": [
+      "Kilo Code CLI",
+      "Kilo Code VS Code extension"
+    ],
+    "guide": "docs/harnesses/kilo-code.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "openclaw",
+    "name": "OpenClaw",
+    "aliases": [
+      "openclaw"
+    ],
+    "guide": "docs/harnesses/openclaw.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "aliases": [
+      "opencode"
+    ],
+    "guide": "docs/harnesses/opencode.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "qwen-code",
+    "name": "Qwen Code",
+    "aliases": [
+      "qwen-code"
+    ],
+    "guide": "docs/harnesses/qwen-code.md",
+    "status": "documented-guidance"
+  },
+  {
+    "id": "windsurf",
+    "name": "Windsurf / Devin Desktop",
+    "aliases": [
+      "Devin Desktop / Windsurf",
+      "Devin Desktop / Windsurf Cascade",
+      "Devin Desktop, formerly Windsurf"
+    ],
+    "guide": "docs/harnesses/windsurf.md",
+    "status": "documented-guidance"
+  }
+]

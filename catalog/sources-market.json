@@ -1,0 +1,954 @@
+[
+  {
+    "id": "market-source-2",
+    "url": "https://aider.chat/docs/more/edit-formats.html",
+    "title": "aider.chat: docs > more > edit-formats.html",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-3",
+    "url": "https://aider.chat/docs/repomap.html",
+    "title": "aider.chat: docs > repomap.html",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-6",
+    "url": "https://arxiv.org/html/2403.12968v2",
+    "title": "LLMLingua-2, paper v2",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-7",
+    "url": "https://arxiv.org/html/2412.18547v5",
+    "title": "TALE, paper v5",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-8",
+    "url": "https://arxiv.org/html/2502.03771v5",
+    "title": "vCache, paper v5",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-10",
+    "url": "https://arxiv.org/html/2508.21433v3",
+    "title": "The Complexity Trap, paper v3",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-12",
+    "url": "https://arxiv.org/html/2509.23586v2",
+    "title": "AgentDiet, paper v2",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-13",
+    "url": "https://arxiv.org/html/2510.00615v3",
+    "title": "ACON, paper v3",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-15",
+    "url": "https://arxiv.org/html/2512.24601v1",
+    "title": "Recursive Language Models, paper v1",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-17",
+    "url": "https://arxiv.org/html/2601.16746v4",
+    "title": "SWE-Pruner, paper v4",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-21",
+    "url": "https://arxiv.org/html/2608.06503v1",
+    "title": "TRACE, paper v1",
+    "checked_on": "2026-09-06",
+    "evidence_type": "primary-study",
+    "caveat": "Author-run study at this explicit paper version; no independent model rerun in this scan. Dataset/model/metric limits apply."
+  },
+  {
+    "id": "market-source-23",
+    "url": "https://code.claude.com/docs/en/legal-and-compliance",
+    "title": "Legal and compliance - Claude Code Docs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-31",
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "title": "Prompt caching | OpenAI API",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-33",
+    "url": "https://developers.openai.com/codex/auth",
+    "title": "Authentication | ChatGPT Learn",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-43",
+    "url": "https://raw.githubusercontent.com/Ayanami1314/swe-pruner/96171b5f3ecaf89745cbeb436c8893b57f3400bd/swe-pruner/README.md",
+    "title": "Ayanami1314/swe-pruner: swe-pruner/README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-46",
+    "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/LICENSE",
+    "title": "DietrichGebert/ponytail: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-50",
+    "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/benchmarks/agentic/run.py",
+    "title": "DietrichGebert/ponytail: benchmarks/agentic/run.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-51",
+    "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/benchmarks/results/2026-06-18-agentic.md",
+    "title": "DietrichGebert/ponytail: benchmarks/results/2026-06-18-agentic.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-53",
+    "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/974d940a1c5344210874150b98ff0d2c861fab6a/skills/ponytail/SKILL.md",
+    "title": "DietrichGebert/ponytail: skills/ponytail/SKILL.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-72",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/LICENSE",
+    "title": "headroomlabs-ai/headroom: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-73",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/README.md",
+    "title": "headroomlabs-ai/headroom: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-74",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/benchmarks/index_proof_table.py",
+    "title": "headroomlabs-ai/headroom: benchmarks/index_proof_table.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-75",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/benchmarks/results/index_proof_table.txt",
+    "title": "headroomlabs-ai/headroom: benchmarks/results/index_proof_table.txt",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-77",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/docs/content/docs/limitations.mdx",
+    "title": "headroomlabs-ai/headroom: docs/content/docs/limitations.mdx",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-80",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/headroom/transforms/smart_crusher.py",
+    "title": "headroomlabs-ai/headroom: headroom/transforms/smart_crusher.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-84",
+    "url": "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/LICENSE",
+    "title": "mksglu/context-mode: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-85",
+    "url": "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/README.md",
+    "title": "mksglu/context-mode: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-86",
+    "url": "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/hooks/codex/posttooluse.mjs",
+    "title": "mksglu/context-mode: hooks/codex/posttooluse.mjs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-88",
+    "url": "https://raw.githubusercontent.com/mksglu/context-mode/aded72c62372515518994153c470344f1b7d81a1/tests/benchmark-results-v04.json",
+    "title": "mksglu/context-mode: tests/benchmark-results-v04.json",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-89",
+    "url": "https://raw.githubusercontent.com/nokia-applied-research/Trace/9be7d66911bb7600fdec66e64f4825865397e944/README.md",
+    "title": "nokia-applied-research/Trace: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-90",
+    "url": "https://raw.githubusercontent.com/nokia-applied-research/Trace/9be7d66911bb7600fdec66e64f4825865397e944/data/rollout_replay_pilot/README.md",
+    "title": "nokia-applied-research/Trace: data/rollout_replay_pilot/README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-102",
+    "url": "https://raw.githubusercontent.com/oraios/serena/13ac8c5b1d51873bd148aea440dcb22f85d3a439/docs/02-usage/020_running.md",
+    "title": "oraios/serena: docs/02-usage/020_running.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-104",
+    "url": "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/LICENSE",
+    "title": "rtk-ai/rtk: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-105",
+    "url": "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/README.md",
+    "title": "rtk-ai/rtk: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-111",
+    "url": "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/src/core/tee.rs",
+    "title": "rtk-ai/rtk: src/core/tee.rs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-112",
+    "url": "https://raw.githubusercontent.com/rtk-ai/rtk/e53ec1cf180d801f33121855dce37b393ede258c/src/core/tracking.rs",
+    "title": "rtk-ai/rtk: src/core/tracking.rs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-114",
+    "url": "https://raw.githubusercontent.com/toon-format/toon/f151a5d830d001bc244395b891183cba37e0d935/benchmarks/results/retrieval-accuracy.md",
+    "title": "toon-format/toon: benchmarks/results/retrieval-accuracy.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-118",
+    "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+    "title": "Introducing advanced tool use on the Claude Developer Platform \\ Anthropic",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-119",
+    "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+    "title": "www.anthropic.com: engineering > code-execution-with-mcp",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-129",
+    "url": "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/README.md",
+    "title": "BerriAI/litellm: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-130",
+    "url": "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/LICENSE",
+    "title": "BerriAI/litellm: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-131",
+    "url": "https://raw.githubusercontent.com/maximhq/bifrost/dev/README.md",
+    "title": "maximhq/bifrost: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-132",
+    "url": "https://raw.githubusercontent.com/maximhq/bifrost/dev/LICENSE",
+    "title": "maximhq/bifrost: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-133",
+    "url": "https://raw.githubusercontent.com/oraios/serena/main/README.md",
+    "title": "oraios/serena: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-134",
+    "url": "https://raw.githubusercontent.com/oraios/serena/main/LICENSE",
+    "title": "oraios/serena: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-137",
+    "url": "https://raw.githubusercontent.com/toon-format/toon/main/LICENSE",
+    "title": "toon-format/toon: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-144",
+    "url": "https://raw.githubusercontent.com/duckdb/duckdb/v2.0-cyanoptera/README.md",
+    "title": "duckdb/duckdb: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-145",
+    "url": "https://raw.githubusercontent.com/duckdb/duckdb/v2.0-cyanoptera/LICENSE",
+    "title": "duckdb/duckdb: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-147",
+    "url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/README.md",
+    "title": "BurntSushi/ripgrep: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-154",
+    "url": "https://raw.githubusercontent.com/Helicone/helicone/main/README.md",
+    "title": "Helicone/helicone: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-155",
+    "url": "https://raw.githubusercontent.com/Helicone/helicone/main/LICENSE",
+    "title": "Helicone/helicone: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-161",
+    "url": "https://raw.githubusercontent.com/jia-gao/leanctx/main/LICENSE",
+    "title": "jia-gao/leanctx: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-162",
+    "url": "https://raw.githubusercontent.com/mirkobrombin/leanctx/master/README.md",
+    "title": "mirkobrombin/leanctx: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-163",
+    "url": "https://raw.githubusercontent.com/mirkobrombin/leanctx/master/LICENSE",
+    "title": "mirkobrombin/leanctx: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-164",
+    "url": "https://raw.githubusercontent.com/yvgude/lean-ctx/main/README.md",
+    "title": "yvgude/lean-ctx: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-165",
+    "url": "https://raw.githubusercontent.com/yvgude/lean-ctx/main/LICENSE",
+    "title": "yvgude/lean-ctx: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-166",
+    "url": "https://raw.githubusercontent.com/fkiene/llmtrim/main/README.md",
+    "title": "fkiene/llmtrim: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-167",
+    "url": "https://raw.githubusercontent.com/fkiene/llmtrim/main/LICENSE",
+    "title": "fkiene/llmtrim: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-168",
+    "url": "https://raw.githubusercontent.com/Paritok-official/paritok-4b-v1/main/README.md",
+    "title": "Paritok-official/paritok-4b-v1: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-169",
+    "url": "https://raw.githubusercontent.com/Paritok-official/paritok-4b-v1/main/LICENSE",
+    "title": "Paritok-official/paritok-4b-v1: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-170",
+    "url": "https://raw.githubusercontent.com/teamchong/pxpipe/main/README.md",
+    "title": "teamchong/pxpipe: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-171",
+    "url": "https://raw.githubusercontent.com/teamchong/pxpipe/main/LICENSE",
+    "title": "teamchong/pxpipe: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-172",
+    "url": "https://raw.githubusercontent.com/LMCache/LMCache/dev/README.md",
+    "title": "LMCache/LMCache: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-173",
+    "url": "https://raw.githubusercontent.com/LMCache/LMCache/dev/LICENSE",
+    "title": "LMCache/LMCache: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-174",
+    "url": "https://raw.githubusercontent.com/stanfordnlp/dspy/main/README.md",
+    "title": "stanfordnlp/dspy: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-175",
+    "url": "https://raw.githubusercontent.com/stanfordnlp/dspy/main/LICENSE",
+    "title": "stanfordnlp/dspy: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-176",
+    "url": "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/README.md",
+    "title": "diegosouzapw/OmniRoute: v3.8.51/README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-177",
+    "url": "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.51/LICENSE",
+    "title": "diegosouzapw/OmniRoute: v3.8.51/LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-178",
+    "url": "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/README.md",
+    "title": "tobi/qmd: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-179",
+    "url": "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/LICENSE",
+    "title": "tobi/qmd: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-180",
+    "url": "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/src/mcp/server.ts",
+    "title": "tobi/qmd: src/mcp/server.ts",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-181",
+    "url": "https://raw.githubusercontent.com/tobi/qmd/dbfd0b4736aeaf761d1a16ca8e424f071df8feb9/src/store.ts",
+    "title": "tobi/qmd: src/store.ts",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-184",
+    "url": "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/README.md",
+    "title": "run-llama/llama_index: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-185",
+    "url": "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/LICENSE",
+    "title": "run-llama/llama_index: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-187",
+    "url": "https://raw.githubusercontent.com/run-llama/llama_index/d2ac544a27c73d2a68e9c57efec4b2ac0ef99892/llama-index-integrations/retrievers/llama-index-retrievers-bm25/llama_index/retrievers/bm25/base.py",
+    "title": "run-llama/llama_index: llama-index-integrations/retrievers/llama-index-retrievers-bm25/llama_index/retrievers/bm25/base.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-188",
+    "url": "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/README.md",
+    "title": "deepset-ai/haystack: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-189",
+    "url": "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/LICENSE",
+    "title": "deepset-ai/haystack: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-190",
+    "url": "https://raw.githubusercontent.com/deepset-ai/haystack/82da3adc2fac4675b80ff5573b790ec07113697b/haystack/components/retrievers/in_memory/bm25_retriever.py",
+    "title": "deepset-ai/haystack: haystack/components/retrievers/in_memory/bm25_retriever.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-191",
+    "url": "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/apps/ccusage/README.md",
+    "title": "ryoppippi/ccusage: apps/ccusage/README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-192",
+    "url": "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/apps/ccusage/LICENSE",
+    "title": "ryoppippi/ccusage: apps/ccusage/LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-194",
+    "url": "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/README.md",
+    "title": "Portkey-AI/gateway: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-195",
+    "url": "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/LICENSE",
+    "title": "Portkey-AI/gateway: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-196",
+    "url": "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/src/middlewares/cache/index.ts",
+    "title": "Portkey-AI/gateway: src/middlewares/cache/index.ts",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-197",
+    "url": "https://raw.githubusercontent.com/Portkey-AI/gateway/669825cbe89ee51569918b8f78a9db486fd69dd4/cookbook/getting-started/enable-cache.md",
+    "title": "Portkey-AI/gateway: cookbook/getting-started/enable-cache.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-198",
+    "url": "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/README.md",
+    "title": "zilliztech/GPTCache: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-199",
+    "url": "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/LICENSE",
+    "title": "zilliztech/GPTCache: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-200",
+    "url": "https://raw.githubusercontent.com/zilliztech/GPTCache/c59fb3a6152a4458b2a070ca183b61c4b614095f/gptcache/similarity_evaluation/exact_match.py",
+    "title": "zilliztech/GPTCache: gptcache/similarity_evaluation/exact_match.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-201",
+    "url": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/11f6517780a502512a3467645074be447cb0369e/README.md",
+    "title": "Opencode-DCP/opencode-dynamic-context-pruning: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-202",
+    "url": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/11f6517780a502512a3467645074be447cb0369e/LICENSE",
+    "title": "Opencode-DCP/opencode-dynamic-context-pruning: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-203",
+    "url": "https://raw.githubusercontent.com/jia-gao/leanctx/84329a47161c449c14817db88c1f3218e95e22fb/README.md",
+    "title": "jia-gao/leanctx: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-204",
+    "url": "https://raw.githubusercontent.com/jia-gao/leanctx/84329a47161c449c14817db88c1f3218e95e22fb/benchmarks/clawrouter/full_long_bench_evaluation_result.md",
+    "title": "jia-gao/leanctx: benchmarks/clawrouter/full_long_bench_evaluation_result.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-205",
+    "url": "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/tiktoken/core.py",
+    "title": "openai/tiktoken: tiktoken/core.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-206",
+    "url": "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/README.md",
+    "title": "openai/tiktoken: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-207",
+    "url": "https://raw.githubusercontent.com/openai/tiktoken/4e71bbe0c078468e00fefbf94b39849389f346e5/LICENSE",
+    "title": "openai/tiktoken: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-208",
+    "url": "https://raw.githubusercontent.com/Aider-AI/aider/main/LICENSE.txt",
+    "title": "Aider-AI/aider: LICENSE.txt",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-209",
+    "url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/COPYING",
+    "title": "BurntSushi/ripgrep: COPYING",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-212",
+    "url": "https://developers.cloudflare.com/ai-gateway/features/caching",
+    "title": "Caching · Cloudflare AI Gateway docs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-213",
+    "url": "https://thetokencompany.com/docs/llms.txt",
+    "title": "thetokencompany.com: docs > llms.txt",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-214",
+    "url": "https://compresr.ai/docs/introduction",
+    "title": "Introduction | Compresr",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-216",
+    "url": "https://developers.openai.com/api/docs/guides/batch",
+    "title": "developers.openai.com: api > docs > guides > batch",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-217",
+    "url": "https://www.sqlite.org/copyright.html",
+    "title": "SQLite Copyright",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts."
+  },
+  {
+    "id": "market-source-218",
+    "url": "https://duckdb.org/docs/stable/sql/query_syntax/select.html",
+    "title": "SELECT Clause : DuckDB",
+    "checked_on": "2026-09-06",
+    "evidence_type": "official-documentation",
+    "caveat": "First-party/vendor documentation checked on the stated date; mutable claims are not independent whole-task measurements."
+  },
+  {
+    "id": "market-source-222",
+    "url": "https://huggingface.co/chopratejas/kompress-v2-base/raw/b1563631b35bfdcee37587ad530147497d820d4c/README.md",
+    "title": "Model card: chopratejas/kompress-v2-base",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-240",
+    "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/e67b3c8a29443a60d6b0018fb22f525c5cd7e709/headroom/transforms/kompress_compressor.py",
+    "title": "headroomlabs-ai/headroom: headroom/transforms/kompress_compressor.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-247",
+    "url": "https://raw.githubusercontent.com/microsoft/LLMLingua/e0e9d99beb94098bbd924aa53c2c112eac41c758/LICENSE",
+    "title": "microsoft/LLMLingua: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-258",
+    "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/main/README.md",
+    "title": "lm-sys/RouteLLM: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-259",
+    "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/main/LICENSE",
+    "title": "lm-sys/RouteLLM: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-260",
+    "url": "https://raw.githubusercontent.com/qdrant/qdrant/master/README.md",
+    "title": "qdrant/qdrant: README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-261",
+    "url": "https://raw.githubusercontent.com/qdrant/qdrant/master/LICENSE",
+    "title": "qdrant/qdrant: LICENSE",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-262",
+    "url": "https://raw.githubusercontent.com/Aider-AI/aider/main/aider/repomap.py",
+    "title": "Aider-AI/aider: aider/repomap.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-263",
+    "url": "https://raw.githubusercontent.com/oraios/serena/main/src/serena/tools/symbol_tools.py",
+    "title": "oraios/serena: src/serena/tools/symbol_tools.py",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-264",
+    "url": "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/pyproject.toml",
+    "title": "BerriAI/litellm: pyproject.toml",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-265",
+    "url": "https://raw.githubusercontent.com/BerriAI/litellm/litellm_internal_staging/enterprise/LICENSE.md",
+    "title": "BerriAI/litellm: enterprise/LICENSE.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Inspected license or copyright text. Not legal advice or clearance of weights, dependencies, trademarks, hosted editions or provider contracts. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-266",
+    "url": "https://raw.githubusercontent.com/toon-format/toon/main/packages/toon/README.md",
+    "title": "toon-format/toon: packages/toon/README.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-267",
+    "url": "https://raw.githubusercontent.com/toon-format/toon/main/packages/toon/src/encode/encoders.ts",
+    "title": "toon-format/toon: packages/toon/src/encode/encoders.ts",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Moving branch URL; inspect again before adoption."
+  },
+  {
+    "id": "market-source-268",
+    "url": "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/rust/crates/ccusage-core/src/cost.rs",
+    "title": "ryoppippi/ccusage: rust/crates/ccusage-core/src/cost.rs",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-269",
+    "url": "https://raw.githubusercontent.com/ryoppippi/ccusage/2defd5550b9e4a26c0f4d4f175fc1508ca16fbc3/docs/guide/cost-modes.md",
+    "title": "ryoppippi/ccusage: docs/guide/cost-modes.md",
+    "checked_on": "2026-09-06",
+    "evidence_type": "source-inspection",
+    "caveat": "Source/model-card inspection only, not installed-release, supply-chain or native end-to-end verification. Immutable repository/model revision linked."
+  },
+  {
+    "id": "market-source-271",
+    "url": "https://api.github.com/search/repositories?q=token+compression+stars%3A%3E100&sort=stars&per_page=20",
+    "title": "GitHub repository discovery: token compression",
+    "checked_on": "2026-09-06",
+    "evidence_type": "discovery-only",
+    "caveat": "Search metadata/descriptions only; first page and popularity bias, not source or benchmark verification."
+  },
+  {
+    "id": "market-source-272",
+    "url": "https://raw.githubusercontent.com/jia-gao/leanctx/84329a47161c449c14817db88c1f3218e95e22fb/benchmarks/clawrouter/results/full503_phase1_results.jsonl",
+    "title": "jia-gao/leanctx: benchmarks/clawrouter/results/full503_phase1_results.jsonl",
+    "checked_on": "2026-09-06",
+    "evidence_type": "author-benchmark",
+    "caveat": "Author artifact, not a new live model run. Payload, full-task, quality and hardware denominators must be read separately. Immutable repository/model revision linked. Locally parsed: 503 A plus 503 B LongBench records and two extra probes; accuracy fields in A/B are null."
+  }
+]
