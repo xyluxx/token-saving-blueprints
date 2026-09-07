@@ -73,7 +73,8 @@
     "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
     "Source dates and guide support labels retain their own scope.",
     "No universal average, exact-quality guarantee or market-wide perfection claim is established.",
-    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified."
+    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified.",
+    "The repository workflow is active and repository Actions are enabled, but the GitHub user-level restriction prevented any hosted test run. Local clean-checkout tests remain the executed evidence."
   ],
   "omniroute_inventory": {
     "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
@@ -90,5 +91,8 @@
     "visual_inspection": "pass",
     "svg_safety_checks": "pass",
     "navigation_pills": 6
-  }
+  },
+  "remote_ci_status": "blocked at account level",
+  "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",
+  "remote_ci_checked_at_utc": "2026-09-07T03:59:06.592468+00:00"
 }
