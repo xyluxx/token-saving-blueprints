@@ -1,10 +1,8 @@
 <h1 align="center">Token Saving Blueprints</h1>
 
 <p align="center">
-  <a href="#api-cost-planning-scenario"><img src="assets/banner.png" width="1200" alt="Token Saving Blueprints. API-cost planning scenario with both add-ons: Conservative 38%, Aggressive 53%. Based on stated assumptions, not measured averages."></a>
+  <a href="#api-cost-planning-scenario"><img src="assets/banner.png" width="1200" alt="Token Saving Blueprints. API-cost planning scenario with both add-ons: Conservative 38%, Aggressive 53%."></a>
 </p>
-
-<p align="center"><strong>Planning scenario:</strong> calculated from the stated assumptions with both add-ons. Actual savings vary; these are not measured averages.</p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ec6?style=plastic" width="87" height="20" alt="License: MIT"></a>

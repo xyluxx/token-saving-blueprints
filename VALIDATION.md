@@ -40,4 +40,4 @@ Say what passed: documentation/fixture checks, source inspection or a particular
 
 ## Scenario arithmetic versus performance
 
-The [README planning scenario](README.md#api-cost-planning-scenario) is calculated from explicit chosen assumptions in [scenario data](examples/api-cost-scenario.json). Checks cover all eight mode/add-on combinations, decimal costs, whole-percentage rounding and nonbenchmark/nonforecast labels. Passing that check proves arithmetic consistency, not that the assumed savings occur. The banner and adjacent text retain the same qualification.
+The [README planning scenario](README.md#api-cost-planning-scenario) is calculated from explicit chosen assumptions in [scenario data](examples/api-cost-scenario.json). Checks cover all eight mode/add-on combinations, decimal costs, whole-percentage rounding and nonbenchmark/nonforecast labels. Passing that check proves arithmetic consistency, not that the assumed savings occur. The banner retains its planning-scenario heading, and the README retains the full assumptions and nonbenchmark explanation.
