@@ -69,7 +69,7 @@ These are operating methods and templates, not claims that a new runtime enforce
 
 Use [native or headless delegation](docs/delegation.md) when a bounded worker helps. API models do not each need a separate app window, but tool-capable workers still need their actual runtime and permissions. The main agent remains accountable.
 
-[OmniRoute](docs/addons/omniroute.md) is an optional API-facing gateway with API-key, OAuth and CLI-owned upstream paths. Either blueprint mode can use an independently approved compatible route. Its [compression inventory](docs/addons/omniroute-compression.md) describes source-inspected controls, not authenticated account tests. It is not an all-features preset or a subscription-token broker. Its route, fallback, cache and data gates must pass first; otherwise stay native.
+[OmniRoute](docs/addons/omniroute.md) is an optional API-facing gateway with API-key, OAuth and CLI-owned upstream paths. Either blueprint mode can use an independently approved compatible route. Its [compression inventory](docs/addons/omniroute-compression.md) describes source-inspected controls, not authenticated account tests. This blueprint does not supply an all-features preset or grant permission to rebroker other people's subscriptions. The selected route, fallback, cache and data gates must pass first; otherwise retain the existing supported route.
 
 [Cheaper/free worker models](docs/addons/free-provider-lanes.md) are separately consented cost choices. They can change dollars without reducing tokens, and no extra 20–30% is promised. Do not enable every layer or pool human accounts.
 
