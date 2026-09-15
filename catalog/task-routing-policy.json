@@ -1,0 +1,240 @@
+{
+  "kind": "forced-task-routing-policy",
+  "version": 2,
+  "default_route": "main",
+  "enabled_when_any": [
+    "local_gpu_enabled",
+    "free_model_enabled",
+    "omniroute_enabled"
+  ],
+  "route_precedence": [
+    "deterministic-code",
+    "local",
+    "free",
+    "main"
+  ],
+  "allowed_values": {
+    "task_shape": [
+      "bounded",
+      "open-ended",
+      "unknown"
+    ],
+    "operation": [
+      "deterministic",
+      "semantic",
+      "mixed",
+      "unknown"
+    ],
+    "reasoning": [
+      "low",
+      "medium",
+      "high",
+      "unknown"
+    ],
+    "data_class": [
+      "public",
+      "internal",
+      "confidential",
+      "credentials",
+      "unknown"
+    ],
+    "external_effect": [
+      "none",
+      "reversible",
+      "irreversible",
+      "unknown"
+    ],
+    "verification": [
+      "deterministic",
+      "human",
+      "none",
+      "unknown"
+    ]
+  },
+  "main_only": {
+    "task_shape": [
+      "open-ended",
+      "unknown"
+    ],
+    "reasoning": [
+      "high",
+      "unknown"
+    ],
+    "data_class": [
+      "credentials",
+      "unknown"
+    ],
+    "external_effect": [
+      "irreversible",
+      "unknown"
+    ],
+    "verification": [
+      "none",
+      "unknown"
+    ]
+  },
+  "main_gate_reason_mapping": {
+    "task_shape": {
+      "open-ended": "UNKNOWN_TASK_SHAPE",
+      "unknown": "UNKNOWN_TASK_SHAPE"
+    },
+    "reasoning": {
+      "high": "HIGH_REASONING_REQUIRED",
+      "unknown": "HIGH_REASONING_REQUIRED"
+    },
+    "data_class": {
+      "credentials": "CREDENTIAL_DATA",
+      "unknown": "UNKNOWN_DATA_CLASS"
+    },
+    "external_effect": {
+      "irreversible": "IRREVERSIBLE_EFFECT",
+      "unknown": "UNKNOWN_EXTERNAL_EFFECT"
+    },
+    "verification": {
+      "none": "VERIFIER_MISSING",
+      "unknown": "VERIFICATION_UNKNOWN"
+    }
+  },
+  "routes": {
+    "local": {
+      "allowed": {
+        "task_shape": [
+          "bounded"
+        ],
+        "operation": [
+          "semantic",
+          "mixed"
+        ],
+        "reasoning": [
+          "low",
+          "medium"
+        ],
+        "data_class": [
+          "public",
+          "internal",
+          "confidential"
+        ],
+        "external_effect": [
+          "none",
+          "reversible"
+        ],
+        "verification": [
+          "deterministic",
+          "human"
+        ]
+      },
+      "policy_mismatch_reason": "NO_VERIFIED_WORKER_ROUTE",
+      "expected_verifier": {
+        "identity": "local-deterministic-verifier",
+        "type": "deterministic",
+        "independence": "independent"
+      }
+    },
+    "free": {
+      "allowed": {
+        "task_shape": [
+          "bounded"
+        ],
+        "operation": [
+          "semantic",
+          "mixed"
+        ],
+        "reasoning": [
+          "low"
+        ],
+        "data_class": [
+          "public"
+        ],
+        "external_effect": [
+          "none"
+        ],
+        "verification": [
+          "deterministic"
+        ]
+      },
+      "policy_mismatch_reason": "NO_VERIFIED_WORKER_ROUTE",
+      "expected_verifier": {
+        "identity": "free-deterministic-verifier",
+        "type": "deterministic",
+        "independence": "independent"
+      }
+    }
+  },
+  "post_result": {
+    "worker_routes": [
+      "local",
+      "free"
+    ],
+    "verifier_results": [
+      "pass",
+      "fail",
+      "unknown"
+    ],
+    "verifier_types": [
+      "deterministic",
+      "human",
+      "independent-model"
+    ],
+    "terminal_states": [
+      "accepted",
+      "stopped",
+      "cancelled",
+      "timed-out",
+      "main-fallback-failed"
+    ],
+    "maximum_main_fallbacks": 1,
+    "actions": {
+      "pass": "accept",
+      "failed_first": "fallback-main",
+      "fallback_not_authorized": "stop",
+      "fallback_limit": "stop",
+      "correlation_failure": "reject",
+      "verifier_not_independent": "stop",
+      "terminal_late_result": "reject",
+      "verifier_authorization_failure": "reject"
+    }
+  },
+  "reason_codes": [
+    "ADDONS_DISABLED",
+    "CAPABILITY_EXPIRED",
+    "CAPABILITY_STATUS_UNKNOWN",
+    "CONTEXT_TOO_LARGE",
+    "CORRELATION_MISMATCH",
+    "CREDENTIAL_DATA",
+    "DATA_CLASS_UNSUPPORTED",
+    "DETERMINISTIC_OPERATION",
+    "HARD_SPEND_STOP_UNVERIFIED",
+    "HIGH_REASONING_REQUIRED",
+    "IRREVERSIBLE_EFFECT",
+    "LATE_RESULT_REJECTED",
+    "MAIN_FALLBACK_LIMIT_REACHED",
+    "MAIN_FALLBACK_NOT_AUTHORIZED",
+    "MODEL_IDENTITY_UNKNOWN",
+    "NO_VERIFIED_WORKER_ROUTE",
+    "OUTPUT_CAPABILITY_UNVERIFIED",
+    "REASONING_UNSUPPORTED",
+    "ROUTE_FREE_ELIGIBLE",
+    "ROUTE_LOCAL_ELIGIBLE",
+    "ROUTE_UNAVAILABLE",
+    "RUNTIME_FINGERPRINT_MISMATCH",
+    "TASK_CLASS_UNVERIFIED",
+    "TOOLS_UNVERIFIED",
+    "UNKNOWN_DATA_CLASS",
+    "UNKNOWN_EXTERNAL_EFFECT",
+    "UNKNOWN_OPERATION",
+    "UNKNOWN_TASK_SHAPE",
+    "VERIFICATION_METHOD_UNSUPPORTED",
+    "VERIFICATION_UNKNOWN",
+    "VERIFIED_WORKER_RESULT",
+    "VERIFIER_AUTHORIZATION_MISMATCH",
+    "VERIFIER_MISSING",
+    "VERIFIER_NOT_INDEPENDENT",
+    "WORKER_VERIFICATION_FAILED"
+  ],
+  "failure_behavior": {
+    "pre_dispatch": "Unknown, malformed, credential-bearing, consequential, unverified or unsupported work stays on main.",
+    "post_dispatch": "Worker output is provisional; only a correlated verifier record may authorize acceptance or one explicitly authorized main fallback.",
+    "enforcement": "If an enabled add-on can bypass this reducer, it is not enabled in conformance."
+  },
+  "evidence_limit": "Blueprint-only pure reducers; classification, dispatch, verification execution, persistence and telemetry storage are host responsibilities."
+}

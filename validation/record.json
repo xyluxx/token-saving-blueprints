@@ -1,0 +1,128 @@
+{
+  "kind": "repository-validation-record",
+  "status": "metadata-only",
+  "validated_at_utc": "2026-09-15T05:29:06Z",
+  "scope": "Repository documents, strict operational routing contracts, structured capability/verifier fixtures, source-backed inventories, privacy patterns and synthetic accounting; not execution, authenticated accounts or a savings benchmark",
+  "validated_content_commit": "32f222b3b0e77a0d6a3d8676df758ec321a1370c",
+  "clean_checkout": false,
+  "repository_command": "python3 scripts/validate.py",
+  "harness_identities": 19,
+  "auth_provider_routes": 91,
+  "market_records": 53,
+  "market_sources": 125,
+  "synthetic_accounting_examples": 2,
+  "syntax_checks": {
+    "json_fences": 4,
+    "toml_fences": 2,
+    "shell_fences_bash_n": 21,
+    "shell_snippets_executed": false,
+    "yaml_fences": "documented example; no native account execution"
+  },
+  "native_authenticated_trials": false,
+  "savings_benchmark": false,
+  "remote_ci_executed": false,
+  "windows_macos_executed": false,
+  "independent_review": {
+    "source_lanes": "Existing claims/OAuth/economics and broader common-platform discovery; parent checked additional sources and integrated corrections",
+    "closure": "Named corrections applied and inventories reconciled; test execution is release evidence outside this static record."
+  },
+  "notes": [
+    "The final release metadata is recorded after the content checkout validation; final commit and package are separately verified.",
+    "Source dates and guide support labels retain their own scope.",
+    "No universal average, exact-quality guarantee or market-wide perfection claim is established.",
+    "OmniRoute remains source-inspected and pilot-gated; no additional savings percentage or all-account compatibility is certified.",
+    "Additional coverage records include variants and legacy recognition, not 34 independently tested products. Original rejected image assets were removed. The later document-cover direction was subsequently reopened for publication by the owner.",
+    "The owner reopened banner publication. The held document-cover direction now includes 38%/53% only as visibly qualified calculated examples, with full assumptions in the README. This adds no performance evidence.",
+    "Technical hardening was validated as uncommitted release-preparation changes against base commit 32f222b; the parent release process owns final clean-checkout metadata.",
+    "The validator checks the declared test-suite shape only; executed passing-test totals must come from a separate release command log."
+  ],
+  "omniroute_inventory": {
+    "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
+    "registered_engines": 15,
+    "normal_config_choices": 12,
+    "supporting_groups": 22,
+    "runtime_trial": false
+  },
+  "readme_assets": {
+    "badge_style": "standard Shields plastic, five centered inline badges with no forced second row",
+    "badge_count": 5,
+    "badge_height": 20,
+    "banner_pixels": [
+      1800,
+      600
+    ],
+    "banner_status": "Owner requested publication of the retained document-cover design with clearly labeled hypothetical figures",
+    "visual_review": "The duplicated banner footer and adjacent README caption were removed at owner request. Planning-scenario heading, both-add-on labels and detailed README assumptions remain; no numerical or evidence status changed."
+  },
+  "remote_ci_status": "blocked at account level",
+  "remote_ci_error": "GitHub workflow dispatch HTTP 422: Actions has been disabled for this user.",
+  "remote_ci_checked_at_utc": "2026-09-07T03:59:06.592468+00:00",
+  "historical_native_help_checks": [
+    {
+      "client": "claude",
+      "available": true,
+      "version": "2.1.205 (Claude Code)",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    },
+    {
+      "client": "codex",
+      "available": true,
+      "version": "codex-cli 0.149.0",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    },
+    {
+      "client": "aider",
+      "available": true,
+      "version": "aider 0.86.2",
+      "version_exit": 0,
+      "help_exit": 0,
+      "scope": "version/help only; no authenticated task"
+    }
+  ],
+  "additional_platform_surface_records": 34,
+  "omniroute_oauth_category_ids": 24,
+  "whole_repository_revalidation": {
+    "base_commit": "4dfe91c7713453db720edda54ecef28d05a97f43",
+    "base_files_accounted": 80,
+    "exact_replacements": 47,
+    "replacement_files": 21,
+    "scope": "All public text read; repeated claims grouped; consequential current sources rechecked; not 47 independent errors or 91 account trials",
+    "unverified_boundaries": "Exact accounts, full gateway/runtime behavior, selected provider-policy/billing questions and combined savings remain unverified."
+  },
+  "hypothetical_api_scenario": {
+    "data": "examples/api-cost-scenario.json",
+    "combinations_checked": 8,
+    "local_gpu_upper_cases_checked": 1,
+    "arithmetic": "Decimal with half-up rounding",
+    "evidence_boundary": "Chosen assumptions, including a sometimes-attainable 75% variable API-cost upper case with 65.5% local eligibility; not measured averages or forecasts and not a token/subscription-meter model"
+  },
+  "forced_task_routing": {
+    "policy": "catalog/task-routing-policy.json",
+    "fixtures": "examples/task-routing.json",
+    "post_result_fixtures": "examples/task-routing-results.json",
+    "routes": [
+      "deterministic-code",
+      "local",
+      "free",
+      "main"
+    ],
+    "trigger": "mandatory when any local GPU, free-model or OmniRoute add-on is enabled",
+    "failure_behavior": "immutable main gates and compositional evidence fail closed; correlated verification permits at most one explicitly authorized main fallback",
+    "evidence_boundary": "Pure reference reducers and manual contract validators only; classification, execution, standards JSON Schema validation, persistence and telemetry storage remain external",
+    "policy_version": 2,
+    "capability_examples": "examples/capability-evidence.json",
+    "schemas": [
+      "schemas/task-routing-policy.schema.json",
+      "schemas/task-route.schema.json",
+      "schemas/capability-evidence.schema.json",
+      "schemas/post-result.schema.json"
+    ]
+  },
+  "declared_test_modules": [
+    "tests/test_validation.py"
+  ]
+}

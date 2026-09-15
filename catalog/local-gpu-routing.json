@@ -1,0 +1,106 @@
+{
+  "kind": "local-gpu-routing-policy",
+  "version": 1,
+  "checked_on": "2026-09-14",
+  "runtime_neutral": true,
+  "default_route": "retain-current-route",
+  "decision_order": [
+    "task-contract",
+    "privacy-and-authority",
+    "protocol-and-tools",
+    "model-capability",
+    "memory-fit",
+    "measured-quality",
+    "measured-latency"
+  ],
+  "general_purpose": {
+    "minimum_parameters_billions": 7,
+    "maximum_tiny_parameters_billions": 2,
+    "minimum_quantization_bits": 4,
+    "preferred_quantization_class": "quality-preserving-4-bit-or-better",
+    "minimum_context_tokens": 8192,
+    "minimum_dedicated_vram_gib": 8,
+    "minimum_system_or_unified_memory_gib": 16,
+    "headroom_fraction": 0.15,
+    "policy": "The minimum practical good starting tier for an average PC or laptop is a capable 7B-9B instruction model at a quality-preserving 4-bit-or-better quantization, 8 GiB dedicated VRAM where available, 16 GiB system or unified memory, and at least 8k tested context. Treat this as a pilot floor, not a guarantee."
+  },
+  "hard_rejections": [
+    {
+      "id": "tiny-general-purpose",
+      "when": "general-purpose task and parameters <= 2B",
+      "reason": "512M/1B/2B-class models are specialist or experimental routes, not general-purpose defaults."
+    },
+    {
+      "id": "sub-four-bit-general-purpose",
+      "when": "general-purpose task and quantization < 4 bits",
+      "reason": "Below-4-bit weights are outside the general-purpose quality floor."
+    },
+    {
+      "id": "q1-27b",
+      "when": "parameters >= 27B and quantization < 2 bits",
+      "reason": "Q1-class quantization is rejected for 27B-and-larger routes; use a smaller capable model at Q4-or-better or add memory."
+    },
+    {
+      "id": "unverified-tools",
+      "when": "required tools or structured output have not passed the route trial",
+      "reason": "Text generation alone does not prove agent, tool-call, schema or cancellation compatibility."
+    },
+    {
+      "id": "memory-no-headroom",
+      "when": "runtime estimate plus 15% headroom exceeds available memory",
+      "reason": "Do not route by weight-file size alone; context/KV cache and runtime allocations also consume memory."
+    }
+  ],
+  "tiers": [
+    {
+      "id": "specialist-only",
+      "parameters_billions": {"min": 0.5, "max": 2.0},
+      "minimum_quantization_bits": 4,
+      "minimum_dedicated_vram_gib": 4,
+      "minimum_system_or_unified_memory_gib": 8,
+      "general_purpose": false,
+      "suitable_for": ["narrow classification", "short extraction with validation", "autocomplete experiment"],
+      "not_for": ["general assistant", "repository-wide coding", "open-ended research", "unsupervised tool use"]
+    },
+    {
+      "id": "minimum-good",
+      "parameters_billions": {"min": 7.0, "max": 9.0},
+      "minimum_quantization_bits": 4,
+      "minimum_dedicated_vram_gib": 8,
+      "minimum_system_or_unified_memory_gib": 16,
+      "minimum_context_tokens": 8192,
+      "general_purpose": true,
+      "suitable_for": ["bounded drafting", "focused coding", "summarization", "validated tool use"],
+      "not_for": ["silent replacement of a stronger required route", "unverified high-stakes decisions"]
+    },
+    {
+      "id": "strong-local",
+      "parameters_billions": {"min": 12.0, "max": 14.0},
+      "minimum_quantization_bits": 4,
+      "minimum_dedicated_vram_gib": 12,
+      "minimum_system_or_unified_memory_gib": 24,
+      "minimum_context_tokens": 8192,
+      "general_purpose": true,
+      "suitable_for": ["multi-file coding pilot", "longer synthesis", "validated agent steps"],
+      "not_for": ["assumed cloud-model equivalence", "unbounded autonomous writes"]
+    },
+    {
+      "id": "large-local",
+      "parameters_billions": {"min": 27.0, "max": 32.0},
+      "minimum_quantization_bits": 4,
+      "minimum_dedicated_vram_gib": 24,
+      "minimum_system_or_unified_memory_gib": 32,
+      "minimum_context_tokens": 8192,
+      "general_purpose": true,
+      "suitable_for": ["quality-sensitive local pilot", "complex synthesis with full checks"],
+      "not_for": ["Q1 quantization", "weight-file-only memory planning"]
+    }
+  ],
+  "sources": [
+    "https://lmstudio.ai/docs/system-requirements",
+    "https://lmstudio.ai/docs/cli/local-models/load",
+    "https://docs.ollama.com/context-length",
+    "https://docs.ollama.com/gpu"
+  ],
+  "evidence_limit": "Runtime documentation supports hardware variability, memory estimation/offload controls, and the context-memory relationship. Tier thresholds and exclusions are conservative repository recommendations requiring a task-specific trial, not vendor benchmarks or universal quality claims."
+}

@@ -1,0 +1,293 @@
+{
+  "pin": "b345c7f6cd4e1590d1177540813302375a75e332",
+  "scope": "24 OAuth-category identities in current default release; categories are not mechanisms",
+  "rows": [
+    {
+      "provider_ids": [
+        "claude"
+      ],
+      "technical_support": "Gateway PKCE code exchange; access/refresh tokens mapped into connection",
+      "interface_runtime": "Direct gateway credential custody, not Claude CLI process",
+      "policy_status": "Do not offer as an approved deployment under current Anthropic restrictions without provider agreement; native unmodified CLI is a different path",
+      "account_test_boundary": "Subscription/extra usage not tested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/claude.ts"
+      ],
+      "policy_sources": [
+        "https://code.claude.com/docs/en/legal-and-compliance.md"
+      ],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "codex"
+      ],
+      "technical_support": "Gateway PKCE browser login; separate device/import paths exist",
+      "interface_runtime": "Direct Codex OAuth-backed API connection",
+      "policy_status": "OpenAI docs describe OpenAI-auth proxies; generic terms and intended use still govern. No blanket ban or universal gateway approval inferred",
+      "account_test_boundary": "Eligible ChatGPT/Codex account and actual quota/billing untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/codex.ts"
+      ],
+      "policy_sources": [
+        "https://developers.openai.com/codex/auth"
+      ],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "xai-oauth"
+      ],
+      "technical_support": "PKCE code exchange, gateway refresh token custody",
+      "interface_runtime": "api.x.ai via XaiExecutor",
+      "policy_status": "Project-supported transport. Exact third-party permission and account feature scope not established",
+      "account_test_boundary": "Not the Grok Build JWT or an API-key invoice by assumption",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/xai-oauth.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "grok-cli"
+      ],
+      "technical_support": "Device flow plus browser PKCE; native auth JSON/JWT import also implemented",
+      "interface_runtime": "Grok Build proxy endpoint via gateway executor, not the native CLI process",
+      "policy_status": "Project-supported gateway. Keep product-specific policy unresolved; imported access token alone may lack refresh",
+      "account_test_boundary": "Build entitlement, plan and extra usage untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/grok-cli.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "github",
+        "ghe-copilot"
+      ],
+      "technical_support": "Device-code OAuth; GHE requires its instance URL",
+      "interface_runtime": "GitHub/GHE entitlement and Copilot token exchange",
+      "policy_status": "Organization policy and exact permitted integration must be checked; not automatically the same as GitHub native CLI",
+      "account_test_boundary": "Not all GitHub accounts have Copilot entitlement",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/ghe-copilot.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/github.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "gitlab-duo"
+      ],
+      "technical_support": "Registered OAuth app/client required; authorization flow",
+      "interface_runtime": "GitLab Duo endpoint; scopes ai_features/read_user",
+      "policy_status": "App registration, scopes and deployment policy required; no working default client asserted",
+      "account_test_boundary": "GitLab Duo entitlement untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/gitlab-duo.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "antigravity",
+        "agy"
+      ],
+      "technical_support": "Google authorization-code flow; agy login import also offered",
+      "interface_runtime": "Antigravity backend/project routes",
+      "policy_status": "Not Gemini CLI consumer entitlement. Exact provider permission/client scopes must be established; no generic Google OAuth interchangeability",
+      "account_test_boundary": "Google account/organization eligibility untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/agy.ts",
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/antigravity.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "kiro",
+        "amazon-q"
+      ],
+      "technical_support": "Builder ID/device and provider-specific imported-token paths",
+      "interface_runtime": "Related AWS auth handler, separately identified connections",
+      "policy_status": "OmniRoute labels Kiro third-party use prohibited. Current AWS service terms were inspected but that precise blanket sentence was not recovered; retain attributed warning/unresolved provider check, not an invented legal ruling",
+      "account_test_boundary": "No credit-to-token conversion accepted; account and terms untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/kiro.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "qoder"
+      ],
+      "technical_support": "Authorization-code flow",
+      "interface_runtime": "Qoder service",
+      "policy_status": "Project-supported technical connection, provider permission unresolved",
+      "account_test_boundary": "Plan/quota untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/qoder.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "cursor"
+      ],
+      "technical_support": "Provider-specific login/import service",
+      "interface_runtime": "Cursor-backed request path",
+      "policy_status": "Not Cursor BYOK and not blanket permission to export native credentials; gateway policy unresolved",
+      "account_test_boundary": "Cursor plan/credit billing untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/cursor.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "zed"
+      ],
+      "technical_support": "Import-token handler, OS keychain/manual API-key import",
+      "interface_runtime": "Underlying provider credentials",
+      "policy_status": "No standard browser OAuth for this entry; do not relabel imported provider keys as Zed subscription entitlement",
+      "account_test_boundary": "Underlying provider invoices apply as configured, not tested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/zed.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "zed-hosted"
+      ],
+      "technical_support": "Native-app sign-in with one-time RSA challenge",
+      "interface_runtime": "Zed hosted model aggregator",
+      "policy_status": "Distinct technical integration from zed import; provider agreement/plan unresolved",
+      "account_test_boundary": "Zed hosted allowance untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/zed-hosted.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "trae"
+      ],
+      "technical_support": "Import-token handler; browser-assisted capture also advertised",
+      "interface_runtime": "Trae SOLO/cloud JWT with identity metadata",
+      "policy_status": "No generic headless refresh guarantee for pasted tokens; provider policy unresolved",
+      "account_test_boundary": "Plan and expiry behavior untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/trae.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "kimi-coding"
+      ],
+      "technical_support": "Device-code OAuth with device identity",
+      "interface_runtime": "Kimi Coding Plan endpoint",
+      "policy_status": "Technical implementation exists; confirm actual plan and supported third-party use",
+      "account_test_boundary": "Not ordinary Moonshot API billing by assumption",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/kimi-coding.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "kilocode"
+      ],
+      "technical_support": "Gateway/account OAuth and optional anonymous fallback in metadata",
+      "interface_runtime": "Kilo provider",
+      "policy_status": "Do not equate metadata anonymous fallback with authenticated paid entitlement or approved zero-cost mode",
+      "account_test_boundary": "Kilo/account/provider charges untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/kilocode.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "cline",
+        "clinepass"
+      ],
+      "technical_support": "WorkOS OAuth handler reused by two catalog entries",
+      "interface_runtime": "Cline credits versus ClinePass model catalog",
+      "policy_status": "Separate entitlement despite same login flow; direct API-key support also advertised for ClinePass",
+      "account_test_boundary": "No current universal price/catalog claim adopted",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/cline.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "devin-desktop",
+        "devin-cli"
+      ],
+      "technical_support": "OAuth registry actually selects import_token; browser login disabled there",
+      "interface_runtime": "Existing Devin token; CLI executor additionally needs native binary",
+      "policy_status": "Do not advertise generic Sign in with OAuth for these entries; native CLI login and gateway token import are separate paths",
+      "account_test_boundary": "Account/CLI path untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/devin-desktop.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "codebuddy-cn"
+      ],
+      "technical_support": "Device-code flow; API-key option also documented",
+      "interface_runtime": "Tencent CodeBuddy CN",
+      "policy_status": "Provider-specific integration, not interchangeable with other coding plans",
+      "account_test_boundary": "Account/model eligibility untested",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/codebuddy-cn.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    },
+    {
+      "provider_ids": [
+        "openference"
+      ],
+      "technical_support": "Account OAuth",
+      "interface_runtime": "api.openference.com",
+      "policy_status": "Provider-specific connection; successful OAuth is not sufficient for inference",
+      "account_test_boundary": "Gateway warns an active plan is required and missing plan can return 402",
+      "source_urls": [
+        "https://github.com/diegosouzapw/OmniRoute/blob/b345c7f6cd4e1590d1177540813302375a75e332/src/lib/oauth/providers/openference.ts"
+      ],
+      "policy_sources": [],
+      "runtime_tested": false
+    }
+  ],
+  "current_main_reference_difference": "main generated reference lists 25 including Raycast; current default release omits Raycast. Qwen OAuth is not in either current OAuth inventory.",
+  "native_cli_owned_paths": [
+    "codex-app-server",
+    "auggie",
+    "devin-cli-agentic",
+    "zcode"
+  ],
+  "native_cli_owned_limit": "No token stored in OmniRoute category does not mean no upstream login/runtime requirement. Codex app-server bridge source checked; other three described in project provider reference, not tested.",
+  "kind": "source-inspected-authentication-matrix",
+  "runtime_tested": false
+}

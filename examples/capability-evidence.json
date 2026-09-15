@@ -1,0 +1,84 @@
+[
+  {
+    "kind": "synthetic-capability-evidence",
+    "route": "local",
+    "evidence": {
+      "schema_version": 1,
+      "worker_id": "local-worker",
+      "requested_model": "local-alias",
+      "resolved_model": "local/model-v1",
+      "runtime_fingerprint": "sha256:runtime-a",
+      "observed_runtime_fingerprint": "sha256:runtime-a",
+      "evidence_status": "verified",
+      "verified_at": "2026-01-01T00:00:00Z",
+      "expires_at": "2027-01-01T00:00:00Z",
+      "effective_context_tokens": 8192,
+      "task_classes": [
+        "structured-extraction"
+      ],
+      "reasoning_levels": [
+        "low",
+        "medium"
+      ],
+      "verified_tools": [
+        "filesystem-read"
+      ],
+      "output_capabilities": [
+        "json"
+      ],
+      "data_classes": [
+        "public",
+        "internal",
+        "confidential"
+      ],
+      "verification_methods": [
+        "deterministic",
+        "human"
+      ],
+      "evidence_reference": "evidence://local/trial-1",
+      "route_available": true,
+      "hard_spend_stop_verified": false
+    }
+  },
+  {
+    "kind": "synthetic-capability-evidence",
+    "route": "free",
+    "evidence": {
+      "schema_version": 1,
+      "worker_id": "free-worker",
+      "requested_model": "free-alias",
+      "resolved_model": "free/model-v1",
+      "runtime_fingerprint": "sha256:runtime-a",
+      "observed_runtime_fingerprint": "sha256:runtime-a",
+      "evidence_status": "verified",
+      "verified_at": "2026-01-01T00:00:00Z",
+      "expires_at": "2027-01-01T00:00:00Z",
+      "effective_context_tokens": 8192,
+      "task_classes": [
+        "structured-extraction"
+      ],
+      "reasoning_levels": [
+        "low",
+        "medium"
+      ],
+      "verified_tools": [
+        "filesystem-read"
+      ],
+      "output_capabilities": [
+        "json"
+      ],
+      "data_classes": [
+        "public",
+        "internal",
+        "confidential"
+      ],
+      "verification_methods": [
+        "deterministic",
+        "human"
+      ],
+      "evidence_reference": "evidence://free/trial-1",
+      "route_available": true,
+      "hard_spend_stop_verified": true
+    }
+  }
+]

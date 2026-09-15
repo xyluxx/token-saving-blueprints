@@ -1,0 +1,182 @@
+[
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "pass",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "pass",
+      "verifier_type": "deterministic",
+      "verifier_identity": "local-deterministic-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": true,
+      "main_fallback_count": 0,
+      "execution_state": "worker-result-pending",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "accept",
+      "reason_code": "VERIFIED_WORKER_RESULT"
+    }
+  },
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "fail fallback",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "fail",
+      "verifier_type": "deterministic",
+      "verifier_identity": "local-deterministic-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": true,
+      "main_fallback_count": 0,
+      "execution_state": "worker-result-pending",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "fallback-main",
+      "reason_code": "WORKER_VERIFICATION_FAILED"
+    }
+  },
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "not authorized",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "fail",
+      "verifier_type": "deterministic",
+      "verifier_identity": "local-deterministic-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": false,
+      "main_fallback_count": 0,
+      "execution_state": "worker-result-pending",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "stop",
+      "reason_code": "MAIN_FALLBACK_NOT_AUTHORIZED"
+    }
+  },
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "limit",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "fail",
+      "verifier_type": "deterministic",
+      "verifier_identity": "local-deterministic-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": true,
+      "main_fallback_count": 1,
+      "execution_state": "worker-result-pending",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "stop",
+      "reason_code": "MAIN_FALLBACK_LIMIT_REACHED"
+    }
+  },
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "late",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "pass",
+      "verifier_type": "deterministic",
+      "verifier_identity": "local-deterministic-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": true,
+      "main_fallback_count": 0,
+      "execution_state": "accepted",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "reject",
+      "reason_code": "LATE_RESULT_REJECTED"
+    }
+  },
+  {
+    "kind": "synthetic-task-result-fixture",
+    "name": "self-asserted verifier rejected",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "decision_id": "decision-1",
+      "worker_id": "local-worker",
+      "expected_task_id": "task-1",
+      "expected_decision_id": "decision-1",
+      "expected_worker_id": "local-worker",
+      "worker_route": "local",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_evidence_reference": "evidence://local/trial-1",
+      "verifier_result": "pass",
+      "verifier_type": "deterministic",
+      "verifier_identity": "arbitrary-verifier",
+      "verifier_independence": "independent",
+      "main_fallback_authorized": true,
+      "main_fallback_count": 0,
+      "execution_state": "worker-result-pending",
+      "expected_verifier_identity": "arbitrary-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    },
+    "expected": {
+      "action": "reject",
+      "reason_code": "VERIFIER_AUTHORIZATION_MISMATCH"
+    }
+  }
+]

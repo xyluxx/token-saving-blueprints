@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized task route request v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "task_class",
+    "task_shape",
+    "operation",
+    "reasoning",
+    "data_class",
+    "external_effect",
+    "verification",
+    "context_tokens",
+    "required_tools",
+    "required_output_capabilities",
+    "evaluation_time",
+    "local_gpu_enabled",
+    "free_model_enabled",
+    "omniroute_enabled",
+    "capability_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_class": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_shape": {
+      "enum": [
+        "bounded",
+        "open-ended",
+        "unknown"
+      ]
+    },
+    "operation": {
+      "enum": [
+        "deterministic",
+        "semantic",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "reasoning": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "data_class": {
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "credentials",
+        "unknown"
+      ]
+    },
+    "external_effect": {
+      "enum": [
+        "none",
+        "reversible",
+        "irreversible",
+        "unknown"
+      ]
+    },
+    "verification": {
+      "enum": [
+        "deterministic",
+        "human",
+        "none",
+        "unknown"
+      ]
+    },
+    "context_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "required_tools": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_output_capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evaluation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "local_gpu_enabled": {
+      "type": "boolean"
+    },
+    "free_model_enabled": {
+      "type": "boolean"
+    },
+    "omniroute_enabled": {
+      "type": "boolean"
+    },
+    "capability_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local",
+        "free"
+      ],
+      "properties": {
+        "local": {
+          "$ref": "capability-evidence.schema.json"
+        },
+        "free": {
+          "$ref": "capability-evidence.schema.json"
+        }
+      }
+    }
+  }
+}

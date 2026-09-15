@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Post-result reducer input v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "decision_id",
+    "worker_id",
+    "expected_task_id",
+    "expected_decision_id",
+    "expected_worker_id",
+    "evidence_reference",
+    "expected_evidence_reference",
+    "verifier_identity",
+    "schema_version",
+    "worker_route",
+    "verifier_result",
+    "verifier_type",
+    "verifier_independence",
+    "main_fallback_authorized",
+    "main_fallback_count",
+    "execution_state",
+    "expected_verifier_identity",
+    "expected_verifier_type",
+    "expected_verifier_independence"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "worker_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_worker_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_evidence_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verifier_identity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "worker_route": {
+      "enum": [
+        "local",
+        "free"
+      ]
+    },
+    "verifier_result": {
+      "enum": [
+        "pass",
+        "fail",
+        "unknown"
+      ]
+    },
+    "verifier_type": {
+      "enum": [
+        "deterministic",
+        "human",
+        "independent-model"
+      ]
+    },
+    "verifier_independence": {
+      "enum": [
+        "independent",
+        "self-check",
+        "required"
+      ]
+    },
+    "main_fallback_authorized": {
+      "type": "boolean"
+    },
+    "main_fallback_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "execution_state": {
+      "enum": [
+        "worker-result-pending",
+        "accepted",
+        "stopped",
+        "cancelled",
+        "timed-out",
+        "main-fallback-failed"
+      ]
+    },
+    "expected_verifier_identity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_verifier_type": {
+      "enum": [
+        "deterministic",
+        "human",
+        "independent-model"
+      ]
+    },
+    "expected_verifier_independence": {
+      "const": "independent"
+    }
+  }
+}

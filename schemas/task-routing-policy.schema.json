@@ -1,0 +1,680 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Forced task routing policy v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "version",
+    "default_route",
+    "enabled_when_any",
+    "route_precedence",
+    "allowed_values",
+    "main_only",
+    "main_gate_reason_mapping",
+    "routes",
+    "post_result",
+    "reason_codes",
+    "failure_behavior",
+    "evidence_limit"
+  ],
+  "properties": {
+    "kind": {
+      "const": "forced-task-routing-policy"
+    },
+    "version": {
+      "const": 2
+    },
+    "default_route": {
+      "const": "main"
+    },
+    "enabled_when_any": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "local_gpu_enabled",
+          "free_model_enabled",
+          "omniroute_enabled"
+        ]
+      },
+      "maxItems": 3
+    },
+    "route_precedence": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "deterministic-code",
+          "local",
+          "free",
+          "main"
+        ]
+      },
+      "maxItems": 4
+    },
+    "allowed_values": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_shape",
+        "operation",
+        "reasoning",
+        "data_class",
+        "external_effect",
+        "verification"
+      ],
+      "properties": {
+        "task_shape": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "bounded",
+              "open-ended",
+              "unknown"
+            ]
+          },
+          "maxItems": 3
+        },
+        "operation": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "deterministic",
+              "semantic",
+              "mixed",
+              "unknown"
+            ]
+          },
+          "maxItems": 4
+        },
+        "reasoning": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "unknown"
+            ]
+          },
+          "maxItems": 4
+        },
+        "data_class": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "public",
+              "internal",
+              "confidential",
+              "credentials",
+              "unknown"
+            ]
+          },
+          "maxItems": 5
+        },
+        "external_effect": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "none",
+              "reversible",
+              "irreversible",
+              "unknown"
+            ]
+          },
+          "maxItems": 4
+        },
+        "verification": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "deterministic",
+              "human",
+              "none",
+              "unknown"
+            ]
+          },
+          "maxItems": 4
+        }
+      }
+    },
+    "main_only": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_shape",
+        "reasoning",
+        "data_class",
+        "external_effect",
+        "verification"
+      ],
+      "properties": {
+        "task_shape": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "open-ended",
+              "unknown"
+            ]
+          }
+        },
+        "reasoning": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "high",
+              "unknown"
+            ]
+          }
+        },
+        "data_class": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "credentials",
+              "unknown"
+            ]
+          }
+        },
+        "external_effect": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "irreversible",
+              "unknown"
+            ]
+          }
+        },
+        "verification": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "none",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "main_gate_reason_mapping": {
+      "const": {
+        "task_shape": {
+          "open-ended": "UNKNOWN_TASK_SHAPE",
+          "unknown": "UNKNOWN_TASK_SHAPE"
+        },
+        "reasoning": {
+          "high": "HIGH_REASONING_REQUIRED",
+          "unknown": "HIGH_REASONING_REQUIRED"
+        },
+        "data_class": {
+          "credentials": "CREDENTIAL_DATA",
+          "unknown": "UNKNOWN_DATA_CLASS"
+        },
+        "external_effect": {
+          "irreversible": "IRREVERSIBLE_EFFECT",
+          "unknown": "UNKNOWN_EXTERNAL_EFFECT"
+        },
+        "verification": {
+          "none": "VERIFIER_MISSING",
+          "unknown": "VERIFICATION_UNKNOWN"
+        }
+      }
+    },
+    "routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local",
+        "free"
+      ],
+      "properties": {
+        "local": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "allowed",
+            "policy_mismatch_reason",
+            "expected_verifier"
+          ],
+          "properties": {
+            "allowed": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "task_shape",
+                "operation",
+                "reasoning",
+                "data_class",
+                "external_effect",
+                "verification"
+              ],
+              "properties": {
+                "task_shape": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "bounded",
+                      "open-ended",
+                      "unknown"
+                    ]
+                  }
+                },
+                "operation": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "deterministic",
+                      "semantic",
+                      "mixed",
+                      "unknown"
+                    ]
+                  }
+                },
+                "reasoning": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "low",
+                      "medium",
+                      "high",
+                      "unknown"
+                    ]
+                  }
+                },
+                "data_class": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "public",
+                      "internal",
+                      "confidential",
+                      "credentials",
+                      "unknown"
+                    ]
+                  }
+                },
+                "external_effect": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "none",
+                      "reversible",
+                      "irreversible",
+                      "unknown"
+                    ]
+                  }
+                },
+                "verification": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "deterministic",
+                      "human",
+                      "none",
+                      "unknown"
+                    ]
+                  }
+                }
+              }
+            },
+            "policy_mismatch_reason": {
+              "const": "NO_VERIFIED_WORKER_ROUTE"
+            },
+            "expected_verifier": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "identity",
+                "type",
+                "independence"
+              ],
+              "properties": {
+                "identity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "enum": [
+                    "deterministic",
+                    "human",
+                    "independent-model"
+                  ]
+                },
+                "independence": {
+                  "const": "independent"
+                }
+              }
+            }
+          }
+        },
+        "free": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "allowed",
+            "policy_mismatch_reason",
+            "expected_verifier"
+          ],
+          "properties": {
+            "allowed": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "task_shape",
+                "operation",
+                "reasoning",
+                "data_class",
+                "external_effect",
+                "verification"
+              ],
+              "properties": {
+                "task_shape": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "bounded",
+                      "open-ended",
+                      "unknown"
+                    ]
+                  }
+                },
+                "operation": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "deterministic",
+                      "semantic",
+                      "mixed",
+                      "unknown"
+                    ]
+                  }
+                },
+                "reasoning": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "low",
+                      "medium",
+                      "high",
+                      "unknown"
+                    ]
+                  }
+                },
+                "data_class": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "public",
+                      "internal",
+                      "confidential",
+                      "credentials",
+                      "unknown"
+                    ]
+                  }
+                },
+                "external_effect": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "none",
+                      "reversible",
+                      "irreversible",
+                      "unknown"
+                    ]
+                  }
+                },
+                "verification": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "deterministic",
+                      "human",
+                      "none",
+                      "unknown"
+                    ]
+                  }
+                }
+              }
+            },
+            "policy_mismatch_reason": {
+              "const": "NO_VERIFIED_WORKER_ROUTE"
+            },
+            "expected_verifier": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "identity",
+                "type",
+                "independence"
+              ],
+              "properties": {
+                "identity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "enum": [
+                    "deterministic",
+                    "human",
+                    "independent-model"
+                  ]
+                },
+                "independence": {
+                  "const": "independent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "post_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worker_routes",
+        "verifier_results",
+        "verifier_types",
+        "terminal_states",
+        "maximum_main_fallbacks",
+        "actions"
+      ],
+      "properties": {
+        "worker_routes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "local",
+              "free"
+            ]
+          }
+        },
+        "verifier_results": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown"
+            ]
+          }
+        },
+        "verifier_types": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "deterministic",
+              "human",
+              "independent-model"
+            ]
+          }
+        },
+        "terminal_states": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "accepted",
+              "stopped",
+              "cancelled",
+              "timed-out",
+              "main-fallback-failed"
+            ]
+          }
+        },
+        "maximum_main_fallbacks": {
+          "const": 1
+        },
+        "actions": {
+          "const": {
+            "pass": "accept",
+            "failed_first": "fallback-main",
+            "fallback_not_authorized": "stop",
+            "fallback_limit": "stop",
+            "correlation_failure": "reject",
+            "verifier_not_independent": "stop",
+            "terminal_late_result": "reject",
+            "verifier_authorization_failure": "reject"
+          }
+        }
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 35,
+      "maxItems": 35,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "ADDONS_DISABLED",
+          "CAPABILITY_EXPIRED",
+          "CAPABILITY_STATUS_UNKNOWN",
+          "CONTEXT_TOO_LARGE",
+          "CORRELATION_MISMATCH",
+          "CREDENTIAL_DATA",
+          "DATA_CLASS_UNSUPPORTED",
+          "DETERMINISTIC_OPERATION",
+          "HARD_SPEND_STOP_UNVERIFIED",
+          "HIGH_REASONING_REQUIRED",
+          "IRREVERSIBLE_EFFECT",
+          "LATE_RESULT_REJECTED",
+          "MAIN_FALLBACK_LIMIT_REACHED",
+          "MAIN_FALLBACK_NOT_AUTHORIZED",
+          "MODEL_IDENTITY_UNKNOWN",
+          "NO_VERIFIED_WORKER_ROUTE",
+          "OUTPUT_CAPABILITY_UNVERIFIED",
+          "REASONING_UNSUPPORTED",
+          "ROUTE_FREE_ELIGIBLE",
+          "ROUTE_LOCAL_ELIGIBLE",
+          "ROUTE_UNAVAILABLE",
+          "RUNTIME_FINGERPRINT_MISMATCH",
+          "TASK_CLASS_UNVERIFIED",
+          "TOOLS_UNVERIFIED",
+          "UNKNOWN_DATA_CLASS",
+          "UNKNOWN_EXTERNAL_EFFECT",
+          "UNKNOWN_OPERATION",
+          "UNKNOWN_TASK_SHAPE",
+          "VERIFICATION_METHOD_UNSUPPORTED",
+          "VERIFICATION_UNKNOWN",
+          "VERIFIED_WORKER_RESULT",
+          "VERIFIER_AUTHORIZATION_MISMATCH",
+          "VERIFIER_MISSING",
+          "VERIFIER_NOT_INDEPENDENT",
+          "WORKER_VERIFICATION_FAILED"
+        ]
+      }
+    },
+    "failure_behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre_dispatch",
+        "post_dispatch",
+        "enforcement"
+      ],
+      "properties": {
+        "pre_dispatch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "post_dispatch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "enforcement": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_limit": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

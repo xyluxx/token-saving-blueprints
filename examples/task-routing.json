@@ -1,0 +1,868 @@
+[
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "local eligible",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "local",
+      "reason_code": "ROUTE_LOCAL_ELIGIBLE",
+      "forced": true,
+      "worker_id": "local-worker",
+      "evidence_reference": "evidence://local/trial-1",
+      "expected_verifier_identity": "local-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "free eligible",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": false,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "free",
+      "reason_code": "ROUTE_FREE_ELIGIBLE",
+      "forced": true,
+      "worker_id": "free-worker",
+      "evidence_reference": "evidence://free/trial-1",
+      "expected_verifier_identity": "free-deterministic-verifier",
+      "expected_verifier_type": "deterministic",
+      "expected_verifier_independence": "independent"
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "deterministic",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "deterministic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "deterministic-code",
+      "reason_code": "DETERMINISTIC_OPERATION",
+      "forced": true
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "addons off",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": false,
+      "free_model_enabled": false,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "main",
+      "reason_code": "ADDONS_DISABLED",
+      "forced": false
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "credentials",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "credentials",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "main",
+      "reason_code": "CREDENTIAL_DATA",
+      "forced": true
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "irreversible",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "irreversible",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "main",
+      "reason_code": "IRREVERSIBLE_EFFECT",
+      "forced": true
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "high reasoning",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "high",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "deterministic",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "main",
+      "reason_code": "HIGH_REASONING_REQUIRED",
+      "forced": true
+    }
+  },
+  {
+    "kind": "synthetic-task-routing-fixture",
+    "name": "unknown verification",
+    "request": {
+      "schema_version": 2,
+      "task_id": "task-1",
+      "task_class": "structured-extraction",
+      "task_shape": "bounded",
+      "operation": "semantic",
+      "reasoning": "low",
+      "data_class": "public",
+      "external_effect": "none",
+      "verification": "unknown",
+      "context_tokens": 4096,
+      "required_tools": [
+        "filesystem-read"
+      ],
+      "required_output_capabilities": [
+        "json"
+      ],
+      "evaluation_time": "2026-09-15T00:00:00Z",
+      "local_gpu_enabled": true,
+      "free_model_enabled": true,
+      "omniroute_enabled": false,
+      "capability_evidence": {
+        "local": {
+          "schema_version": 1,
+          "worker_id": "local-worker",
+          "requested_model": "local-alias",
+          "resolved_model": "local/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://local/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": false
+        },
+        "free": {
+          "schema_version": 1,
+          "worker_id": "free-worker",
+          "requested_model": "free-alias",
+          "resolved_model": "free/model-v1",
+          "runtime_fingerprint": "sha256:runtime-a",
+          "observed_runtime_fingerprint": "sha256:runtime-a",
+          "evidence_status": "verified",
+          "verified_at": "2026-01-01T00:00:00Z",
+          "expires_at": "2027-01-01T00:00:00Z",
+          "effective_context_tokens": 8192,
+          "task_classes": [
+            "structured-extraction"
+          ],
+          "reasoning_levels": [
+            "low",
+            "medium"
+          ],
+          "verified_tools": [
+            "filesystem-read"
+          ],
+          "output_capabilities": [
+            "json"
+          ],
+          "data_classes": [
+            "public",
+            "internal",
+            "confidential"
+          ],
+          "verification_methods": [
+            "deterministic",
+            "human"
+          ],
+          "evidence_reference": "evidence://free/trial-1",
+          "route_available": true,
+          "hard_spend_stop_verified": true
+        }
+      }
+    },
+    "expected": {
+      "route": "main",
+      "reason_code": "VERIFICATION_UNKNOWN",
+      "forced": true
+    }
+  }
+]

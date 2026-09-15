@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability evidence v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "worker_id",
+    "requested_model",
+    "resolved_model",
+    "runtime_fingerprint",
+    "observed_runtime_fingerprint",
+    "evidence_status",
+    "verified_at",
+    "expires_at",
+    "effective_context_tokens",
+    "task_classes",
+    "reasoning_levels",
+    "verified_tools",
+    "output_capabilities",
+    "data_classes",
+    "verification_methods",
+    "evidence_reference",
+    "route_available",
+    "hard_spend_stop_verified"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "worker_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requested_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolved_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_runtime_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_status": {
+      "enum": [
+        "verified",
+        "expired",
+        "unknown",
+        "unavailable"
+      ]
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "effective_context_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "task_classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reasoning_levels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "unknown"
+        ]
+      }
+    },
+    "verified_tools": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "output_capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "data_classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "public",
+          "internal",
+          "confidential",
+          "credentials",
+          "unknown"
+        ]
+      }
+    },
+    "verification_methods": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "deterministic",
+          "human",
+          "none",
+          "unknown"
+        ]
+      }
+    },
+    "evidence_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route_available": {
+      "type": "boolean"
+    },
+    "hard_spend_stop_verified": {
+      "type": "boolean"
+    }
+  }
+}

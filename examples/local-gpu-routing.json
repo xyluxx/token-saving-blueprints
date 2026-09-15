@@ -1,0 +1,94 @@
+[
+  {
+    "kind": "synthetic-local-route-fixture",
+    "name": "tiny-model-is-not-general-purpose",
+    "request": {
+      "task_class": "general-purpose",
+      "parameters_billions": 1.0,
+      "quantization_bits": 4,
+      "context_tokens": 8192,
+      "available_memory_gib": 8,
+      "estimated_runtime_memory_gib": 3,
+      "tools_required": false,
+      "tools_verified": false
+    },
+    "expected": {
+      "decision": "reject",
+      "reason": "tiny-general-purpose"
+    }
+  },
+  {
+    "kind": "synthetic-local-route-fixture",
+    "name": "minimum-good-tier-fits",
+    "request": {
+      "task_class": "general-purpose",
+      "parameters_billions": 8.0,
+      "quantization_bits": 4,
+      "context_tokens": 8192,
+      "available_memory_gib": 8,
+      "estimated_runtime_memory_gib": 6.5,
+      "tools_required": true,
+      "tools_verified": true
+    },
+    "expected": {
+      "decision": "admit-for-capability-trial",
+      "tier": "minimum-good",
+      "task_eligible": false
+    }
+  },
+  {
+    "kind": "synthetic-local-route-fixture",
+    "name": "q1-is-rejected-for-27b",
+    "request": {
+      "task_class": "general-purpose",
+      "parameters_billions": 27.0,
+      "quantization_bits": 1,
+      "context_tokens": 8192,
+      "available_memory_gib": 24,
+      "estimated_runtime_memory_gib": 12,
+      "tools_required": false,
+      "tools_verified": false
+    },
+    "expected": {
+      "decision": "reject",
+      "reason": "q1-27b"
+    }
+  },
+  {
+    "kind": "synthetic-local-route-fixture",
+    "name": "runtime-estimate-needs-headroom",
+    "request": {
+      "task_class": "general-purpose",
+      "parameters_billions": 8.0,
+      "quantization_bits": 4,
+      "context_tokens": 8192,
+      "available_memory_gib": 8,
+      "estimated_runtime_memory_gib": 7.5,
+      "tools_required": false,
+      "tools_verified": false
+    },
+    "expected": {
+      "decision": "reject",
+      "reason": "memory-no-headroom"
+    }
+  },
+  {
+    "kind": "synthetic-local-route-fixture",
+    "name": "specialist-tiny-route-can-be-piloted",
+    "request": {
+      "task_class": "specialist",
+      "parameters_billions": 2.0,
+      "quantization_bits": 4,
+      "context_tokens": 4096,
+      "available_memory_gib": 4,
+      "estimated_runtime_memory_gib": 3,
+      "tools_required": false,
+      "tools_verified": false
+    },
+    "expected": {
+      "decision": "admit-for-capability-trial",
+      "tier": "specialist-only",
+      "task_eligible": false
+    }
+  }
+]
